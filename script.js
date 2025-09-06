@@ -1,29 +1,8 @@
 // ==========================================================================
-// FINAL CORRECTED SCRIPT.JS - PLEASE REPLACE YOUR ENTIRE FILE WITH THIS
+// FINAL REDESIGNED SCRIPT.JS - PLEASE REPLACE YOUR ENTIRE FILE WITH THIS
 // ==========================================================================
 
-// Background slideshow functionality
-let currentSlide = 0;
-const slides = ['slide1', 'slide2', 'slide3'];
-const slideInterval = 4000; // 4 seconds per slide
-
-function initSlideshow() {
-  setInterval(changeSlide, slideInterval);
-}
-
-function changeSlide() {
-  const currentSlideElement = document.getElementById(slides[currentSlide]);
-  if (currentSlideElement) {
-    currentSlideElement.style.opacity = '0';
-  }
-  currentSlide = (currentSlide + 1) % slides.length;
-  const nextSlideElement = document.getElementById(slides[currentSlide]);
-  if (nextSlideElement) {
-    nextSlideElement.style.opacity = '1';
-  }
-}
-
-// AMAC current chapters data
+// --- CORE DATA (Should eventually be moved to a JSON file or API) ---
 const chapters = [
     { id: 'uae', name: "UAE Chapter", location: "UAE", imageUrl: "images/uae.jpg", description: "UAE Chapter connects alumni across the Emirates with networking and professional development opportunities." },
     { id: 'australia', name: "Australia Chapter", location: "Australia", imageUrl: "images/australia.jpg", description: "Australia Chapter supports alumni in Australia with career development and community building initiatives." },
@@ -38,7 +17,6 @@ const chapters = [
     { id: 'dc', name: "Washington DC Chapter", location: "Washington DC", imageUrl: "images/washington.jpg", description: "Washington DC Chapter focuses on policy, government relations, and public sector networking." }
 ];
 
-// AMAC Presidents data
 const presidents = [
     { chapter: "AMAC", name: "Mohan Joseph Cheeran", contact: "chairman@amac.org", position: "Chairman", imageUrl: "https://i.pravatar.cc/150?u=chairman@amac.org" },
     { chapter: "UAE Chapter", name: "Mathew Kavalam", contact: "uae@amac.org", position: "President", imageUrl: "https://i.pravatar.cc/150?u=uae@amac.org" },
@@ -65,93 +43,46 @@ const presidents = [
     { chapter: "Washington DC Chapter", name: "Rejive Joseph", contact: "dc@amac.org", position: "President", imageUrl: "https://i.pravatar.cc/150?u=dc@amac.org" }
 ];
 
+// --- RENDER FUNCTIONS ---
+
+function renderChapters() {
+  const list = document.getElementById("chaptersList");
+  if (!list) return;
+  list.innerHTML = chapters.map((ch, idx) => `
+    <div class="card reveal-up" data-reveal-delay="${idx * 50}">
+      <img class="card-media" src="${ch.imageUrl}" alt="${ch.name}">
+      <div class="p-6">
+        <h4 class="text-lg">${ch.name}</h4>
+        <p class="mt-1 text-base">${ch.location}</p>
+      </div>
+    </div>
+  `).join("");
+}
+
 function renderPresidents() {
   const list = document.getElementById("presidentsList");
   if (!list) return;
-
   const visibleCount = 6;
   list.innerHTML = presidents.map((p, idx) => {
     const isHidden = idx >= visibleCount ? 'hidden extra-president-card' : '';
     return `
-      <div class="card flex items-center p-4 space-x-4 reveal-up ${isHidden}" data-reveal-delay="${idx * 40}">
-        <img src="${p.imageUrl}" alt="Profile of ${p.name}" class="w-16 h-16 rounded-full object-cover flex-shrink-0">
-        <div class="flex-grow">
-          <h4 class="text-lg font-bold text-gray-900">${p.name}</h4>
-          <p class="font-semibold text-blue-600 text-sm">${p.position}</p>
-          <a href="mailto:${p.contact}" class="inline-flex items-center space-x-1.5 text-gray-500 hover:text-blue-600 transition-colors mt-1">
-            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
-            <span class="text-sm">${p.contact}</span>
-          </a>
+      <div class="reveal-up ${isHidden}" data-reveal-delay="${idx * 50}">
+        <div class="flex items-center gap-x-6">
+          <img class="h-16 w-16 rounded-full" src="${p.imageUrl}" alt="Profile of ${p.name}">
+          <div>
+            <h3 class="text-base font-semibold leading-7 tracking-tight text-white">${p.name}</h3>
+            <p class="text-sm font-semibold leading-6 text-blue-400">${p.position} - ${p.chapter}</p>
+          </div>
         </div>
       </div>`;
   }).join('');
 
-  // ** Change: "Show More" button is now styled for a DARK background **
   const toggleContainer = document.getElementById('presidents-toggle-container');
   if (toggleContainer && presidents.length > visibleCount) {
-    toggleContainer.innerHTML = `<button id="show-more-presidents" class="px-6 py-2 border-2 border-blue-300 text-blue-300 rounded-lg hover:bg-blue-300 hover:text-gray-900 font-semibold transition-colors">Show More</button>`;
-  } else if (toggleContainer) {
-    toggleContainer.innerHTML = '';
+    toggleContainer.innerHTML = `<button id="show-more-presidents" class="font-semibold text-sm text-white leading-6 hover:underline">Show all leaders <span aria-hidden="true">→</span></button>`;
   }
 }
 
-function setupShowMorePresidents() {
-  const toggleButton = document.getElementById('show-more-presidents');
-  if (!toggleButton) return;
-  toggleButton.addEventListener('click', () => {
-    const extraCards = document.querySelectorAll('.extra-president-card');
-    extraCards.forEach(card => {
-      card.classList.toggle('hidden');
-    });
-    // Use .trim() to make the text check reliable
-    if (toggleButton.textContent.trim() === 'Show More') {
-      toggleButton.textContent = 'Show Less';
-    } else {
-      toggleButton.textContent = 'Show More';
-    }
-  });
-}
-
-function animateCountUp(el, toValue, durationMs) {
-    if (!el) return;
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) { el.textContent = String(toValue); return; }
-    let start, fromValue = 0;
-    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
-    function step(ts) {
-        if (!start) start = ts;
-        const elapsed = ts - start;
-        const t = Math.min(1, elapsed / durationMs);
-        const eased = easeOutCubic(t);
-        const val = Math.round(fromValue + (toValue - fromValue) * eased);
-        el.textContent = String(val);
-        if (t < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-}
-  
-function formatDate(ts) {
-    const d = new Date(ts);
-    return d.toLocaleString('en-IN', { dateStyle: 'medium' });
-}
-  
-function renderChapters() {
-    const list = document.getElementById("chaptersList");
-    const countEl = document.getElementById("chapterCount");
-    if (!list || !countEl) return;
-    countEl.textContent = chapters.length.toString();
-    list.innerHTML = chapters.map((ch, idx) => `
-      <div class="card reveal-up" data-reveal-delay="${idx * 60}" data-chapter-id="${ch.id}">
-        <img class="card-media" src="${ch.imageUrl}" alt="${ch.name}">
-        <div class="p-4">
-          <h4 class="text-lg">${ch.name}</h4>
-          <p class="text-sm mt-1">${ch.location}</p>
-        </div>
-      </div>
-    `).join("");
-    animateCountUp(countEl, chapters.length, 1000);
-}
-  
 async function renderAnnouncements() {
     const list = document.getElementById("announcementsList");
     if (!list) return;
@@ -159,35 +90,67 @@ async function renderAnnouncements() {
     const API_URL = "https://script.google.com/macros/s/AKfycbwYzR_HsPaS78iRPy1VCAM8W2j6zdwk2fbGdAA57ptyJ9cgh3PAT60TUNJWI3T7pe30qQ/exec"; 
     try {
       const response = await fetch(API_URL);
-      if (!response.ok) { throw new Error('Network response was not ok'); }
+      if (!response.ok) { throw new Error('Network response'); }
       const announcements = await response.json();
       if (announcements.length === 0) {
-        list.innerHTML = `<p class="text-gray-500">No announcements at this time.</p>`;
+        list.innerHTML = `<p class="text-gray-500">No new announcements.</p>`;
         return;
       }
-      list.innerHTML = announcements.map((a, idx) => `
-        <li class="card p-4 reveal-up" data-reveal-delay="${idx * 60}">
-          <div class="flex items-center justify-between">
-            <h4 class="text-lg">${a.title}</h4><span class="text-xs text-gray-500">${formatDate(a.createdAt)}</span>
+      list.innerHTML = announcements.slice(0, 3).map((a, idx) => `
+        <li class="card p-6 reveal-up" data-reveal-delay="${idx * 50}">
+          <div class="flex items-center justify-between gap-x-4">
+            <h4 class="text-lg">${a.title}</h4>
+            <time class="text-xs text-gray-500">${new Date(a.createdAt).toLocaleDateString('en-IN', { dateStyle: 'medium' })}</time>
           </div>
-          <p class="text-sm text-gray-600 mt-1">By ${a.author}</p>
-          <p class="mt-2">${a.body}</p>
+          <p class="mt-1 text-sm text-gray-500">By ${a.author}</p>
+          <p class="mt-4 text-base leading-7">${a.body}</p>
         </li>
       `).join("");
       triggerReveal();
     } catch (error) {
       console.error("Failed to fetch announcements:", error);
-      list.innerHTML = `<p class="text-red-500">Could not load announcements. Please try again later.</p>`;
+      list.innerHTML = `<p class="text-red-500">Could not load announcements.</p>`;
     }
 }
-  
+
+// --- UTILITY & SETUP FUNCTIONS ---
+
+let currentSlide = 0;
+const slides = ['slide1', 'slide2', 'slide3'];
+const slideInterval = 4000;
+
+function initSlideshow() {
+  setInterval(() => {
+    const current = document.getElementById(slides[currentSlide]);
+    if (current) current.style.opacity = '0';
+    currentSlide = (currentSlide + 1) % slides.length;
+    const next = document.getElementById(slides[currentSlide]);
+    if (next) next.style.opacity = '1';
+  }, slideInterval);
+}
+
+function setupShowMorePresidents() {
+  const toggleButton = document.getElementById('show-more-presidents');
+  if (!toggleButton) return;
+  let isShowingAll = false;
+  toggleButton.addEventListener('click', () => {
+    isShowingAll = !isShowingAll;
+    const extraCards = document.querySelectorAll('.extra-president-card');
+    extraCards.forEach(card => {
+      card.classList.toggle('hidden');
+    });
+    toggleButton.innerHTML = isShowingAll 
+        ? `Show fewer leaders <span aria-hidden="true">←</span>` 
+        : `Show all leaders <span aria-hidden="true">→</span>`;
+  });
+}
+
 let revealObserver;
 function initReveal() {
-    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const selectors = ['.reveal', '.reveal-up', '.reveal-left', '.reveal-right', '.reveal-zoom'];
-    const all = document.querySelectorAll(selectors.join(','));
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const elements = document.querySelectorAll('.reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-zoom');
     if (prefersReduced) {
-      all.forEach(el => el.classList.add('visible'));
+      elements.forEach(el => el.classList.add('visible'));
       return;
     }
     revealObserver = new IntersectionObserver((entries) => {
@@ -195,55 +158,34 @@ function initReveal() {
         if (entry.isIntersecting) {
           const el = entry.target;
           const delay = parseInt(el.getAttribute('data-reveal-delay') || '0', 10);
-          if (delay) { el.style.transitionDelay = `${delay}ms`; }
+          if (delay) el.style.transitionDelay = `${delay}ms`;
           el.classList.add('visible');
           revealObserver.unobserve(el);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
-    all.forEach(el => revealObserver.observe(el));
+    }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
+    elements.forEach(el => revealObserver.observe(el));
 }
 function triggerReveal() {
     if (!revealObserver) return;
-    const selectors = ['.reveal', '.reveal-up', '.reveal-left', '.reveal-right', '.reveal-zoom'];
-    document.querySelectorAll(selectors.join(',')).forEach(el => {
-      if (!el.classList.contains('visible')) {
-          revealObserver.observe(el);
-      }
-    });
+    const elements = document.querySelectorAll('.reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-zoom:not(.visible)');
+    elements.forEach(el => revealObserver.observe(el));
 }
   
 function setupNavbarScroll() {
     const navbar = document.getElementById('navbar');
     if (!navbar) return;
+    const heroSection = document.getElementById('home');
+    const heroHeight = heroSection ? heroSection.offsetHeight : 50;
     window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      if (y > 10) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
+      if (window.scrollY > heroHeight - 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
     }, { passive: true });
 }
   
-function renderChapterDetail() {
-    const container = document.getElementById('chapterDetail');
-    if (!container) return;
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get('id');
-    const chapter = chapters.find(c => c.id === id);
-    if (!chapter) { container.innerHTML = '<p>Chapter not found.</p>'; return; }
-    container.innerHTML = `
-      <div class="max-w-4xl mx-auto px-4 py-10">
-        <a href="index.html#chapters" class="text-blue-700 underline">← Back to Chapters</a>
-        <div class="mt-6 card">
-          <img class="card-media" src="${chapter.imageUrl}" alt="${chapter.name}">
-          <div class="p-6">
-            <h2 class="text-2xl font-bold">${chapter.name}</h2>
-            <p class="mt-2 text-gray-600">Location: ${chapter.location}</p>
-            <p class="mt-4">${chapter.description}</p>
-          </div>
-        </div>
-      </div>
-    `;
-}
-
 function setupMobileMenu() {
     const hamburgerBtn = document.getElementById('hamburger-button');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -254,6 +196,7 @@ function setupMobileMenu() {
     }
 }
   
+// This runs when the page is fully loaded.
 window.addEventListener("DOMContentLoaded", () => {
   initSlideshow();
   renderChapters();
@@ -261,7 +204,6 @@ window.addEventListener("DOMContentLoaded", () => {
   renderAnnouncements();
   initReveal();
   setupNavbarScroll();
-  renderChapterDetail();
   setupMobileMenu();
   setupShowMorePresidents();
 });
