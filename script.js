@@ -1,8 +1,4 @@
-// ==========================================================================
-// FINAL REDESIGNED SCRIPT.JS - PLEASE REPLACE YOUR ENTIRE FILE WITH THIS
-// ==========================================================================
 
-// --- CORE DATA (Should eventually be moved to a JSON file or API) ---
 const chapters = [
     { id: 'uae', name: "UAE Chapter", location: "UAE", imageUrl: "images/uae.jpg", description: "UAE Chapter connects alumni across the Emirates with networking and professional development opportunities." },
     { id: 'australia', name: "Australia Chapter", location: "Australia", imageUrl: "images/australia.jpg", description: "Australia Chapter supports alumni in Australia with career development and community building initiatives." },
@@ -22,8 +18,8 @@ const presidents = [
     { chapter: "UAE Chapter", name: "Mathew Kavalam", contact: "uae@amac.org", position: "President", imageUrl: "https://i.pravatar.cc/150?u=uae@amac.org" },
     { chapter: "Australia Chapter", name: "Xavi Joseph", contact: "australia@amac.org", position: "President", imageUrl: "https://i.pravatar.cc/150?u=australia@amac.org" },
     { chapter: "USA Chapter", name: "Thomas Stephan", contact: "usa@amac.org", position: "President", imageUrl: "https://i.pravatar.cc/150?u=Thomas" },
-    { chapter: "AMAC", name: "Jacob Zachariah", contact: "secretary@amac.org", position: "General Secretary", imageUrl: "https://i.pravatar.cc/150?u=australia@amac.org" },
-    { chapter: "BALI", name: "John Emmanuel", contact: "bali@amac.org", position: "Convener", imageUrl: "https://i.pravatar.cc/150?u=uae@amac.org" },
+    { chapter: "AMAC", name: "Jacob Zachariah", contact: "secretary@amac.org", position: "General Secretary", imageUrl: "https://i.pravatar.cc/150?u=Jacob" },
+    { chapter: "BALI", name: "John Emmanuel", contact: "bali@amac.org", position: "Convener", imageUrl: "https://i.pravatar.cc/150?u=John" },
     { chapter: "Singapore Chapter", name: "Shaja Mathews", contact: "singapore@amac.org", position: "President", imageUrl: "https://i.pravatar.cc/150?u=singapore@amac.org" },
     { chapter: "MACE", name: "Bos Mathew", contact: "principal@mace.ac.in", position: "Principal", imageUrl: "https://i.pravatar.cc/150?u=principal@mace.ac.in" },
     { chapter: "Parent Alumni", name: "Jiss Paul", contact: "parent@amac.org", position: "Representative", imageUrl: "https://i.pravatar.cc/150?u=parent@amac.org" },
@@ -72,6 +68,10 @@ function renderPresidents() {
           <div>
             <h3 class="text-base font-semibold leading-7 tracking-tight text-white">${p.name}</h3>
             <p class="text-sm font-semibold leading-6 text-blue-400">${p.position} - ${p.chapter}</p>
+            <a href="mailto:${p.contact}" class="mt-1 inline-flex items-center gap-x-2 text-sm leading-6 text-gray-400 hover:text-white transition-colors">
+              <svg class="h-4 w-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
+              ${p.contact}
+            </a>
           </div>
         </div>
       </div>`;
