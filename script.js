@@ -13,12 +13,12 @@ const chapters = [
     { id: 'qatar', name: "Qatar Chapter", location: "Qatar", imageUrl: "images/qatar.jpg", description: "Qatar Chapter supports alumni with networking events and career advancement opportunities." },
     { id: 'oman', name: "Oman Chapter", location: "Oman", imageUrl: "images/oman.jpg", description: "Oman Chapter facilitates professional connections and community engagement in the Sultanate." },
     { id: 'chennai', name: "Chennai Chapter", location: "Chennai", imageUrl: "images/chennai.jpg", description: "Chennai Chapter supports community outreach and alumni meetups in South India." },
-    { id: 'chicago', name: "Chicago Chapter", location: "Chicago", imageUrl: "images/chicago.jpg", description: "Chicago Chapter connects alumni in the Midwest with professional development opportunities." },
-    { id: 'dc', name: "Washington DC Chapter", location: "Washington DC", imageUrl: "images/washington.jpg", description: "Washington DC Chapter focuses on policy, government relations, and public sector networking." }
+    { id: 'chicago', name: "Chicago Chapter", location: "USA", imageUrl: "images/chicago.jpg", description: "Chicago Chapter connects alumni in the Midwest with professional development opportunities." },
+    { id: 'dc', name: "Washington DC Chapter", location: "USA", imageUrl: "images/washington.jpg", description: "Washington DC Chapter focuses on policy, government relations, and public sector networking." }
 ];
 
 const presidents = [
-    { chapter: "AMAC", name: "Mohan Joseph Cheeran", contact: "chairman@amac.org", position: "Chairman", imageUrl: "https://i.pravatar.cc/150?u=chairman@amac.org" },
+    { chapter: "AMAC", name: "Mohan Joseph Cheeran", contact: "chairman@amac.org", position: "Chairman", imageUrl: "https://i.pravatar.cc/150?u=Mohan" },
     { chapter: "UAE Chapter", name: "Mathew Kavalam", contact: "uae@amac.org", position: "President", imageUrl: "https://i.pravatar.cc/150?u=uae@amac.org" },
     { chapter: "Australia Chapter", name: "Xavi Joseph", contact: "australia@amac.org", position: "President", imageUrl: "https://i.pravatar.cc/150?u=australia@amac.org" },
     { chapter: "USA Chapter", name: "Thomas Stephan", contact: "usa@amac.org", position: "President", imageUrl: "https://i.pravatar.cc/150?u=usa@amac.org" },
