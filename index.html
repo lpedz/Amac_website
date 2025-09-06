@@ -5,46 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AMAC — Association of MACE Alumni Chapters</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Tailwind CDN (optional, for faster styling) -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="font-sans bg-gray-100 text-gray-900">
-  <!-- Navbar -->
-  <nav id="navbar" class="bg-gradient-to-b from-slate-800 to-transparent text-white transition-all duration-300 backdrop-blur-sm">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <div class="flex items-center space-x-3">
-        <img src="trasparent_logo.png" alt="AMAC Logo" class="h-8 w-8 object-contain logo-img brightness-150 contrast-125" />
-        <h1 class="font-semibold text-lg">AMAC — Association of MACE Alumni Chapters</h1>
-      </div>
-      <div class="flex items-center space-x-4 text-sm">
-        <a class="hover:underline transition-colors" href="#home">Home</a>
-        <a class="hover:underline transition-colors" href="#history">History</a>
-        <a class="hover:underline transition-colors" href="#founders">Founders</a>
-        <a class="hover:underline transition-colors" href="#chapters">Chapters</a>
-        <a class="hover:underline transition-colors" href="#presidents">Presidents</a>
-        <a class="hover:underline transition-colors" href="#announcements">Announcements</a>
-      </div>
+<nav id="navbar" class="bg-gradient-to-b from-slate-800 to-transparent text-white transition-all duration-300 backdrop-blur-sm">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <img src="trasparent_logo.png" alt="AMAC Logo" class="h-8 w-8 object-contain logo-img brightness-150 contrast-125" />
+      <h1 class="font-semibold text-lg">AMAC</h1>
     </div>
-  </nav>
+    <div class="hidden md:flex items-center space-x-4 text-sm">
+      <a class="hover:underline transition-colors" href="#home">Home</a>
+      <a class="hover:underline transition-colors" href="#history">History</a>
+      <a class="hover:underline transition-colors" href="#founders">Founders</a>
+      <a class="hover:underline transition-colors" href="#chapters">Chapters</a>
+      <a class="hover:underline transition-colors" href="#presidents">Presidents</a>
+      <a class="hover:underline transition-colors" href="#announcements">Announcements</a>
+    </div>
+    <div class="md:hidden flex items-center">
+      <button id="hamburger-button" class="focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden">
+    <a href="#home" class="block py-2 px-4 text-sm hover:bg-slate-700">Home</a>
+    <a href="#history" class="block py-2 px-4 text-sm hover:bg-slate-700">History</a>
+    <a href="#founders" class="block py-2 px-4 text-sm hover:bg-slate-700">Founders</a>
+    <a href="#chapters" class="block py-2 px-4 text-sm hover:bg-slate-700">Chapters</a>
+    <a href="#presidents" class="block py-2 px-4 text-sm hover:bg-slate-700">Presidents</a>
+    <a href="#announcements" class="block py-2 px-4 text-sm hover:bg-slate-700">Announcements</a>
+  </div>
+</nav>
 
-  <!-- Background Slideshow - Full Screen -->
   <div class="fixed inset-0 -z-10">
     <div id="slide1" class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out opacity-100" style="background-image: url('images/mac1.jpg');"></div>
     <div id="slide2" class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out opacity-0" style="background-image: url('images/mac2.jpg');"></div>
     <div id="slide3" class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out opacity-0" style="background-image: url('images/mac3.jpeg');"></div>
-    <!-- Dark overlay for better text readability -->
     <div class="absolute inset-0 bg-black bg-opacity-40"></div>
   </div>
 
-  <!-- Hero -->
   <section id="home" class="relative overflow-hidden min-h-screen">
-    
     <div class="relative max-w-6xl mx-auto px-4 py-20 text-center">
       <div class="reveal-up" data-reveal-delay="40">
         <div class="mb-6">
           <img src="trasparent_logo.png" alt="AMAC Logo" class="h-20 w-auto mx-auto mb-4 brightness-150 contrast-125 drop-shadow-lg">
         </div>
-        <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
           Welcome to <span class="text-blue-300">AMAC</span>
         </h1>
         <p class="text-xl md:text-2xl text-gray-200 mb-4 max-w-4xl mx-auto font-light">
@@ -53,145 +60,84 @@
         <p class="text-lg text-gray-300 mb-12 max-w-3xl mx-auto">
           Connecting <strong class="text-blue-300">11 chapters</strong> across the globe, fostering lifelong relationships among <strong class="text-blue-300">thousands of alumni</strong> worldwide since 2012.
         </p>
-        
-        <!-- Key Statistics -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
-          <div class="reveal-up" data-reveal-delay="100">
-            <div class="text-3xl md:text-4xl font-bold text-blue-300 mb-2">11+</div>
-            <div class="text-gray-200">Active Chapters</div>
-          </div>
-          <div class="reveal-up" data-reveal-delay="150">
-            <div class="text-3xl md:text-4xl font-bold text-blue-300 mb-2">2012</div>
-            <div class="text-gray-200">Founded</div>
-          </div>
-          <div class="reveal-up" data-reveal-delay="200">
-            <div class="text-3xl md:text-4xl font-bold text-blue-300 mb-2">Global</div>
-            <div class="text-gray-200">Reach</div>
-          </div>
+          <div class="reveal-up" data-reveal-delay="100"><div class="text-3xl md:text-4xl font-bold text-blue-300 mb-2">11+</div><div class="text-gray-200">Active Chapters</div></div>
+          <div class="reveal-up" data-reveal-delay="150"><div class="text-3xl md:text-4xl font-bold text-blue-300 mb-2">2012</div><div class="text-gray-200">Founded</div></div>
+          <div class="reveal-up" data-reveal-delay="200"><div class="text-3xl md:text-4xl font-bold text-blue-300 mb-2">Global</div><div class="text-gray-200">Reach</div></div>
         </div>
-        
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#chapters" class="btn-primary px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            Explore Our Chapters
-          </a>
-          <a href="#announcements" class="px-8 py-4 text-lg font-semibold border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:-translate-y-1">
-            Latest Updates
-          </a>
+          <a href="#chapters" class="btn-primary px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">Explore Our Chapters</a>
+          <a href="#announcements" class="px-8 py-4 text-lg font-semibold border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:-translate-y-1">Latest Updates</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- History -->
   <section id="history" class="relative z-10">
-    <div class="bg-white w-full py-12">
+    <div class="bg-white w-full py-8 sm:py-12">
       <div class="max-w-6xl mx-auto px-4">
         <h3 class="text-2xl font-bold mb-6 reveal-up" data-reveal-delay="0">History of AMAC</h3>
-    
-    <div class="space-y-8">
-      <div class="reveal-up" data-reveal-delay="80">
-        <h4 class="text-xl font-semibold mb-3 text-blue-700">Beginning of AMAC</h4>
-        <p class="text-gray-700 leading-relaxed">Association of MACE Alumni Chapters (AMAC) based in the Gulf has been constituted on 13th April 2012 in the MACEAA Global meet conducted in Dubai-UAE as an association of MACE ALUMNI CHAPTERS based in different cities / countries around the world.</p>
-      </div>
-
-      <div class="reveal-up" data-reveal-delay="120">
-        <h4 class="text-xl font-semibold mb-3 text-blue-700">Mission</h4>
-        <p class="text-gray-700 leading-relaxed">This association is to co-ordinate the activities of MACE ALUMNI CHAPTERS scattered around the world and to identify & form new Alumni Chapters.</p>
-      </div>
-
-      <div class="reveal-up" data-reveal-delay="160">
-        <h4 class="text-xl font-semibold mb-3 text-blue-700">Objectives</h4>
-        <ul class="text-gray-700 leading-relaxed space-y-2">
-          <li>1. To coordinate under one umbrella & unify activities of MACE ALUMNI CHAPTERS in the Gulf and around the world in General.</li>
-          <li>2. To Identify and support to create new MACEAA chapters worldwide.</li>
-          <li>3. To Assist members for better career opportunities, placements & leadership development.</li>
-          <li>4. To enhance professional and entrepreneurial skills of members.</li>
-          <li>5. To support activities of MACEAA parent alumni and to function as a bridge between parent alumni and various chapters around the globe.</li>
-        </ul>
-      </div>
+        <div class="space-y-8">
+          <div class="reveal-up" data-reveal-delay="80">
+            <h4 class="text-xl font-semibold mb-3 text-blue-700">Beginning of AMAC</h4>
+            <p class="text-sm sm:text-base text-gray-700 leading-relaxed">Association of MACE Alumni Chapters (AMAC) based in the Gulf has been constituted on 13th April 2012 in the MACEAA Global meet conducted in Dubai-UAE as an association of MACE ALUMNI CHAPTERS based in different cities / countries around the world.</p>
+          </div>
+          <div class="reveal-up" data-reveal-delay="120">
+            <h4 class="text-xl font-semibold mb-3 text-blue-700">Mission</h4>
+            <p class="text-sm sm:text-base text-gray-700 leading-relaxed">This association is to co-ordinate the activities of MACE ALUMNI CHAPTERS scattered around the world and to identify & form new Alumni Chapters.</p>
+          </div>
+          <div class="reveal-up" data-reveal-delay="160">
+            <h4 class="text-xl font-semibold mb-3 text-blue-700">Objectives</h4>
+            <ul class="text-sm sm:text-base text-gray-700 leading-relaxed space-y-2 list-disc list-inside">
+              <li>To coordinate under one umbrella & unify activities of MACE ALUMNI CHAPTERS in the Gulf and around the world in General.</li>
+              <li>To Identify and support to create new MACEAA chapters worldwide.</li>
+              <li>To Assist members for better career opportunities, placements & leadership development.</li>
+              <li>To enhance professional and entrepreneurial skills of members.</li>
+              <li>To support activities of MACEAA parent alumni and to function as a bridge between parent alumni and various chapters around the globe.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Founder Information -->
   <section id="founders" class="bg-white">
-    <div class="max-w-6xl mx-auto px-4 py-12">
+    <div class="max-w-6xl mx-auto px-4 py-8 sm:py-12">
       <h3 class="text-2xl font-bold mb-6 reveal-up" data-reveal-delay="0">Founder Information</h3>
-      
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div class="reveal-up" data-reveal-delay="80">
           <h4 class="text-xl font-semibold mb-4 text-blue-700">Founder Member Chapters</h4>
-          <p class="text-gray-600 mb-4">Following MACE Alumni Chapters are the founder members of AMAC. They were affiliated in the founding conference held on 13th April 2012 in Dubai, UAE.</p>
-          <ul class="text-gray-700 space-y-2">
-            <li>1. Bahrain</li>
-            <li>2. Kuwait</li>
-            <li>3. Oman</li>
-            <li>4. Qatar</li>
-            <li>5. Trichur (Seniors Chapter)</li>
-            <li>6. UAE</li>
-            <li>7. Australia (Associate Member)</li>
-            <li>8. United Kingdom (Associate Member)</li>
+          <p class="text-sm sm:text-base text-gray-600 mb-4">Following MACE Alumni Chapters are the founder members of AMAC. They were affiliated in the founding conference held on 13th April 2012 in Dubai, UAE.</p>
+          <ul class="text-sm sm:text-base text-gray-700 space-y-2 list-disc list-inside">
+            <li>Bahrain</li><li>Kuwait</li><li>Oman</li><li>Qatar</li><li>Trichur (Seniors Chapter)</li><li>UAE</li><li>Australia (Associate Member)</li><li>United Kingdom (Associate Member)</li>
           </ul>
         </div>
-
         <div class="reveal-up" data-reveal-delay="120">
           <h4 class="text-xl font-semibold mb-4 text-blue-700">Founding Committee</h4>
           <div class="space-y-3">
-            <div class="p-3 bg-gray-50 rounded">
-              <p class="font-semibold">Mr. Mohan Joseph Cheeran</p>
-              <p class="text-sm text-gray-600">Chairman</p>
-            </div>
-            <div class="p-3 bg-gray-50 rounded">
-              <p class="font-semibold">Dr. George Isaac</p>
-              <p class="text-sm text-gray-600">Principal</p>
-            </div>
-            <div class="p-3 bg-gray-50 rounded">
-              <p class="font-semibold">Mr. Sasi Kodanadu</p>
-              <p class="text-sm text-gray-600">General Secretary</p>
-            </div>
-            <div class="p-3 bg-gray-50 rounded">
-              <p class="font-semibold">Mr. Mathew Kavalam</p>
-              <p class="text-sm text-gray-600">Treasurer</p>
-            </div>
+            <div class="p-3 bg-gray-50 rounded"><p class="font-semibold">Mr. Mohan Joseph Cheeran</p><p class="text-sm text-gray-600">Chairman</p></div>
+            <div class="p-3 bg-gray-50 rounded"><p class="font-semibold">Dr. George Isaac</p><p class="text-sm text-gray-600">Principal</p></div>
+            <div class="p-3 bg-gray-50 rounded"><p class="font-semibold">Mr. Sasi Kodanadu</p><p class="text-sm text-gray-600">General Secretary</p></div>
+            <div class="p-3 bg-gray-50 rounded"><p class="font-semibold">Mr. Mathew Kavalam</p><p class="text-sm text-gray-600">Treasurer</p></div>
           </div>
         </div>
       </div>
-
       <div class="mt-8 reveal-up" data-reveal-delay="160">
         <h4 class="text-xl font-semibold mb-4 text-blue-700">Chapter Presidents at Formation</h4>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div class="p-3 bg-gray-50 rounded">
-            <p class="font-semibold">Mr. Hari Kumar</p>
-            <p class="text-sm text-gray-600">Bahrain</p>
-          </div>
-          <div class="p-3 bg-gray-50 rounded">
-            <p class="font-semibold">Mr. Sasi Kodanadan</p>
-            <p class="text-sm text-gray-600">Kuwait</p>
-          </div>
-          <div class="p-3 bg-gray-50 rounded">
-            <p class="font-semibold">Mr. Murali</p>
-            <p class="text-sm text-gray-600">Oman</p>
-          </div>
-          <div class="p-3 bg-gray-50 rounded">
-            <p class="font-semibold">Mr. Govindan Kutty</p>
-            <p class="text-sm text-gray-600">Qatar</p>
-          </div>
-          <div class="p-3 bg-gray-50 rounded">
-            <p class="font-semibold">Mr. Joseph Peter</p>
-            <p class="text-sm text-gray-600">Trichur</p>
-          </div>
-          <div class="p-3 bg-gray-50 rounded">
-            <p class="font-semibold">Mr. John Emmanual</p>
-            <p class="text-sm text-gray-600">UAE</p>
-          </div>
+            <div class="p-3 bg-gray-50 rounded"><p class="font-semibold">Mr. Hari Kumar</p><p class="text-sm text-gray-600">Bahrain</p></div>
+            <div class="p-3 bg-gray-50 rounded"><p class="font-semibold">Mr. Sasi Kodanadan</p><p class="text-sm text-gray-600">Kuwait</p></div>
+            <div class="p-3 bg-gray-50 rounded"><p class="font-semibold">Mr. Murali</p><p class="text-sm text-gray-600">Oman</p></div>
+            <div class="p-3 bg-gray-50 rounded"><p class="font-semibold">Mr. Govindan Kutty</p><p class="text-sm text-gray-600">Qatar</p></div>
+            <div class="p-3 bg-gray-50 rounded"><p class="font-semibold">Mr. Joseph Peter</p><p class="text-sm text-gray-600">Trichur</p></div>
+            <div class="p-3 bg-gray-50 rounded"><p class="font-semibold">Mr. John Emmanual</p><p class="text-sm text-gray-600">UAE</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Chapters -->
   <section id="chapters" class="bg-white">
-    <div class="max-w-6xl mx-auto px-4 py-12">
+    <div class="max-w-6xl mx-auto px-4 py-8 sm:py-12">
       <div class="flex items-center justify-between mb-6">
         <h3 class="text-2xl font-bold reveal-up" data-reveal-delay="0">Chapters</h3>
         <p class="text-gray-600 reveal-up" data-reveal-delay="60">Number of chapters: <span id="chapterCount" class="font-semibold">0</span></p>
@@ -200,22 +146,22 @@
     </div>
   </section>
 
-  <!-- Presidents -->
-  <section id="presidents" class="max-w-6xl mx-auto px-4 py-12">
-    <h3 class="text-2xl font-bold text-blue-300 mb-6 reveal-up" data-reveal-delay="0">Current Chapter Presidents</h3>
-    <div id="presidentsList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  <section id="presidents" class="bg-gray-900 py-8 sm:py-12">
+    <div class="max-w-6xl mx-auto px-4">
+        <h3 class="text-2xl font-bold text-blue-300 mb-6 reveal-up" data-reveal-delay="0">Current Chapter Presidents</h3>
+        <div id="presidentsList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        <div id="presidents-toggle-container" class="text-center mt-8"></div>
+    </div>
   </section>
 
-  <!-- Announcements -->
   <section id="announcements" class="bg-white">
-    <div class="max-w-6xl mx-auto px-4 py-12">
+    <div class="max-w-6xl mx-auto px-4 py-8 sm:py-12">
       <h3 class="text-2xl font-bold mb-4 reveal-up" data-reveal-delay="0">Announcements</h3>
       <ul id="announcementsList" class="space-y-4"></ul>
     </div>
   </section>
 
-
-  <footer class="bg-blue-700 text-white">
+  <footer class="bg-gray-900 text-white">
     <div class="max-w-6xl mx-auto px-4 py-4 text-center">
       © 2025 AMAC — Association of MACE Alumni Chapters
     </div>
