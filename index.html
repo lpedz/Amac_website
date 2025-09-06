@@ -10,10 +10,10 @@
 </head>
 <body class="font-sans bg-gray-100 text-gray-900">
   <!-- Navbar -->
-  <nav id="navbar" class="bg-blue-700 text-white transition-all duration-300">
+  <nav id="navbar" class="bg-gradient-to-b from-slate-800 to-transparent text-white transition-all duration-300 backdrop-blur-sm">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       <div class="flex items-center space-x-3">
-        <img src="trasparent_logo.png" alt="AMAC Logo" class="h-8 w-8 object-contain logo-img" />
+        <img src="trasparent_logo.png" alt="AMAC Logo" class="h-8 w-8 object-contain logo-img brightness-150 contrast-125" />
         <h1 class="font-semibold text-lg">AMAC — Association of MACE Alumni Chapters</h1>
       </div>
       <div class="flex items-center space-x-4 text-sm">
@@ -23,46 +23,50 @@
         <a class="hover:underline transition-colors" href="#chapters">Chapters</a>
         <a class="hover:underline transition-colors" href="#presidents">Presidents</a>
         <a class="hover:underline transition-colors" href="#announcements">Announcements</a>
-        <a class="hover:underline transition-colors" href="#contact">Contact</a>
       </div>
     </div>
   </nav>
 
+  <!-- Background Slideshow - Full Screen -->
+  <div class="fixed inset-0 -z-10">
+    <div id="slide1" class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out opacity-100" style="background-image: url('images/mac1.jpg');"></div>
+    <div id="slide2" class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out opacity-0" style="background-image: url('images/mac2.jpg');"></div>
+    <div id="slide3" class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out opacity-0" style="background-image: url('images/mac3.jpeg');"></div>
+    <!-- Dark overlay for better text readability -->
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+  </div>
+
   <!-- Hero -->
-  <section id="home" class="relative bg-gradient-to-br from-blue-50 via-white to-blue-50 overflow-hidden">
-    <!-- Background Pattern -->
-    <div class="absolute inset-0 opacity-5">
-      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23000000" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-    </div>
+  <section id="home" class="relative overflow-hidden min-h-screen">
     
     <div class="relative max-w-6xl mx-auto px-4 py-20 text-center">
       <div class="reveal-up" data-reveal-delay="40">
         <div class="mb-6">
-          <img src="trasparent_logo.png" alt="AMAC Logo" class="h-20 w-auto mx-auto mb-4 opacity-90">
+          <img src="trasparent_logo.png" alt="AMAC Logo" class="h-20 w-auto mx-auto mb-4 brightness-150 contrast-125 drop-shadow-lg">
         </div>
-        <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-          Welcome to <span class="text-blue-600">AMAC</span>
+        <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Welcome to <span class="text-blue-300">AMAC</span>
         </h1>
-        <p class="text-xl md:text-2xl text-gray-600 mb-4 max-w-4xl mx-auto font-light">
+        <p class="text-xl md:text-2xl text-gray-200 mb-4 max-w-4xl mx-auto font-light">
           Association of MACE Alumni Chapters
         </p>
-        <p class="text-lg text-gray-500 mb-12 max-w-3xl mx-auto">
-          Connecting <strong class="text-blue-600">11 chapters</strong> across the globe, fostering lifelong relationships among <strong class="text-blue-600">thousands of alumni</strong> worldwide since 2012.
+        <p class="text-lg text-gray-300 mb-12 max-w-3xl mx-auto">
+          Connecting <strong class="text-blue-300">11 chapters</strong> across the globe, fostering lifelong relationships among <strong class="text-blue-300">thousands of alumni</strong> worldwide since 2012.
         </p>
         
         <!-- Key Statistics -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
           <div class="reveal-up" data-reveal-delay="100">
-            <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">11+</div>
-            <div class="text-gray-600">Active Chapters</div>
+            <div class="text-3xl md:text-4xl font-bold text-blue-300 mb-2">11+</div>
+            <div class="text-gray-200">Active Chapters</div>
           </div>
           <div class="reveal-up" data-reveal-delay="150">
-            <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">2012</div>
-            <div class="text-gray-600">Founded</div>
+            <div class="text-3xl md:text-4xl font-bold text-blue-300 mb-2">2012</div>
+            <div class="text-gray-200">Founded</div>
           </div>
           <div class="reveal-up" data-reveal-delay="200">
-            <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">Global</div>
-            <div class="text-gray-600">Reach</div>
+            <div class="text-3xl md:text-4xl font-bold text-blue-300 mb-2">Global</div>
+            <div class="text-gray-200">Reach</div>
           </div>
         </div>
         
@@ -70,7 +74,7 @@
           <a href="#chapters" class="btn-primary px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
             Explore Our Chapters
           </a>
-          <a href="#announcements" class="px-8 py-4 text-lg font-semibold border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:-translate-y-1">
+          <a href="#announcements" class="px-8 py-4 text-lg font-semibold border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:-translate-y-1">
             Latest Updates
           </a>
         </div>
@@ -79,8 +83,10 @@
   </section>
 
   <!-- History -->
-  <section id="history" class="max-w-6xl mx-auto px-4 py-12">
-    <h3 class="text-2xl font-bold mb-6 reveal-up" data-reveal-delay="0">History of AMAC</h3>
+  <section id="history" class="relative z-10">
+    <div class="bg-white w-full py-12">
+      <div class="max-w-6xl mx-auto px-4">
+        <h3 class="text-2xl font-bold mb-6 reveal-up" data-reveal-delay="0">History of AMAC</h3>
     
     <div class="space-y-8">
       <div class="reveal-up" data-reveal-delay="80">
@@ -102,6 +108,7 @@
           <li>4. To enhance professional and entrepreneurial skills of members.</li>
           <li>5. To support activities of MACEAA parent alumni and to function as a bridge between parent alumni and various chapters around the globe.</li>
         </ul>
+      </div>
       </div>
     </div>
   </section>
@@ -195,7 +202,7 @@
 
   <!-- Presidents -->
   <section id="presidents" class="max-w-6xl mx-auto px-4 py-12">
-    <h3 class="text-2xl font-bold mb-6 reveal-up" data-reveal-delay="0">Current Chapter Presidents</h3>
+    <h3 class="text-2xl font-bold text-blue-300 mb-6 reveal-up" data-reveal-delay="0">Current Chapter Presidents</h3>
     <div id="presidentsList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
   </section>
 
@@ -207,12 +214,6 @@
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="max-w-6xl mx-auto px-4 py-12">
-    <h3 class="text-2xl font-bold mb-4 reveal-up" data-reveal-delay="0">Contact</h3>
-    <p class="text-gray-700">Email: <a class="text-blue-700 hover:underline" href="mailto:contact@amac.org">contact@amac.org</a></p>
-    <p class="text-gray-700">Phone: +91-1234567890</p>
-  </section>
 
   <footer class="bg-blue-700 text-white">
     <div class="max-w-6xl mx-auto px-4 py-4 text-center">

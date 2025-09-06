@@ -1,3 +1,30 @@
+// Background slideshow functionality
+let currentSlide = 0;
+const slides = ['slide1', 'slide2', 'slide3'];
+const slideInterval = 4000; // 4 seconds per slide
+
+function initSlideshow() {
+  // Start the slideshow
+  setInterval(changeSlide, slideInterval);
+}
+
+function changeSlide() {
+  // Hide current slide
+  const currentSlideElement = document.getElementById(slides[currentSlide]);
+  if (currentSlideElement) {
+    currentSlideElement.style.opacity = '0';
+  }
+  
+  // Move to next slide
+  currentSlide = (currentSlide + 1) % slides.length;
+  
+  // Show next slide
+  const nextSlideElement = document.getElementById(slides[currentSlide]);
+  if (nextSlideElement) {
+    nextSlideElement.style.opacity = '1';
+  }
+}
+
 // AMAC current chapters data
 const chapters = [
   { id: 'uae', name: "UAE Chapter", location: "UAE", imageUrl: "images/uae.jpg", description: "UAE Chapter connects alumni across the Emirates with networking and professional development opportunities." },
@@ -208,6 +235,7 @@ function renderChapterDetail() {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+  initSlideshow();
   renderChapters();
   renderPresidents();
   renderAnnouncements();
