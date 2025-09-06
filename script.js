@@ -122,8 +122,10 @@ function renderChapters() {
   const countEl = document.getElementById("chapterCount");
   if (!list || !countEl) return;
   countEl.textContent = chapters.length.toString();
+
+  // The 'cursor-pointer' class has been removed from the div below.
   list.innerHTML = chapters.map((ch, idx) => `
-    <div class="card reveal-up cursor-pointer" data-reveal-delay="${idx * 60}" data-chapter-id="${ch.id}">
+    <div class="card reveal-up" data-reveal-delay="${idx * 60}" data-chapter-id="${ch.id}">
       <img class="card-media" src="${ch.imageUrl}" alt="${ch.name}">
       <div class="p-4">
         <h4 class="text-lg">${ch.name}</h4>
@@ -131,15 +133,10 @@ function renderChapters() {
       </div>
     </div>
   `).join("");
+  
   // Count-up animation
   animateCountUp(countEl, chapters.length, 1000);
-  // Click handlers
-  list.querySelectorAll('[data-chapter-id]').forEach(card => {
-    card.addEventListener('click', () => {
-      const id = card.getAttribute('data-chapter-id');
-      window.location.href = `chapter.html?id=${encodeURIComponent(id)}`;
-    });
-  });
+  
 }
 
 // ** New async function to fetch announcements from Google Sheets **
