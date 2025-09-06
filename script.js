@@ -24,11 +24,8 @@ function changeSlide() {
     nextSlideElement.style.opacity = '1';
   }
 }
-// ==========================================================================
-// UPDATED PRESIDENTS DATA AND RENDER FUNCTION
-// ==========================================================================
 
-// AMAC current chapters data (This remains unchanged)
+// AMAC current chapters data
 const chapters = [
   { id: 'uae', name: "UAE Chapter", location: "UAE", imageUrl: "images/uae.jpg", description: "UAE Chapter connects alumni across the Emirates with networking and professional development opportunities." },
   { id: 'australia', name: "Australia Chapter", location: "Australia", imageUrl: "images/australia.jpg", description: "Australia Chapter supports alumni in Australia with career development and community building initiatives." },
@@ -43,11 +40,7 @@ const chapters = [
   { id: 'dc', name: "Washington DC Chapter", location: "Washington DC", imageUrl: "images/washington.jpg", description: "Washington DC Chapter focuses on policy, government relations, and public sector networking." }
 ];
 
-
-// ** STEP 1: I've updated the presidents array to include an 'imageUrl' property. **
-// I'm using a placeholder image here. You should replace these with actual photos.
-// ** Updated presidents array using Pravatar for realistic profile pictures **
-// Each person gets a consistent image based on their unique email address.
+// AMAC Presidents data
 const presidents = [
   { chapter: "AMAC", name: "Mohan Joseph Cheeran", contact: "chairman@amac.org", position: "Chairman", imageUrl: "https://i.pravatar.cc/150?u=chairman@amac.org" },
   { chapter: "UAE Chapter", name: "Mathew Kavalam", contact: "uae@amac.org", position: "President", imageUrl: "https://i.pravatar.cc/150?u=uae@amac.org" },
@@ -73,23 +66,19 @@ const presidents = [
   { chapter: "Chicago Chapter", name: "Lisha Johny", contact: "chicago@amac.org", position: "President", imageUrl: "https://i.pravatar.cc/150?u=chicago@amac.org" },
   { chapter: "Washington DC Chapter", name: "Rejive Joseph", contact: "dc@amac.org", position: "President", imageUrl: "https://i.pravatar.cc/150?u=dc@amac.org" }
 ];
-// ** STEP 2: I've completely redesigned the card in the renderPresidents function. **
-// ** STEP 3: A more compact, horizontal card design. **
-// Replace your existing renderPresidents function with this one.
+
+// Renders the president profile cards
 function renderPresidents() {
   const list = document.getElementById("presidentsList");
   if (!list) return;
 
   list.innerHTML = presidents.map((p, idx) => `
     <div class="card flex items-center p-4 space-x-4 reveal-up" data-reveal-delay="${idx * 40}">
-      
       <img src="${p.imageUrl}" alt="Profile picture of ${p.name}" class="w-16 h-16 rounded-full object-cover border-2 border-white shadow flex-shrink-0">
-      
       <div class="flex-grow">
         <h4 class="text-lg font-bold text-gray-800">${p.name}</h4>
         <p class="font-semibold text-blue-600 text-sm">${p.position}</p>
         <p class="text-sm text-gray-500">${p.chapter}</p>
-        
         <a href="mailto:${p.contact}" class="inline-flex items-center space-x-1.5 text-gray-500 hover:text-blue-700 hover:underline transition-colors mt-1">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
             <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
@@ -102,27 +91,7 @@ function renderPresidents() {
   `).join("");
 }
 
-// Hardcoded announcements
-const hardcodedAnnouncements = [
-  {
-    title: "Welcome to AMAC 2025",
-    author: "AMAC Board",
-    body: "We're excited to welcome all alumni to another year of networking, mentorship, and community building. Stay tuned for upcoming events and initiatives.",
-    createdAt: new Date('2025-01-15').getTime()
-  },
-  {
-    title: "Annual Alumni Meet 2025",
-    author: "Event Committee",
-    body: "Save the date! Our annual alumni meet will be held on March 15th, 2025. More details and registration information will be shared soon.",
-    createdAt: new Date('2025-01-10').getTime()
-  },
-  {
-    title: "New Chapter Launch - Mumbai",
-    author: "AMAC Leadership",
-    body: "We're thrilled to announce the launch of our Mumbai Chapter. Alumni in the Mumbai area can now connect and participate in local events.",
-    createdAt: new Date('2025-01-05').getTime()
-  }
-];
+// NOTE: The hardcodedAnnouncements array has been removed.
 
 function animateCountUp(el, toValue, durationMs) {
   if (!el) return;
@@ -145,7 +114,7 @@ function animateCountUp(el, toValue, durationMs) {
 
 function formatDate(ts) {
   const d = new Date(ts);
-  return d.toLocaleString();
+  return d.toLocaleString('en-IN', { dateStyle: 'medium' });
 }
 
 function renderChapters() {
@@ -173,22 +142,49 @@ function renderChapters() {
   });
 }
 
-
-function renderAnnouncements() {
+// ** New async function to fetch announcements from Google Sheets **
+async function renderAnnouncements() {
   const list = document.getElementById("announcementsList");
   if (!list) return;
-  list.innerHTML = hardcodedAnnouncements.map((a, idx) => `
-    <li class="card p-4 reveal-up" data-reveal-delay="${idx * 60}">
-      <div class="flex items-center justify-between">
-        <h4 class="text-lg">${a.title}</h4>
-        <span class="text-xs text-gray-500">${formatDate(a.createdAt)}</span>
-      </div>
-      <p class="text-sm text-gray-600 mt-1">By ${a.author}</p>
-      <p class="mt-2">${a.body}</p>
-    </li>
-  `).join("");
-}
 
+  // Show a loading message while fetching data.
+  list.innerHTML = `<p class="text-gray-500">Loading announcements...</p>`;
+
+  // The Web App URL you provided.
+  const API_URL = "https://script.google.com/macros/s/AKfycbwYzR_HsPaS78iRPy1VCAM8W2j6zdwk2fbGdAA57ptyJ9cgh3PAT60TUNJWI3T7pe30qQ/exec"; 
+
+  try {
+    const response = await fetch(API_URL);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const announcements = await response.json();
+
+    if (announcements.length === 0) {
+      list.innerHTML = `<p class="text-gray-500">No announcements at this time.</p>`;
+      return;
+    }
+
+    // This is your original rendering logic.
+    list.innerHTML = announcements.map((a, idx) => `
+      <li class="card p-4 reveal-up" data-reveal-delay="${idx * 60}">
+        <div class="flex items-center justify-between">
+          <h4 class="text-lg">${a.title}</h4>
+          <span class="text-xs text-gray-500">${formatDate(a.createdAt)}</span>
+        </div>
+        <p class="text-sm text-gray-600 mt-1">By ${a.author}</p>
+        <p class="mt-2">${a.body}</p>
+      </li>
+    `).join("");
+
+    // Re-trigger reveal animations for the new content.
+    triggerReveal();
+
+  } catch (error) {
+    console.error("Failed to fetch announcements:", error);
+    list.innerHTML = `<p class="text-red-500">Could not load announcements. Please try again later.</p>`;
+  }
+}
 
 // On-scroll reveal animations with variants and delays
 let revealObserver;
@@ -219,7 +215,10 @@ function triggerReveal() {
   if (!revealObserver) return;
   const selectors = ['.reveal', '.reveal-up', '.reveal-left', '.reveal-right', '.reveal-zoom'];
   document.querySelectorAll(selectors.join(',')).forEach(el => {
-    if (!el.classList.contains('visible')) revealObserver.observe(el);
+    // Re-observe elements that are not yet visible
+    if (!el.classList.contains('visible')) {
+        revealObserver.observe(el);
+    }
   });
 }
 
@@ -232,7 +231,6 @@ function setupNavbarScroll() {
     if (y > 10) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
   }, { passive: true });
 }
-
 
 // Chapter detail page renderer
 function renderChapterDetail() {
@@ -257,11 +255,12 @@ function renderChapterDetail() {
   `;
 }
 
+// This runs when the page is fully loaded.
 window.addEventListener("DOMContentLoaded", () => {
   initSlideshow();
   renderChapters();
   renderPresidents();
-  renderAnnouncements();
+  renderAnnouncements(); // This will now fetch data from your Google Sheet.
   initReveal();
   setupNavbarScroll();
   renderChapterDetail();
