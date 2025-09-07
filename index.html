@@ -202,14 +202,14 @@
           </div>
         </div>
       </div>
-      </div>
+    </div>
   </section>
 
   <section id="chapters" class="bg-gray-50 py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:mx-0 reveal-up">
         <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Global Chapters & Leadership</h2>
-        <p class="mt-6 text-lg leading-8 text-gray-600">From the Middle East to North America and beyond, our chapters form the backbone of our global community. Hover over a chapter to see its leadership.</p>
+        <p class="mt-6 text-lg leading-8 text-gray-600">From the Middle East to North America and beyond, our chapters form the backbone of our global community. Hover for a quick view or click for full details.</p>
       </div>
       
       <div class="mt-20">
@@ -249,6 +249,18 @@
       </div>
     </div>
   </footer>
+
+  <div id="leadership-modal" class="modal-container hidden">
+    <div id="modal-backdrop" class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+      <h3 id="modal-title" class="modal-title">Chapter Leadership</h3>
+      <div id="modal-body" class="modal-body">
+        </div>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
