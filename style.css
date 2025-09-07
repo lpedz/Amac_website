@@ -163,7 +163,6 @@ body.modal-open {
 .modal-body {
   margin-top: 1.5rem; display: grid;
   grid-template-columns: 1fr; /* Single column on mobile */
-  lg:grid-template-columns: 40% 1fr; /* Two columns on larger screens */
   gap: 2.5rem;
 }
 @media (min-width: 1024px) {
