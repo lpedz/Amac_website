@@ -43,6 +43,7 @@ body {
 
 /* --- Cards (Light Theme) --- */
 .card {
+  position: relative; /* Needed for overlay positioning */
   border: 1px solid #e5e7eb; /* gray-200 */
   border-radius: 0.75rem; /* 12px */
   background: #ffffff;
@@ -70,6 +71,89 @@ body {
   height: 160px;
   object-fit: cover;
   display: block;
+}
+
+/* --- Card Overlay for Leadership (REDESIGNED) --- */
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(17, 24, 39, 0.75); /* Slightly more transparent */
+  color: #fff;
+  padding: 1rem 1.5rem;
+  
+  /* Initial state: hidden below the card */
+  transform: translateY(100%);
+  opacity: 0;
+  visibility: hidden;
+
+  /* Smoother, slightly longer transition */
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.4s ease;
+  
+  /* Increased blur for a better "glass" effect */
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
+  
+  /* A subtle border to separate the overlay from the card content */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  /* Added for rounded top corners */
+  border-top-left-radius: 0.75rem; /* Matches card's border-radius */
+  border-top-right-radius: 0.75rem; /* Matches card's border-radius */
+}
+
+.card:hover .card-overlay {
+  transform: translateY(0); /* Slide into view on hover */
+  opacity: 1;
+  visibility: visible;
+}
+
+.card-overlay-content {
+  text-align: left;
+  width: 100%;
+}
+
+.card-overlay-content h5 {
+  /* Hiding the "Leadership" title as it's now contextually obvious */
+  display: none;
+}
+
+.card-overlay-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 100px; /* Set a max-height for scrolling on long lists */
+  overflow-y: auto;
+}
+
+/* Custom scrollbar for a cleaner look */
+.card-overlay-content ul::-webkit-scrollbar {
+  width: 4px;
+}
+.card-overlay-content ul::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.card-overlay-content li {
+  margin-bottom: 0.75rem;
+}
+.card-overlay-content li:last-child {
+  margin-bottom: 0;
+}
+
+.card-overlay-content .leader-name {
+  font-weight: 600;
+  color: #fff;
+  font-size: 0.9rem; /* 14px */
+  line-height: 1.2;
+}
+
+.card-overlay-content .leader-position {
+  font-size: 0.75rem; /* 12px */
+  color: #cbd5e1; /* gray-300 */
+  opacity: 0.9;
 }
 
 

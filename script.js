@@ -1,16 +1,15 @@
-
 const chapters = [
-    { id: 'uae', name: "UAE Chapter", location: "UAE", imageUrl: "images/uae.jpg", description: "UAE Chapter connects alumni across the Emirates with networking and professional development opportunities." },
-    { id: 'australia', name: "Australia Chapter", location: "Australia", imageUrl: "images/australia.jpg", description: "Australia Chapter supports alumni in Australia with career development and community building initiatives." },
-    { id: 'usa', name: "USA Chapter", location: "USA", imageUrl: "images/usa.jpg", description: "USA Chapter focuses on scholarships, innovation forums, and regional networking across America." },
-    { id: 'singapore', name: "Singapore Chapter", location: "Singapore", imageUrl: "images/singapore.webp", description: "Singapore Chapter facilitates business networking and professional growth in Southeast Asia." },
-    { id: 'saudi', name: "Saudi Arabia Chapter", location: "Saudi Arabia", imageUrl: "images/saudi.avif", description: "Saudi Arabia Chapter connects alumni in the Kingdom with career opportunities and community events." },
-    { id: 'kuwait', name: "Kuwait Chapter", location: "Kuwait", imageUrl: "images/Kuwait.jpeg", description: "Kuwait Chapter organizes professional development and cultural exchange programs." },
-    { id: 'qatar', name: "Qatar Chapter", location: "Qatar", imageUrl: "images/qatar.jpg", description: "Qatar Chapter supports alumni with networking events and career advancement opportunities." },
-    { id: 'oman', name: "Oman Chapter", location: "Oman", imageUrl: "images/oman.jpg", description: "Oman Chapter facilitates professional connections and community engagement in the Sultanate." },
-    { id: 'chennai', name: "Chennai Chapter", location: "Chennai", imageUrl: "images/chennai.jpg", description: "Chennai Chapter supports community outreach and alumni meetups in South India." },
-    { id: 'chicago', name: "Chicago Chapter", location: "USA", imageUrl: "images/chicago.jpg", description: "Chicago Chapter connects alumni in the Midwest with professional development opportunities." },
-    { id: 'dc', name: "Washington DC Chapter", location: "USA", imageUrl: "images/washington.jpg", description: "Washington DC Chapter focuses on policy, government relations, and public sector networking." }
+    { id: 'uae', name: "UAE Chapter", location: "UAE", region: "MEU", imageUrl: "images/uae.jpg" },
+    { id: 'australia', name: "Australia Chapter", location: "Australia", region: "AP", imageUrl: "images/australia.jpg" },
+    { id: 'usa', name: "USA Chapter", location: "USA", region: "NA", imageUrl: "images/usa.jpg" },
+    { id: 'singapore', name: "Singapore Chapter", location: "Singapore", region: "AP", imageUrl: "images/singapore.webp" },
+    { id: 'saudi', name: "Saudi Arabia Chapter", location: "Saudi Arabia", region: "MEU", imageUrl: "images/saudi.avif" },
+    { id: 'kuwait', name: "Kuwait Chapter", location: "Kuwait", region: "MEU", imageUrl: "images/Kuwait.jpeg" },
+    { id: 'qatar', name: "Qatar Chapter", location: "Qatar", region: "MEU", imageUrl: "images/qatar.jpg" },
+    { id: 'oman', name: "Oman Chapter", location: "Oman", region: "MEU", imageUrl: "images/oman.jpg" },
+    { id: 'chennai', name: "Chennai Chapter", location: "Chennai", region: "AP", imageUrl: "images/chennai.jpg" },
+    { id: 'chicago', name: "Chicago Chapter", location: "USA", region: "NA", imageUrl: "images/chicago.jpg" },
+    { id: 'dc', name: "Washington DC Chapter", location: "USA", region: "NA", imageUrl: "images/washington.jpg" }
 ];
 
 const presidents = [
@@ -42,46 +41,56 @@ const presidents = [
 // --- RENDER FUNCTIONS ---
 
 function renderChapters() {
-  const list = document.getElementById("chaptersList");
-  if (!list) return;
-  list.innerHTML = chapters.map((ch, idx) => `
-    <div class="card reveal-up" data-reveal-delay="${idx * 50}">
-      <img class="card-media" src="${ch.imageUrl}" alt="${ch.name}">
-      <div class="p-6">
-        <h4 class="text-lg">${ch.name}</h4>
-        <p class="mt-1 text-base">${ch.location}</p>
-      </div>
-    </div>
-  `).join("");
-}
+  const regions = {
+    NA: document.getElementById("chapters-na"),
+    AP: document.getElementById("chapters-ap"),
+    MEU: document.getElementById("chapters-meu")
+  };
 
-function renderPresidents() {
-  const list = document.getElementById("presidentsList");
-  if (!list) return;
-  const visibleCount = 6;
-  list.innerHTML = presidents.map((p, idx) => {
-    const isHidden = idx >= visibleCount ? 'hidden extra-president-card' : '';
-    return `
-      <div class="reveal-up ${isHidden}" data-reveal-delay="${idx * 50}">
-        <div class="flex items-center gap-x-6">
-          <img class="h-16 w-16 rounded-full" src="${p.imageUrl}" alt="Profile of ${p.name}">
-          <div>
-            <h3 class="text-base font-semibold leading-7 tracking-tight text-white">${p.name}</h3>
-            <p class="text-sm font-semibold leading-6 text-blue-400">${p.position} - ${p.chapter}</p>
-            <a href="mailto:${p.contact}" class="mt-1 inline-flex items-center gap-x-2 text-sm leading-6 text-gray-400 hover:text-white transition-colors">
-              <svg class="h-4 w-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
-              ${p.contact}
-            </a>
+  if (!regions.NA || !regions.AP || !regions.MEU) return;
+
+  // Clear existing content
+  Object.values(regions).forEach(el => el.innerHTML = '');
+
+  chapters.forEach((chapter, idx) => {
+    const container = regions[chapter.region];
+    if (!container) return;
+
+    // Find leaders for this chapter
+    const chapterLeaders = presidents.filter(p => p.chapter === chapter.name);
+    
+    // Generate HTML for leaders to be placed in the overlay
+    const leadersHtml = chapterLeaders.length > 0 
+      ? `<ul>
+          ${chapterLeaders.map(leader => `
+            <li>
+              <p class="leader-name">${leader.name}</p>
+              <p class="leader-position">${leader.position}</p>
+            </li>
+          `).join('')}
+         </ul>`
+      : '<p class="text-sm text-gray-400">No leadership listed.</p>';
+      
+    const chapterCardHtml = `
+      <div class="card reveal-up" data-reveal-delay="${idx * 50}">
+        <img class="card-media" src="${chapter.imageUrl}" alt="${chapter.name}">
+        <div class="p-6">
+          <h4 class="text-lg">${chapter.name}</h4>
+          <p class="mt-1 text-base">${chapter.location}</p>
+        </div>
+        <div class="card-overlay">
+          <div class="card-overlay-content">
+            <h5>Leadership</h5>
+            ${leadersHtml}
           </div>
         </div>
-      </div>`;
-  }).join('');
-
-  const toggleContainer = document.getElementById('presidents-toggle-container');
-  if (toggleContainer && presidents.length > visibleCount) {
-    toggleContainer.innerHTML = `<button id="show-more-presidents" class="font-semibold text-sm text-white leading-6 hover:underline">Show all leaders <span aria-hidden="true">→</span></button>`;
-  }
+      </div>
+    `;
+    
+    container.innerHTML += chapterCardHtml;
+  });
 }
+
 
 async function renderAnnouncements() {
     const list = document.getElementById("announcementsList");
@@ -127,22 +136,6 @@ function initSlideshow() {
     const next = document.getElementById(slides[currentSlide]);
     if (next) next.style.opacity = '1';
   }, slideInterval);
-}
-
-function setupShowMorePresidents() {
-  const toggleButton = document.getElementById('show-more-presidents');
-  if (!toggleButton) return;
-  let isShowingAll = false;
-  toggleButton.addEventListener('click', () => {
-    isShowingAll = !isShowingAll;
-    const extraCards = document.querySelectorAll('.extra-president-card');
-    extraCards.forEach(card => {
-      card.classList.toggle('hidden');
-    });
-    toggleButton.innerHTML = isShowingAll 
-        ? `Show fewer leaders <span aria-hidden="true">←</span>` 
-        : `Show all leaders <span aria-hidden="true">→</span>`;
-  });
 }
 
 let revealObserver;
@@ -200,10 +193,8 @@ function setupMobileMenu() {
 window.addEventListener("DOMContentLoaded", () => {
   initSlideshow();
   renderChapters();
-  renderPresidents();
   renderAnnouncements();
   initReveal();
   setupNavbarScroll();
   setupMobileMenu();
-  setupShowMorePresidents();
 });
