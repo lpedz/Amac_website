@@ -7,13 +7,6 @@ const chapters = [
         }
     },
     { 
-        id: 'singapore', name: "Singapore Chapter", location: "Singapore", region: "AP", imageUrl: "images/singapore.webp",
-        details: {
-            history: "Founded in 2012, the Singapore chapter was created to cater to the growing number of MACE alumni in Southeast Asia's premier financial and tech hub. It has since become a vital resource for professional development in the region.",
-            gallery: ["https://picsum.photos/seed/sg1/400/300", "https://picsum.photos/seed/sg2/400/300", "https://picsum.photos/seed/sg3/400/300"],
-        }
-    },
-    { 
         id: 'saudi', name: "Saudi Arabia Chapter", location: "Saudi Arabia", region: "MEU", imageUrl: "images/saudi.avif",
         details: {
             history: "Our chapter was formed in 2016 to align with the Kingdom's Vision 2030, creating a network for MACE engineers and professionals contributing to the nation's ambitious giga-projects and economic diversification.",
@@ -39,13 +32,6 @@ const chapters = [
         details: {
             history: "Our chapter in the Sultanate of Oman was founded on the principles of community and heritage. Since 2011, we have focused on creating a supportive network that blends professional growth with cultural appreciation.",
             gallery: ["https://picsum.photos/seed/om1/400/300"],
-        }
-    },
-    { 
-        id: 'chennai', name: "Chennai Chapter", location: "Chennai, India", region: "AP", imageUrl: "images/chennai.jpg",
-        details: {
-            history: "Launched in 2013, the Chennai chapter serves the large MACE alumni population in South India. It has strong ties to the local IT and automotive industries, providing a platform for knowledge sharing and career opportunities.",
-            gallery: ["https://picsum.photos/seed/ch1/400/300", "https://picsum.photos/seed/ch2/400/300"],
         }
     },
     { 
@@ -118,11 +104,40 @@ const chapters = [
             gallery: ["https://picsum.photos/seed/uk1/400/300", "https://picsum.photos/seed/uk2/400/300"],
         }
     },
+    // --- REORDERED ASIA PACIFIC CHAPTERS ---
+    { 
+        id: 'sydney', name: "OZ MACE Sydney", location: "Australia", region: "AP", imageUrl: "https://picsum.photos/seed/sydney/400/300",
+        details: {
+            history: "As a major hub for finance and professional services in Australia, the Sydney chapter connects alumni in the heart of the city's bustling business district.",
+            gallery: ["https://picsum.photos/seed/syd1/400/300"],
+        }
+    },
     { 
         id: 'melbourne', name: "OZ MACE Melbourne", location: "Australia", region: "AP", imageUrl: "https://picsum.photos/seed/melbourne/400/300",
         details: {
             history: "Focusing on Melbourne's vibrant arts, sports, and tech scenes, this chapter provides a network for alumni in Victoria. It's known for its creative and social events.",
             gallery: ["https://picsum.photos/seed/mel1/400/300"],
+        }
+    },
+    { 
+        id: 'brisbane', name: "OZMACE Brisbane", location: "Australia", region: "AP", imageUrl: "https://picsum.photos/seed/brisbane/400/300",
+        details: {
+            history: "The Brisbane chapter supports alumni in Queensland, focusing on the region's strengths in construction, resources, and tourism. It provides a key network on Australia's east coast.",
+            gallery: ["https://picsum.photos/seed/bris1/400/300"],
+        }
+    },
+    { 
+        id: 'singapore', name: "Singapore Chapter", location: "Singapore", region: "AP", imageUrl: "images/singapore.webp",
+        details: {
+            history: "Founded in 2012, the Singapore chapter was created to cater to the growing number of MACE alumni in Southeast Asia's premier financial and tech hub. It has since become a vital resource for professional development in the region.",
+            gallery: ["https://picsum.photos/seed/sg1/400/300", "https://picsum.photos/seed/sg2/400/300", "https://picsum.photos/seed/sg3/400/300"],
+        }
+    },
+    { 
+        id: 'chennai', name: "Chennai Chapter", location: "Chennai, India", region: "AP", imageUrl: "images/chennai.jpg",
+        details: {
+            history: "Launched in 2013, the Chennai chapter serves the large MACE alumni population in South India. It has strong ties to the local IT and automotive industries, providing a platform for knowledge sharing and career opportunities.",
+            gallery: ["https://picsum.photos/seed/ch1/400/300", "https://picsum.photos/seed/ch2/400/300"],
         }
     },
     { 
