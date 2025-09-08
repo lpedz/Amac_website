@@ -140,6 +140,13 @@ const chapters = [
             gallery: ["https://picsum.photos/seed/ch1/400/300", "https://picsum.photos/seed/ch2/400/300"],
         }
     },
+    {
+      id: 'tcr', name: "Thrissur Chapter (Seniors)", location: "Thrissur, India", region: "MEU", imageUrl: "images/oman.jpg",
+        details: {
+            history: "Our chapter in the Sultanate of Oman was founded on the principles of community and heritage. Since 2011, we have focused on creating a supportive network that blends professional growth with cultural appreciation.",
+            gallery: ["https://picsum.photos/seed/om1/400/300"],
+        }
+    },
     { 
         id: 'perth', name: "OZ MACE Perth", location: "Australia", region: "AP", imageUrl: "https://picsum.photos/seed/perth/400/300",
         details: {
