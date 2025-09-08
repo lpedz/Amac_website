@@ -7,20 +7,6 @@ const chapters = [
         }
     },
     { 
-        id: 'australia', name: "Australia Chapter", location: "Australia", region: "AP", imageUrl: "images/australia.jpg",
-        details: {
-            history: "Our chapter began with informal alumni meetups in Sydney in 2010. Officially recognized in 2014, it has since expanded to include members across Australia, with a strong focus on the tech and engineering sectors in Melbourne and Brisbane.",
-            gallery: ["https://picsum.photos/seed/aus1/400/300", "https://picsum.photos/seed/aus2/400/300", "https://picsum.photos/seed/aus3/400/300"],
-        }
-    },
-    { 
-        id: 'usa', name: "USA Chapter", location: "USA", region: "NA", imageUrl: "images/usa.jpg",
-        details: {
-            history: "The USA Chapter was formally established in 2015 to unify several smaller, regional alumni groups. It now serves as a national platform for networking, mentorship, and supporting new graduates arriving in the United States.",
-            gallery: ["https://picsum.photos/seed/usa1/400/300", "https://picsum.photos/seed/usa2/400/300", "https://picsum.photos/seed/usa3/400/300"],
-        }
-    },
-    { 
         id: 'singapore', name: "Singapore Chapter", location: "Singapore", region: "AP", imageUrl: "images/singapore.webp",
         details: {
             history: "Founded in 2012, the Singapore chapter was created to cater to the growing number of MACE alumni in Southeast Asia's premier financial and tech hub. It has since become a vital resource for professional development in the region.",
@@ -75,14 +61,83 @@ const chapters = [
             history: "Our Washington DC chapter was formed in 2019 to cater to the growing number of alumni in public policy, federal agencies, and international organizations. It serves as a unique intersection of engineering and governance.",
             gallery: ["https://picsum.photos/seed/dc1/400/300", "https://picsum.photos/seed/dc2/400/300"],
         }
+    },
+    { 
+        id: 'seattle', name: "Seattle Chapter", location: "USA", region: "NA", imageUrl: "https://picsum.photos/seed/seattle/400/300",
+        details: {
+            history: "Launched in 2020, our Seattle chapter brings together alumni in the Pacific Northwest's thriving tech and aerospace industries. We foster a community of innovation and collaboration.",
+            gallery: ["https://picsum.photos/seed/sea1/400/300", "https://picsum.photos/seed/sea2/400/300"],
+        }
+    },
+    { 
+        id: 'siliconvalley', name: "Silicon Valley Chapter", location: "San Francisco, USA", region: "NA", imageUrl: "https://picsum.photos/seed/sf/400/300",
+        details: {
+            history: "The Silicon Valley chapter is at the heart of global innovation. Formed in 2019, it connects MACE alumni in leading tech companies, startups, and venture capital firms.",
+            gallery: ["https://picsum.photos/seed/sf1/400/300", "https://picsum.photos/seed/sf2/400/300"],
+        }
+    },
+    { 
+        id: 'atlanta', name: "Atlanta Chapter", location: "USA", region: "NA", imageUrl: "https://picsum.photos/seed/atlanta/400/300",
+        details: {
+            history: "Our Atlanta chapter serves the growing community of alumni in the southeastern United States. It focuses on logistics, manufacturing, and the burgeoning film technology industry.",
+            gallery: ["https://picsum.photos/seed/atl1/400/300"],
+        }
+    },
+    { 
+        id: 'delaware', name: "Delaware Chapter", location: "USA", region: "NA", imageUrl: "https://picsum.photos/seed/delaware/400/300",
+        details: {
+            history: "Established to support alumni in the financial and chemical engineering sectors, the Delaware chapter provides a valuable network in the mid-Atlantic region.",
+            gallery: ["https://picsum.photos/seed/de1/400/300"],
+        }
+    },
+    { 
+        id: 'houston', name: "Houston Chapter", location: "USA", region: "NA", imageUrl: "https://picsum.photos/seed/houston/400/300",
+        details: {
+            history: "The Houston chapter is a hub for our alumni in the energy sector. Since its inception, it has connected professionals in oil, gas, and renewable energy, as well as the aerospace industry.",
+            gallery: ["https://picsum.photos/seed/hou1/400/300", "https://picsum.photos/seed/hou2/400/300"],
+        }
+    },
+    { 
+        id: 'toronto', name: "Toronto Chapter", location: "Canada", region: "NA", imageUrl: "https://picsum.photos/seed/toronto/400/300",
+        details: {
+            history: "Our first chapter in Canada, the Toronto chapter, unites alumni across the Greater Toronto Area. It focuses on finance, real estate, and technology, reflecting the city's diverse economy.",
+            gallery: ["https://picsum.photos/seed/tor1/400/300"],
+        }
+    },
+    { 
+        id: 'bahrain', name: "Bahrain Chapter", location: "Bahrain", region: "MEU", imageUrl: "https://picsum.photos/seed/bahrain/400/300",
+        details: {
+            history: "The Bahrain chapter, one of our earliest in the Gulf, has a long history of connecting alumni in the banking and finance sectors. It hosts regular events to foster community and professional growth.",
+            gallery: ["https://picsum.photos/seed/bah1/400/300"],
+        }
+    },
+    { 
+        id: 'uk', name: "UK Chapter", location: "United Kingdom", region: "MEU", imageUrl: "https://picsum.photos/seed/uk/400/300",
+        details: {
+            history: "The UK chapter connects alumni across England, Scotland, Wales, and Northern Ireland. It has strong ties to London's financial district and the UK's rich engineering heritage.",
+            gallery: ["https://picsum.photos/seed/uk1/400/300", "https://picsum.photos/seed/uk2/400/300"],
+        }
+    },
+    { 
+        id: 'melbourne', name: "OZ MACE Melbourne", location: "Australia", region: "AP", imageUrl: "https://picsum.photos/seed/melbourne/400/300",
+        details: {
+            history: "Focusing on Melbourne's vibrant arts, sports, and tech scenes, this chapter provides a network for alumni in Victoria. It's known for its creative and social events.",
+            gallery: ["https://picsum.photos/seed/mel1/400/300"],
+        }
+    },
+    { 
+        id: 'perth', name: "OZ MACE Perth", location: "Australia", region: "AP", imageUrl: "https://picsum.photos/seed/perth/400/300",
+        details: {
+            history: "The Perth chapter is dedicated to alumni in Western Australia, with a strong link to the region's booming mining and resources industries. It provides critical support for engineers in the sector.",
+            gallery: ["https://picsum.photos/seed/per1/400/300"],
+        }
     }
 ];
 
 const presidents = [
     { chapter: "AMAC", name: "Mohan Joseph Cheeran", contact: "chairman@amac.org", position: "Chairman", phone: "+91-9876543210", imageUrl: "images/People/MohanJoseph.jpeg" },
     { chapter: "UAE Chapter", name: "Mathew Kavalam", contact: "uae@amac.org", position: "President", phone: "+971-501234567", imageUrl: "https://i.pravatar.cc/150?u=uae@amac.org" },
-    { chapter: "Australia Chapter", name: "Xavi Joseph", contact: "australia@amac.org", position: "President", phone: "+61-401234567", imageUrl: "images/People/xavi.jpeg" },
-    { chapter: "USA Chapter", name: "Thomas Stephan", contact: "usa@amac.org", position: "President", phone: "+1-202-555-0149", imageUrl: "images/People/ThomasStephan.jpeg" },
+    { chapter: "OZ MACE Melbourne", name: "Xavi Joseph", contact: "melbourne@amac.org", position: "President", phone: "+61-401234567", imageUrl: "images/People/xavi.jpeg" },
     { chapter: "Singapore Chapter", name: "Shaja Mathews", contact: "singapore@amac.org", position: "President", phone: null, imageUrl: "images/People/ShajahMathew.jpeg" },
     { chapter: "Saudi Arabia Chapter", name: "Johnson Samuel", contact: "saudi@amac.org", position: "President", phone: "+966-501234567", imageUrl: "images/People/Johnson%20Samuel%20.jpeg" },
     { chapter: "UAE Chapter", name: "Siby Joseph", contact: "uae2@amac.org", position: "Vice President", phone: null, imageUrl: "https://i.pravatar.cc/150?u=uae2@amac.org" },
@@ -92,7 +147,6 @@ const presidents = [
     { chapter: "Qatar Chapter", name: "Sineesh", contact: "qatar2@amac.org", position: "Vice President", phone: null, imageUrl: "https://i.pravatar.cc/150?u=qatar2@amac.org" },
     { chapter: "Oman Chapter", name: "Benny Joseph", contact: "oman@amac.org", position: "President", phone: null, imageUrl: "https://i.pravatar.cc/150?u=oman@amac.org" },
     { chapter: "Chennai Chapter", name: "David Rajan", contact: "chennai@amac.org", position: "President", phone: null, imageUrl: "images/People/Rajan%20David.jpeg" },
-    { chapter: "Australia Chapter", name: "Dhanya", contact: "australia2@amac.org", position: "Vice President", phone: null, imageUrl: "https://i.pravatar.cc/150?u=australia2@amac.org" },
     { chapter: "Chicago Chapter", name: "Lisha Johny", contact: "chicago@amac.org", position: "President", phone: "+1-312-555-0199", imageUrl: "https://i.pravatar.cc/150?u=chicago@amac.org" },
     { chapter: "Washington DC Chapter", name: "Rejive Joseph", contact: "dc@amac.org", position: "President", phone: "+1-202-555-0182", imageUrl: "images/People/RejiveJoseph.jpeg" }
 ];
@@ -199,6 +253,8 @@ function setupModal() {
         return `<div class="modal-leader-card"><img src="${leader.imageUrl}" alt="Profile of ${leader.name}"><div class="modal-leader-info"><p class="name">${leader.name}</p><p class="position">${leader.position}</p><div class="contact"><a href="mailto:${leader.contact}" class="contact-link">${leader.contact}</a>${phoneHtml}</div></div></div>`;
       }).join('');
       rightColumn.innerHTML += `<div class="modal-section"><h2>Leadership</h2><div class="modal-leadership-grid">${leadersHtml}</div></div>`;
+    } else {
+        rightColumn.innerHTML += `<div class="modal-section"><h2>Leadership</h2><p class="text-gray-500">No leadership details available for this chapter.</p></div>`;
     }
 
     modalBody.appendChild(leftColumn);
