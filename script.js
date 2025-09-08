@@ -35,7 +35,7 @@ const chapters = [
         }
     },
     { 
-        id: 'chicago', name: "Chicago Chapter", location: "USA", region: "NA", imageUrl: "images/chicago.jpg",
+        id: 'chicago', name: "Mid West Chapter", location: "Chicago,USA", region: "NA", imageUrl: "images/chicago.jpg",
         details: {
             history: "The Chicago Chapter was established in 2018 as a hub for MACE alumni in the American Midwest. It focuses on connecting professionals in manufacturing, architecture, and finance through targeted events and seminars.",
             gallery: ["https://picsum.photos/seed/chi1/400/300"],
