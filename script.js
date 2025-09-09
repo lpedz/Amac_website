@@ -145,6 +145,12 @@ const chapters = [
             history: "The Perth chapter is dedicated to alumni in Western Australia, with a strong link to the region's booming mining and resources industries. It provides critical support for engineers in the sector.",
             gallery: ["https://picsum.photos/seed/per1/400/300"],
         }
+    },    { 
+        id: 'trichur', name: "Trichur Chapter", location: "Trichur", region: "AP", imageUrl: "images/trichur.jpg",
+        details: {
+            history: "The Trichur chapter is a hub for our alumni in the energy sector. Since its inception, it has connected professionals in oil, gas, and renewable energy, as well as the aerospace industry.",
+            gallery: ["https://picsum.photos/seed/hou1/400/300", "https://picsum.photos/seed/hou2/400/300"],
+        }
     }
 ];
 
