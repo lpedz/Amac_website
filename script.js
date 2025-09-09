@@ -3,7 +3,7 @@ const chapters = [
         id: 'uae', name: "UAE Chapter", location: "UAE", region: "MEU", imageUrl: "images/uae.jpg",
         details: {
             history: "Established in the early 2000s by a group of pioneering MACE alumni involved in the UAE's infrastructure boom, our chapter has grown into one of the most active networks in the Middle East, fostering professional and personal connections.",
-            gallery: ["https://picsum.photos/seed/uae1/400/300", "https://picsum.photos/seed/uae2/400/300", "https://picsum.photos/seed/uae3/400/300"],
+            gallery: ["images/Chapters%20images/uae.png"],
         }
     },
     { 
@@ -35,24 +35,24 @@ const chapters = [
         }
     },
     { 
-        id: 'chicago', name: "Mid West Chapter", location: "Chicago,USA", region: "NA", imageUrl: "images/chicago.jpg",
+        id: 'chicago', name: "Chicago Chapter", location: "USA", region: "NA", imageUrl: "images/chicago.jpg",
         details: {
             history: "The Chicago Chapter was established in 2018 as a hub for MACE alumni in the American Midwest. It focuses on connecting professionals in manufacturing, architecture, and finance through targeted events and seminars.",
             gallery: ["https://picsum.photos/seed/chi1/400/300"],
         }
     },
     { 
-        id: 'dc', name: "Washington DC Chapter", location: "USA", region: "NA", imageUrl: "images/washington.jpg",
+        id: 'dc', name: "Washington D.C. Chapter", location: "USA", region: "NA", imageUrl: "images/washington.jpg",
         details: {
-            history: "Our Washington DC chapter was formed in 2019 to cater to the growing number of alumni in public policy, federal agencies, and international organizations. It serves as a unique intersection of engineering and governance.",
+            history: "Our Washington D.C. chapter was formed in 2019 to cater to the growing number of alumni in public policy, federal agencies, and international organizations. It serves as a unique intersection of engineering and governance.",
             gallery: ["https://picsum.photos/seed/dc1/400/300", "https://picsum.photos/seed/dc2/400/300"],
         }
     },
     { 
-        id: 'seattle', name: "Seattle Chapter", location: "USA", region: "NA", imageUrl: "https://picsum.photos/seed/seattle/400/300",
+        id: 'seattle', name: "Seattle Chapter", location: "USA", region: "NA", imageUrl: "images/Chapters%20images/Seattle%20(2).jpeg",
         details: {
             history: "Launched in 2020, our Seattle chapter brings together alumni in the Pacific Northwest's thriving tech and aerospace industries. We foster a community of innovation and collaboration.",
-            gallery: ["https://picsum.photos/seed/sea1/400/300", "https://picsum.photos/seed/sea2/400/300"],
+            gallery: ["images/Chapters%20images/Seattle%20(1).jpeg", "images/Chapters%20images/Seattle%20(3).jpeg"],
         }
     },
     { 
@@ -70,9 +70,9 @@ const chapters = [
         }
     },
     { 
-        id: 'delaware', name: "Delaware Chapter", location: "USA", region: "NA", imageUrl: "https://picsum.photos/seed/delaware/400/300",
+        id: 'delaware', name: "Delaware Valley Chapter", location: "USA", region: "NA", imageUrl: "https://picsum.photos/seed/delaware/400/300",
         details: {
-            history: "Established to support alumni in the financial and chemical engineering sectors, the Delaware chapter provides a valuable network in the mid-Atlantic region.",
+            history: "Established to support alumni in the financial and chemical engineering sectors, the Delaware Valley chapter provides a valuable network in the mid-Atlantic region.",
             gallery: ["https://picsum.photos/seed/de1/400/300"],
         }
     },
@@ -104,9 +104,8 @@ const chapters = [
             gallery: ["https://picsum.photos/seed/uk1/400/300", "https://picsum.photos/seed/uk2/400/300"],
         }
     },
-    // --- REORDERED ASIA PACIFIC CHAPTERS ---
     { 
-        id: 'sydney', name: "OZ MACE Sydney", location: "Australia", region: "AP", imageUrl: "https://picsum.photos/seed/sydney/400/300",
+        id: 'sydney', name: "OZ MACE Sydney", location: "Australia", region: "AP", imageUrl: "images/australia.jpg",
         details: {
             history: "As a major hub for finance and professional services in Australia, the Sydney chapter connects alumni in the heart of the city's bustling business district.",
             gallery: ["https://picsum.photos/seed/syd1/400/300"],
@@ -130,7 +129,7 @@ const chapters = [
         id: 'singapore', name: "Singapore Chapter", location: "Singapore", region: "AP", imageUrl: "images/singapore.webp",
         details: {
             history: "Founded in 2012, the Singapore chapter was created to cater to the growing number of MACE alumni in Southeast Asia's premier financial and tech hub. It has since become a vital resource for professional development in the region.",
-            gallery: ["https://picsum.photos/seed/sg1/400/300", "https://picsum.photos/seed/sg2/400/300", "https://picsum.photos/seed/sg3/400/300"],
+            gallery: ["images/Chapters%20images/Singapore%20(1).jpeg", "images/Chapters%20images/Singapore%20(2).jpeg", "images/Chapters%20images/Singapore%20(3).jpeg"],
         }
     },
     { 
@@ -138,13 +137,6 @@ const chapters = [
         details: {
             history: "Launched in 2013, the Chennai chapter serves the large MACE alumni population in South India. It has strong ties to the local IT and automotive industries, providing a platform for knowledge sharing and career opportunities.",
             gallery: ["https://picsum.photos/seed/ch1/400/300", "https://picsum.photos/seed/ch2/400/300"],
-        }
-    },
-    {
-      id: 'tcr', name: "Thrissur Chapter (Seniors)", location: "Thrissur, India", region: "MEU", imageUrl: "images/oman.jpg",
-        details: {
-            history: "Our chapter in the Sultanate of Oman was founded on the principles of community and heritage. Since 2011, we have focused on creating a supportive network that blends professional growth with cultural appreciation.",
-            gallery: ["https://picsum.photos/seed/om1/400/300"],
         }
     },
     { 
@@ -158,7 +150,7 @@ const chapters = [
 
 const presidents = [
     { chapter: "AMAC", name: "Mohan Joseph Cheeran", contact: "chairman@amac.org", position: "Chairman", phone: "+91-9876543210", imageUrl: "images/People/MohanJoseph.jpeg" },
-    { chapter: "UAE Chapter", name: "Mathew Kavalam", contact: "uae@amac.org", position: "President", phone: "+971-501234567", imageUrl: "https://i.pravatar.cc/150?u=uae@amac.org" },
+    { chapter: "UAE Chapter", name: "Mathew Kavalam", contact: "uae@amac.org", position: "President", phone: "+971-501234567", imageUrl: "images/People/MathewKavalam.png" },
     { chapter: "OZ MACE Melbourne", name: "Xavi Joseph", contact: "melbourne@amac.org", position: "President", phone: "+61-401234567", imageUrl: "images/People/xavi.jpeg" },
     { chapter: "Singapore Chapter", name: "Shaja Mathews", contact: "singapore@amac.org", position: "President", phone: null, imageUrl: "images/People/ShajahMathew.jpeg" },
     { chapter: "Saudi Arabia Chapter", name: "Johnson Samuel", contact: "saudi@amac.org", position: "President", phone: "+966-501234567", imageUrl: "images/People/Johnson%20Samuel%20.jpeg" },
@@ -170,7 +162,7 @@ const presidents = [
     { chapter: "Oman Chapter", name: "Benny Joseph", contact: "oman@amac.org", position: "President", phone: null, imageUrl: "https://i.pravatar.cc/150?u=oman@amac.org" },
     { chapter: "Chennai Chapter", name: "David Rajan", contact: "chennai@amac.org", position: "President", phone: null, imageUrl: "images/People/Rajan%20David.jpeg" },
     { chapter: "Chicago Chapter", name: "Lisha Johny", contact: "chicago@amac.org", position: "President", phone: "+1-312-555-0199", imageUrl: "https://i.pravatar.cc/150?u=chicago@amac.org" },
-    { chapter: "Washington DC Chapter", name: "Rejive Joseph", contact: "dc@amac.org", position: "President", phone: "+1-202-555-0182", imageUrl: "images/People/RejiveJoseph.jpeg" }
+    { chapter: "Washington D.C. Chapter", name: "Rejive Joseph", contact: "dc@amac.org", position: "President", phone: "+1-202-555-0182", imageUrl: "images/People/RejiveJoseph.jpeg" }
 ];
 
 // --- RENDER FUNCTIONS ---
