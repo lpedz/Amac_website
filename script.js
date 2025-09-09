@@ -49,56 +49,56 @@ const chapters = [
         }
     },
     { 
-        id: 'seattle', name: "Seattle Chapter", location: "USA", region: "NA", imageUrl: "images/Chapters%20images/Seattle%20(2).jpeg",
+        id: 'seattle', name: "Seattle Chapter", location: "USA", region: "NA", imageUrl: "images/seattle.jpg",
         details: {
             history: "Launched in 2020, our Seattle chapter brings together alumni in the Pacific Northwest's thriving tech and aerospace industries. We foster a community of innovation and collaboration.",
             gallery: ["images/Chapters%20images/Seattle%20(1).jpeg", "images/Chapters%20images/Seattle%20(3).jpeg"],
         }
     },
     { 
-        id: 'siliconvalley', name: "Silicon Valley Chapter", location: "San Francisco, USA", region: "NA", imageUrl: "https://picsum.photos/seed/sf/400/300",
+        id: 'siliconvalley', name: "Silicon Valley Chapter", location: "San Francisco, USA", region: "NA", imageUrl: "images/silliconvalley.jpg",
         details: {
             history: "The Silicon Valley chapter is at the heart of global innovation. Formed in 2019, it connects MACE alumni in leading tech companies, startups, and venture capital firms.",
             gallery: ["https://picsum.photos/seed/sf1/400/300", "https://picsum.photos/seed/sf2/400/300"],
         }
     },
     { 
-        id: 'atlanta', name: "Atlanta Chapter", location: "USA", region: "NA", imageUrl: "https://picsum.photos/seed/atlanta/400/300",
+        id: 'atlanta', name: "Atlanta Chapter", location: "USA", region: "NA", imageUrl: "images/atlanda.jpg",
         details: {
             history: "Our Atlanta chapter serves the growing community of alumni in the southeastern United States. It focuses on logistics, manufacturing, and the burgeoning film technology industry.",
             gallery: ["https://picsum.photos/seed/atl1/400/300"],
         }
     },
     { 
-        id: 'delaware', name: "Delaware Valley Chapter", location: "USA", region: "NA", imageUrl: "https://picsum.photos/seed/delaware/400/300",
+        id: 'delaware', name: "Delaware Valley Chapter", location: "USA", region: "NA", imageUrl: "images/delawarevalley.jpg",
         details: {
             history: "Established to support alumni in the financial and chemical engineering sectors, the Delaware Valley chapter provides a valuable network in the mid-Atlantic region.",
             gallery: ["https://picsum.photos/seed/de1/400/300"],
         }
     },
     { 
-        id: 'houston', name: "Houston Chapter", location: "USA", region: "NA", imageUrl: "https://picsum.photos/seed/houston/400/300",
+        id: 'houston', name: "Houston Chapter", location: "USA", region: "NA", imageUrl: "images/houston.jpg",
         details: {
             history: "The Houston chapter is a hub for our alumni in the energy sector. Since its inception, it has connected professionals in oil, gas, and renewable energy, as well as the aerospace industry.",
             gallery: ["https://picsum.photos/seed/hou1/400/300", "https://picsum.photos/seed/hou2/400/300"],
         }
     },
     { 
-        id: 'toronto', name: "Toronto Chapter", location: "Canada", region: "NA", imageUrl: "https://picsum.photos/seed/toronto/400/300",
+        id: 'toronto', name: "Toronto Chapter", location: "Canada", region: "NA", imageUrl: "images/tronto.webp",
         details: {
             history: "Our first chapter in Canada, the Toronto chapter, unites alumni across the Greater Toronto Area. It focuses on finance, real estate, and technology, reflecting the city's diverse economy.",
             gallery: ["https://picsum.photos/seed/tor1/400/300"],
         }
     },
     { 
-        id: 'bahrain', name: "Bahrain Chapter", location: "Bahrain", region: "MEU", imageUrl: "https://picsum.photos/seed/bahrain/400/300",
+        id: 'bahrain', name: "Bahrain Chapter", location: "Bahrain", region: "MEU", imageUrl: "images/bahrin.jpg",
         details: {
             history: "The Bahrain chapter, one of our earliest in the Gulf, has a long history of connecting alumni in the banking and finance sectors. It hosts regular events to foster community and professional growth.",
             gallery: ["https://picsum.photos/seed/bah1/400/300"],
         }
     },
     { 
-        id: 'uk', name: "UK Chapter", location: "United Kingdom", region: "MEU", imageUrl: "https://picsum.photos/seed/uk/400/300",
+        id: 'uk', name: "UK Chapter", location: "United Kingdom", region: "MEU", imageUrl: "images/uk.jpg",
         details: {
             history: "The UK chapter connects alumni across England, Scotland, Wales, and Northern Ireland. It has strong ties to London's financial district and the UK's rich engineering heritage.",
             gallery: ["https://picsum.photos/seed/uk1/400/300", "https://picsum.photos/seed/uk2/400/300"],
@@ -112,14 +112,14 @@ const chapters = [
         }
     },
     { 
-        id: 'melbourne', name: "OZ MACE Melbourne", location: "Australia", region: "AP", imageUrl: "https://picsum.photos/seed/melbourne/400/300",
+        id: 'melbourne', name: "OZ MACE Melbourne", location: "Australia", region: "AP", imageUrl: "images/mellbourne.jpg",
         details: {
             history: "Focusing on Melbourne's vibrant arts, sports, and tech scenes, this chapter provides a network for alumni in Victoria. It's known for its creative and social events.",
             gallery: ["https://picsum.photos/seed/mel1/400/300"],
         }
     },
     { 
-        id: 'brisbane', name: "OZMACE Brisbane", location: "Australia", region: "AP", imageUrl: "https://picsum.photos/seed/brisbane/400/300",
+        id: 'brisbane', name: "OZMACE Brisbane", location: "Australia", region: "AP", imageUrl: "images/brisbane.jpg",
         details: {
             history: "The Brisbane chapter supports alumni in Queensland, focusing on the region's strengths in construction, resources, and tourism. It provides a key network on Australia's east coast.",
             gallery: ["https://picsum.photos/seed/bris1/400/300"],
@@ -140,7 +140,7 @@ const chapters = [
         }
     },
     { 
-        id: 'perth', name: "OZ MACE Perth", location: "Australia", region: "AP", imageUrl: "https://picsum.photos/seed/perth/400/300",
+        id: 'perth', name: "OZ MACE Perth", location: "Australia", region: "AP", imageUrl: "images/perth.jpg",
         details: {
             history: "The Perth chapter is dedicated to alumni in Western Australia, with a strong link to the region's booming mining and resources industries. It provides critical support for engineers in the sector.",
             gallery: ["https://picsum.photos/seed/per1/400/300"],
