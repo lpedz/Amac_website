@@ -3,153 +3,182 @@ const chapters = [
         id: 'uae', name: "UAE Chapter", location: "UAE", region: "MEU", imageUrl: "images/uae.jpg",
         details: {
             history: "Established in the early 2000s by a group of pioneering MACE alumni involved in the UAE's infrastructure boom, our chapter has grown into one of the most active networks in the Middle East, fostering professional and personal connections.",
-            gallery: ["images/Chapters%20images/uae.png"],
+            gallery: [
+                { src: "images/Chapters%20images/uae%20(1).jpeg", caption: "MACE ALUMNI UAE winning KERA Cricket Tournament in 2006  and team celbrates in Cyprus" },
+                { src: "images/Chapters%20images/uae%20(4).jpeg", },
+                { src: "images/Chapters%20images/uae%20(8).jpeg" },
+                { src: "images/Chapters%20images/uae%20(9).jpeg", }
+            ],
         }
     },
     { 
         id: 'saudi', name: "Saudi Arabia Chapter", location: "Saudi Arabia", region: "MEU", imageUrl: "images/saudi.avif",
         details: {
             history: "Our chapter was formed in 2016 to align with the Kingdom's Vision 2030, creating a network for MACE engineers and professionals contributing to the nation's ambitious giga-projects and economic diversification.",
-            gallery: ["https://picsum.photos/seed/sa1/400/300", "https://picsum.photos/seed/sa2/400/300"],
+            gallery: [{ src: "https://picsum.photos/seed/sa1/400/300" }, { src: "https://picsum.photos/seed/sa2/400/300" }],
         }
     },
     { 
         id: 'kuwait', name: "Kuwait Chapter", location: "Kuwait", region: "MEU", imageUrl: "images/Kuwait.jpeg",
         details: {
             history: "As one of the oldest chapters in the Gulf, the Kuwait Chapter has been a cornerstone of the MACE community since the late 1990s. It has a rich tradition of mentorship, particularly in the oil and gas sector.",
-            gallery: ["https://picsum.photos/seed/kw1/400/300", "https://picsum.photos/seed/kw2/400/300"],
+            gallery: [
+                { src: "images/Chapters%20images/Kuwait%20(1).jpeg" },
+                { src: "images/Chapters%20images/Kuwait%20(2).jpeg" },
+                { src: "images/Chapters%20images/Kuwait%20(3).jpeg" }
+            ],
         }
     },
     { 
         id: 'qatar', name: "Qatar Chapter", location: "Qatar", region: "MEU", imageUrl: "images/qatar.jpg",
         details: {
             history: "The Qatar Chapter was established in the lead-up to the 2022 FIFA World Cup, a period of immense growth. Our members played key roles in developing the nation's infrastructure and continue to shape its future.",
-            gallery: ["https://picsum.photos/seed/qa1/400/300", "https://picsum.photos/seed/qa2/400/300"],
+            gallery: [{ src: "https://picsum.photos/seed/qa1/400/300" }, { src: "https://picsum.photos/seed/qa2/400/300" }],
         }
     },
     { 
         id: 'oman', name: "Oman Chapter", location: "Oman", region: "MEU", imageUrl: "images/oman.jpg",
         details: {
             history: "Our chapter in the Sultanate of Oman was founded on the principles of community and heritage. Since 2011, we have focused on creating a supportive network that blends professional growth with cultural appreciation.",
-            gallery: ["https://picsum.photos/seed/om1/400/300"],
+            gallery: [{ src: "https://picsum.photos/seed/om1/400/300" }],
         }
     },
     { 
         id: 'chicago', name: "Chicago Chapter", location: "USA", region: "NA", imageUrl: "images/chicago.jpg",
         details: {
             history: "The Chicago Chapter was established in 2018 as a hub for MACE alumni in the American Midwest. It focuses on connecting professionals in manufacturing, architecture, and finance through targeted events and seminars.",
-            gallery: ["https://picsum.photos/seed/chi1/400/300"],
+            gallery: [{ src: "https://picsum.photos/seed/chi1/400/300" }],
         }
     },
     { 
         id: 'dc', name: "Washington D.C. Chapter", location: "USA", region: "NA", imageUrl: "images/washington.jpg",
         details: {
             history: "Our Washington D.C. chapter was formed in 2019 to cater to the growing number of alumni in public policy, federal agencies, and international organizations. It serves as a unique intersection of engineering and governance.",
-            gallery: ["https://picsum.photos/seed/dc1/400/300", "https://picsum.photos/seed/dc2/400/300"],
+            gallery: [{ src: "https://picsum.photos/seed/dc1/400/300" }, { src: "https://picsum.photos/seed/dc2/400/300" }],
         }
     },
     { 
         id: 'seattle', name: "Seattle Chapter", location: "USA", region: "NA", imageUrl: "images/seattle.jpg",
         details: {
             history: "Launched in 2020, our Seattle chapter brings together alumni in the Pacific Northwest's thriving tech and aerospace industries. We foster a community of innovation and collaboration.",
-            gallery: ["images/Chapters%20images/Seattle%20(1).jpeg", "images/Chapters%20images/Seattle%20(3).jpeg"],
+            gallery: [
+                { src: "images/Chapters%20images/Seattle%20(4).jpeg" },
+                { src: "images/Chapters%20images/Seattle%20(6).jpeg" },
+                { src: "images/Chapters%20images/Seattle%20(7).jpeg" }
+            ],
         }
     },
     { 
         id: 'siliconvalley', name: "Silicon Valley Chapter", location: "San Francisco, USA", region: "NA", imageUrl: "images/silliconvalley.jpg",
         details: {
             history: "The Silicon Valley chapter is at the heart of global innovation. Formed in 2019, it connects MACE alumni in leading tech companies, startups, and venture capital firms.",
-            gallery: ["https://picsum.photos/seed/sf1/400/300", "https://picsum.photos/seed/sf2/400/300"],
+            gallery: [
+                { src: "images/Chapters%20images/SilliconValley%20(1).jpeg" },
+                { src: "images/Chapters%20images/SilliconValley%20(2).jpeg" }
+            ],
         }
     },
     { 
         id: 'atlanta', name: "Atlanta Chapter", location: "USA", region: "NA", imageUrl: "images/atlanda.jpg",
         details: {
             history: "Our Atlanta chapter serves the growing community of alumni in the southeastern United States. It focuses on logistics, manufacturing, and the burgeoning film technology industry.",
-            gallery: ["https://picsum.photos/seed/atl1/400/300"],
+            gallery: [
+                { src: "images/Chapters%20images/Atlanta%20(1).jpeg" },
+                { src: "images/Chapters%20images/Atlanta%20(2).jpeg" }
+            ],
         }
     },
     { 
         id: 'delaware', name: "Delaware Valley Chapter", location: "USA", region: "NA", imageUrl: "images/delawarevalley.jpg",
         details: {
             history: "Established to support alumni in the financial and chemical engineering sectors, the Delaware Valley chapter provides a valuable network in the mid-Atlantic region.",
-            gallery: ["https://picsum.photos/seed/de1/400/300"],
+            gallery: [{ src: "https://picsum.photos/seed/de1/400/300" }],
         }
     },
     { 
         id: 'houston', name: "Houston Chapter", location: "USA", region: "NA", imageUrl: "images/houston.jpg",
         details: {
             history: "The Houston chapter is a hub for our alumni in the energy sector. Since its inception, it has connected professionals in oil, gas, and renewable energy, as well as the aerospace industry.",
-            gallery: ["https://picsum.photos/seed/hou1/400/300", "https://picsum.photos/seed/hou2/400/300"],
+            gallery: [{ src: "images/Chapters%20images/Houston.jpeg" }],
         }
     },
     { 
         id: 'toronto', name: "Toronto Chapter", location: "Canada", region: "NA", imageUrl: "images/tronto.webp",
         details: {
             history: "Our first chapter in Canada, the Toronto chapter, unites alumni across the Greater Toronto Area. It focuses on finance, real estate, and technology, reflecting the city's diverse economy.",
-            gallery: ["https://picsum.photos/seed/tor1/400/300"],
+            gallery: [{ src: "https://picsum.photos/seed/tor1/400/300" }],
         }
     },
     { 
         id: 'bahrain', name: "Bahrain Chapter", location: "Bahrain", region: "MEU", imageUrl: "images/bahrin.jpg",
         details: {
             history: "The Bahrain chapter, one of our earliest in the Gulf, has a long history of connecting alumni in the banking and finance sectors. It hosts regular events to foster community and professional growth.",
-            gallery: ["https://picsum.photos/seed/bah1/400/300"],
+            gallery: [{ src: "https://picsum.photos/seed/bah1/400/300" }],
         }
     },
     { 
         id: 'uk', name: "UK Chapter", location: "United Kingdom", region: "MEU", imageUrl: "images/uk.jpg",
         details: {
             history: "The UK chapter connects alumni across England, Scotland, Wales, and Northern Ireland. It has strong ties to London's financial district and the UK's rich engineering heritage.",
-            gallery: ["https://picsum.photos/seed/uk1/400/300", "https://picsum.photos/seed/uk2/400/300"],
+            gallery: [{ src: "https://picsum.photos/seed/uk1/400/300" }, { src: "https://picsum.photos/seed/uk2/400/300" }],
         }
     },
     { 
         id: 'sydney', name: "OZ MACE Sydney", location: "Australia", region: "AP", imageUrl: "images/australia.jpg",
         details: {
             history: "As a major hub for finance and professional services in Australia, the Sydney chapter connects alumni in the heart of the city's bustling business district.",
-            gallery: ["https://picsum.photos/seed/syd1/400/300"],
+            gallery: [{ src: "https://picsum.photos/seed/syd1/400/300" }],
         }
     },
     { 
         id: 'melbourne', name: "OZ MACE Melbourne", location: "Australia", region: "AP", imageUrl: "images/mellbourne.jpg",
         details: {
             history: "Focusing on Melbourne's vibrant arts, sports, and tech scenes, this chapter provides a network for alumni in Victoria. It's known for its creative and social events.",
-            gallery: ["https://picsum.photos/seed/mel1/400/300"],
+            gallery: [{ src: "https://picsum.photos/seed/mel1/400/300" }],
         }
     },
     { 
         id: 'brisbane', name: "OZMACE Brisbane", location: "Australia", region: "AP", imageUrl: "images/brisbane.jpg",
         details: {
             history: "The Brisbane chapter supports alumni in Queensland, focusing on the region's strengths in construction, resources, and tourism. It provides a key network on Australia's east coast.",
-            gallery: ["https://picsum.photos/seed/bris1/400/300"],
+            gallery: [{ src: "https://picsum.photos/seed/bris1/400/300" }],
         }
     },
     { 
         id: 'singapore', name: "Singapore Chapter", location: "Singapore", region: "AP", imageUrl: "images/singapore.webp",
         details: {
             history: "Founded in 2012, the Singapore chapter was created to cater to the growing number of MACE alumni in Southeast Asia's premier financial and tech hub. It has since become a vital resource for professional development in the region.",
-            gallery: ["images/Chapters%20images/Singapore%20(1).jpeg", "images/Chapters%20images/Singapore%20(2).jpeg", "images/Chapters%20images/Singapore%20(3).jpeg"],
+            gallery: [
+                { src: "images/Chapters%20images/Singapore%20(1).jpeg" }, 
+                { src: "images/Chapters%20images/Singapore%20(2).jpeg" }, 
+                { src: "images/Chapters%20images/Singapore%20(3).jpeg" }
+            ],
         }
     },
     { 
         id: 'chennai', name: "Chennai Chapter", location: "Chennai, India", region: "AP", imageUrl: "images/chennai.jpg",
         details: {
             history: "Launched in 2013, the Chennai chapter serves the large MACE alumni population in South India. It has strong ties to the local IT and automotive industries, providing a platform for knowledge sharing and career opportunities.",
-            gallery: ["https://picsum.photos/seed/ch1/400/300", "https://picsum.photos/seed/ch2/400/300"],
+            gallery: [
+                { src: "images/Chapters%20images/Chennai%20(1).jpeg" },
+                { src: "images/Chapters%20images/Chennai%20(2).jpeg" },
+                { src: "images/Chapters%20images/Chennai%20(3).jpeg" },
+                { src: "images/Chapters%20images/Chennai%20(4).jpeg" }
+            ],
         }
     },
     { 
         id: 'perth', name: "OZ MACE Perth", location: "Australia", region: "AP", imageUrl: "images/perth.jpg",
         details: {
             history: "The Perth chapter is dedicated to alumni in Western Australia, with a strong link to the region's booming mining and resources industries. It provides critical support for engineers in the sector.",
-            gallery: ["https://picsum.photos/seed/per1/400/300"],
+            gallery: [{ src: "https://picsum.photos/seed/per1/400/300" }],
         }
-    },    { 
+    },
+    { 
         id: 'trichur', name: "Trichur Chapter", location: "Trichur", region: "AP", imageUrl: "images/trichur.jpg",
         details: {
             history: "The Trichur chapter is a hub for our alumni in the energy sector. Since its inception, it has connected professionals in oil, gas, and renewable energy, as well as the aerospace industry.",
-            gallery: ["https://picsum.photos/seed/hou1/400/300", "https://picsum.photos/seed/hou2/400/300"],
+            gallery: [{ src: "https://picsum.photos/seed/hou1/400/300" }, { src: "https://picsum.photos/seed/hou2/400/300" }],
         }
     }
 ];
@@ -243,7 +272,7 @@ function setupModal() {
   
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = lightbox.querySelector('.lightbox-image');
-  const lightboxCloseBtn = lightbox.querySelector('.lightbox-close-btn');
+  const lightboxCaption = document.getElementById('lightbox-caption');
 
   function openModal(chapterId, clickedElement) {
     if (modalContainer.classList.contains('is-open')) return;
@@ -263,7 +292,10 @@ function setupModal() {
     }
 
     if (chapter.details.gallery && chapter.details.gallery.length > 0) {
-      const galleryHtml = chapter.details.gallery.map(imgUrl => `<img src="${imgUrl}" alt="Chapter event photo">`).join('');
+      const galleryHtml = chapter.details.gallery.map(img => {
+          const captionData = img.caption ? `data-caption="${img.caption}"` : '';
+          return `<img src="${img.src}" alt="Chapter event photo" ${captionData}>`;
+      }).join('');
       rightColumn.innerHTML += `<div class="modal-section"><h2>Gallery</h2><div class="modal-gallery">${galleryHtml}</div></div>`;
     }
     const chapterLeaders = presidents.filter(p => p.chapter === chapter.name);
@@ -324,8 +356,13 @@ function setupModal() {
       modalContent.addEventListener('transitionend', onTransitionEnd, { once: true });
   }
 
-  function openLightbox(src) {
+  function openLightbox(src, caption) {
       lightboxImg.src = src;
+      if (caption) {
+          lightboxCaption.textContent = caption;
+      } else {
+          lightboxCaption.textContent = '';
+      }
       lightbox.classList.remove('hidden');
   }
   function closeLightbox() {
@@ -338,8 +375,11 @@ function setupModal() {
       openModal(triggerElement.dataset.chapterId, triggerElement);
     }
     
-    if (modalContainer.classList.contains('is-open') && e.target.closest('.modal-gallery img')) {
-        openLightbox(e.target.closest('.modal-gallery img').src);
+    const clickedImg = e.target.closest('.modal-gallery img');
+    if (modalContainer.classList.contains('is-open') && clickedImg) {
+        const src = clickedImg.src;
+        const caption = clickedImg.dataset.caption;
+        openLightbox(src, caption);
     }
   });
 
