@@ -273,6 +273,7 @@ function setupModal() {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = lightbox.querySelector('.lightbox-image');
   const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxBackBtn = document.getElementById('lightbox-back-btn');
 
   function openModal(chapterId, clickedElement) {
     if (modalContainer.classList.contains('is-open')) return;
@@ -384,7 +385,7 @@ function setupModal() {
   });
 
   modalCloseBtn.addEventListener('click', closeModal);
-  lightboxCloseBtn.addEventListener('click', closeLightbox);
+  lightboxBackBtn.addEventListener('click', closeLightbox);
   lightbox.querySelector('.lightbox-backdrop').addEventListener('click', closeLightbox);
   
   document.addEventListener('keydown', (e) => {
