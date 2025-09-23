@@ -21,7 +21,7 @@ const chapters = [
     { 
         id: 'kuwait', name: "Kuwait Chapter", location: "Kuwait", region: "MEU", imageUrl: "images/Kuwait.jpeg",
         details: {
-            history: "As one of the oldest chapters in the Gulf, the Kuwait Chapter has been a cornerstone of the MACE community since the late 1990s. It has a rich tradition of mentorship, particularly in the oil and gas sector.",
+            history: "As one of the oldest chapters in the Gulf, the Kuwait Chapter has been a cornerstone of the MACE community since the late 1984. It has a rich tradition of mentorship, particularly in the oil and gas sector.",
             gallery: [
                 { src: "images/Chapters%20images/Kuwait%20(1).jpeg" },
                 { src: "images/Chapters%20images/Kuwait%20(2).jpeg" },
@@ -62,9 +62,9 @@ const chapters = [
         details: {
             history: "Launched in 2020, our Seattle chapter brings together alumni in the Pacific Northwest's thriving tech and aerospace industries. We foster a community of innovation and collaboration.",
             gallery: [
-                { src: "images/Chapters%20images/Seattle%20(4).jpeg" },
-                { src: "images/Chapters%20images/Seattle%20(6).jpeg" },
-                { src: "images/Chapters%20images/Seattle%20(7).jpeg" }
+                { src: "images/Chapters%20images/Seattle%20(1).jpeg" },
+                { src: "images/Chapters%20images/Seattle%20(2).jpeg" },
+                { src: "images/Chapters%20images/Seattle%20(5).jpeg" }
             ],
         }
     },
