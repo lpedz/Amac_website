@@ -7,7 +7,8 @@ const chapters = [
                 { src: "images/Chapters%20images/uae%20(1).jpeg", caption: "MACE ALUMNI UAE winning KERA Cricket Tournament in 2006 and team celbrates in Cyprus" },
                 { src: "images/Chapters%20images/uae%20(4).jpeg", },
                 { src: "images/Chapters%20images/uae%20(8).jpeg" },
-                { src: "images/Chapters%20images/uae%20(9).jpeg", }
+                { src: "images/Chapters%20images/uae%20(9).jpeg" },
+                { src: "images/Chapters%20images/uae.jpeg",caption: "Founder PRESIDENT Engr Hussain P( Late) & Founder Gen Secretary Mohan Joseph  sharing a lighter moment in 2006 when MACE was leading the KERALA ENGG ALUMNI (KERA)in UAE.as its3rd President." }
             ],
         }
     },
@@ -188,9 +189,9 @@ const presidents = [
     { chapter: "AMAC", name: "Mohan Joseph Cheeran", contact: "chairman@amac.org", position: "Chairman", phone: "+91-9876543210", imageUrl: "images/People/MohanJoseph.jpeg" },
     
     // UAE
-    { chapter: "UAE Chapter", name: "Hussain", contact: "uae-fp@amac.org", position: "Founder President", phone: null, imageUrl: "https://i.pravatar.cc/150?u=hussain" },
+    { chapter: "UAE Chapter", name: "Hussain", contact: "uae-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Hussain.jpeg" },
     { chapter: "UAE Chapter", name: "Mohan Joseph Cheeran", contact: "uae-fgs@amac.org", position: "Founder Gen. Secretary", phone: null, imageUrl: "images/People/MohanJoseph.jpeg" },
-    { chapter: "UAE Chapter", name: "Mathew Kavalam", contact: "uae@amac.org", position: "Current President", phone: "+971-501234567", imageUrl: "images/People/MathewKavalam.png" },
+    { chapter: "UAE Chapter", name: "Krishna Kumar", contact: "uae@amac.org", position: "Current President", phone: "+971-501234567", imageUrl: "images/People/krishnakumar.jpg" },
     
     // Kuwait
     { chapter: "Kuwait Chapter", name: "Muhhamadd Kutty", contact: "kuwait@amac.org", position: "Founder Chairman", phone: null, imageUrl: "images/People/pkmuahhamedkutty.jpeg" },
@@ -210,7 +211,7 @@ const presidents = [
     { chapter: "Chennai Chapter", name: "David Rajan", contact: "chennai@amac.org", position: "President", phone: null, imageUrl: "images/People/Rajan%20David.jpeg" },
 
     // Trichur
-    { chapter: "Trichur Chapter", name: "Joseph Peter", contact: "trichur@amac.org", position: "President", phone: null, imageUrl: "https://i.pravatar.cc/150?u=JosephPeter" },
+    { chapter: "Trichur Chapter", name: "Joseph Peter", contact: "trichur@amac.org", position: "President", phone: null, imageUrl: "images/People/josephpeter.jpeg" },
 
     // Washington DC
     { chapter: "Washington D.C. Chapter", name: "Rejive Joseph", contact: "dc@amac.org", position: "Founder President", phone: "+1-202-555-0182", imageUrl: "images/People/RejiveJoseph.jpeg" },
