@@ -2,7 +2,7 @@ const chapters = [
     { 
         id: 'uae', name: "UAE Chapter", location: "UAE", region: "MEU", imageUrl: "images/uae.jpg",
         details: {
-            history: "Founded in 1995 by a group of pioneering MACE alumni, our chapter has expanded from 50 members to over 700, becoming one of the most active networks worldwide that fosters both professional and personal connections. AMAC was later constituted on April 13, 2012, in Dubai through the initiative of the UAE chapter.",
+            history: "Founded in 1994 June 18 by a group of pioneering MACE alumni, our chapter has expanded from 50 members to over 700, becoming one of the most active networks worldwide that fosters both professional and personal connections. AMAC was later constituted on April 13, 2012, in Dubai through the initiative of the UAE chapter.",
             gallery: [
                 { src: "images/Chapters%20images/uae%20(1).jpeg", caption: "MACE ALUMNI UAE winning KERA Cricket Tournament in 2006 and team celbrates in Cyprus" },
                 { src: "images/Chapters%20images/uae%20(4).jpeg", },
@@ -195,7 +195,7 @@ const presidents = [
     // UAE
     { chapter: "UAE Chapter", name: "Hussain", contact: "uae-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Hussain.jpeg" },
     { chapter: "UAE Chapter", name: "Mohan Joseph Cheeran", contact: "uae-fgs@amac.org", position: "Founder Gen. Secretary", phone: null, imageUrl: "images/People/MohanJoseph.jpeg" },
-    { chapter: "UAE Chapter", name: "Krishna Kumar", contact: "uae@amac.org", position: "Current President", phone: "+971-501234567", imageUrl: "images/People/krishnakumar.jpg" },
+    { chapter: "UAE Chapter", name: "Krishna Kumar", contact: "uae@amac.org", position: "Current President",  imageUrl: "images/People/krishnakumar.jpg" },
     
     // Kuwait
     { chapter: "Kuwait Chapter", name: "Muhhamadd Kutty", contact: "kuwait@amac.org", position: "Founder Chairman", phone: null, imageUrl: "images/People/pkmuahhamedkutty.jpeg" },
