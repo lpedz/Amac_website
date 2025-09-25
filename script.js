@@ -10,7 +10,9 @@ const chapters = [
                 { src: "images/Chapters%20images/uae.jpeg",caption: "Founder PRESIDENT Engr Hussain P( Late) & Founder Gen Secretary Mohan Joseph  sharing a lighter moment in 2006 when MACE was leading the KERALA ENGG ALUMNI (KERA)in UAE as its 3rd President." },
                 {src: "images/Chapters%20images/uae%20(3).jpeg" },
                 { src: "images/Chapters%20images/uae11.jpeg",caption:"Founding leaders availabe in UAE  when Silver Jubilee was celebrated" },
-                {src: "images/Chapters%20images/uae12.jpeg" }
+                {src: "images/Chapters%20images/uae12.jpeg" },
+                {src: "images/Chapters%20images/uae22%20(1).jpeg" },
+                {src: "images/Chapters%20images/uae22%20(2).jpeg" }
             ],
         }
     },
