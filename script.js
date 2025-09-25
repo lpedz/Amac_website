@@ -2,13 +2,15 @@ const chapters = [
     { 
         id: 'uae', name: "UAE Chapter", location: "UAE", region: "MEU", imageUrl: "images/uae.jpg",
         details: {
-            history: "Established in the early 2000s by a group of pioneering MACE alumni, our chapter has grown into one of the most active networks in the Middle East, fostering professional and personal connections.",
+            history: "Founded in 1995 by a group of pioneering MACE alumni, our chapter has expanded from 50 members to over 700, becoming one of the most active networks worldwide that fosters both professional and personal connections. AMAC was later constituted on April 13, 2012, in Dubai through the initiative of the UAE chapter.",
             gallery: [
                 { src: "images/Chapters%20images/uae%20(1).jpeg", caption: "MACE ALUMNI UAE winning KERA Cricket Tournament in 2006 and team celbrates in Cyprus" },
                 { src: "images/Chapters%20images/uae%20(4).jpeg", },
                 { src: "images/Chapters%20images/uae%20(8).jpeg" },
-                { src: "images/Chapters%20images/uae%20(9).jpeg" },
-                { src: "images/Chapters%20images/uae.jpeg",caption: "Founder PRESIDENT Engr Hussain P( Late) & Founder Gen Secretary Mohan Joseph  sharing a lighter moment in 2006 when MACE was leading the KERALA ENGG ALUMNI (KERA)in UAE.as its3rd President." }
+                { src: "images/Chapters%20images/uae.jpeg",caption: "Founder PRESIDENT Engr Hussain P( Late) & Founder Gen Secretary Mohan Joseph  sharing a lighter moment in 2006 when MACE was leading the KERALA ENGG ALUMNI (KERA)in UAE as its 3rd President." },
+                {src: "images/Chapters%20images/uae%20(3).jpeg" },
+                { src: "images/Chapters%20images/uae11.jpeg",caption:"Founding leaders availabe in UAE  when Silver Jubilee was celebrated" },
+                {src: "images/Chapters%20images/uae12.jpeg" }
             ],
         }
     },
