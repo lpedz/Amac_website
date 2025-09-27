@@ -5,14 +5,14 @@ const chapters = [
             history: "Founded in 1994 June 18 by a group of pioneering MACE alumni, our chapter has expanded from 50 members to over 700, becoming one of the most active networks worldwide that fosters both professional and personal connections. AMAC was later constituted on April 13, 2012, in Dubai through the initiative of the UAE chapter.",
             gallery: [
                 { src: "images/Chapters%20images/uae%20(1).jpeg", caption: "MACE ALUMNI UAE winning KERA Cricket Tournament in 2006 and team celbrates in Cyprus" },
-                { src: "images/Chapters%20images/uae%20(4).jpeg" },
+                { src: "images/Chapters%20images/uae%20(4).jpeg", },
                 { src: "images/Chapters%20images/uae%20(8).jpeg" },
-                { src: "images/Chapters%20images/uae.jpeg", caption: "Founder PRESIDENT Engr Hussain P( Late) & Founder Gen Secretary Mohan Joseph  sharing a lighter moment in 2006 when MACE was leading the KERALA ENGG ALUMNI (KERA)in UAE as its 3rd President." },
-                { src: "images/Chapters%20images/uae%20(3).jpeg" },
-                { src: "images/Chapters%20images/uae11.jpeg", caption:"Founding leaders availabe in UAE  when Silver Jubilee was celebrated" },
-                { src: "images/Chapters%20images/uae12.jpeg" },
-                { src: "images/Chapters%20images/uae22%20(1).jpeg" },
-                { src: "images/Chapters%20images/uae22%20(2).jpeg" }
+                { src: "images/Chapters%20images/uae.jpeg",caption: "Founder PRESIDENT Engr Hussain P( Late) & Founder Gen Secretary Mohan Joseph  sharing a lighter moment in 2006 when MACE was leading the KERALA ENGG ALUMNI (KERA)in UAE as its 3rd President." },
+                {src: "images/Chapters%20images/uae%20(3).jpeg" },
+                { src: "images/Chapters%20images/uae11.jpeg",caption:"Founding leaders availabe in UAE  when Silver Jubilee was celebrated" },
+                {src: "images/Chapters%20images/uae12.jpeg" },
+                {src: "images/Chapters%20images/uae22%20(1).jpeg" },
+                {src: "images/Chapters%20images/uae22%20(2).jpeg" }
             ],
         }
     },
@@ -75,14 +75,15 @@ const chapters = [
         details: {
             history: "Launched in July 2019, our Seattle chapter brings together alumni in the Pacific Northwest's thriving tech and aerospace industries. We foster a community of innovation and collaboration.",
             gallery: [
-                { src: "images/Chapters%20images/Seattle%20(4).jpeg" },
-                { src: "images/Chapters%20images/Seattle%20(6).jpeg" },
-                { src: "images/Chapters%20images/Seattle%20(7).jpeg" }
+                { src: "images/Chapters%20images/Seattle%20(1).jpeg" },
+                { src: "images/Chapters%20images/Seattle%20(1).png" },
+                { src: "images/Chapters%20images/Seattle%20(2).png" },
+                { src: "images/Chapters%20images/Seattle%20(5).jpeg" }
             ],
         }
     },
     { 
-        id: 'siliconvalley', name: "Silicon Valley Chapter", location: "San Francisco, USA", region: "NA", imageUrl: "images/silliconvalley.jpeg",
+        id: 'siliconvalley', name: "Silicon Valley Chapter", location: "San Francisco, USA", region: "NA", imageUrl: "images/silliconvalley.jpg",
         details: {
             history: "The Silicon Valley chapter is at the heart of global innovation. Formed in 2019, it connects MACE alumni in leading tech companies, startups, and venture capital firms.",
             gallery: [
@@ -140,7 +141,7 @@ const chapters = [
         id: 'sydney', name: "OZ MACE Sydney", location: "Australia", region: "AP", imageUrl: "images/australia.jpg",
         details: {
             history: "Founded in July 2013, the Sydney chapter is a major hub for finance and professional services in Australia, connecting alumni in the heart of the city's bustling business district.",
-            gallery: [{ src: "https://picsum.photos/seed/syd1/400/300" }],
+            gallery: [{ src: "images/Chapters images/OZ mace sydney (1).jpeg" }, { src: "images/Chapters%20images/OZ mace sydney%20(2).jpeg" }, { src: "images/Chapters%20images/OZ mace sydney%20(3).jpeg" }],
         }
     },
     { 
