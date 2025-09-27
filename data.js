@@ -12,7 +12,7 @@ const chapters = [
                 { src: "images/Chapters%20images/uae11.jpeg", caption: "Founding members during the Silver Jubilee, along with Dr. Lazar John and Dr. Solly George (Princy)." },
                 { src: "images/Chapters%20images/uae12.jpeg", caption: "The AMAC Chairman addressing founding members of the MACE Alumni UAE chapter." },
                 { src: "images/Chapters%20images/uae22%20(1).jpeg", caption: "Faculty members along with former principals Prof. Kurian Mathew, Dr. George Issac, and Dr. J Issac." },
-                { src: "images/Chapters%20images/uae22%20(2).jpeg", caption: "The launching of AMAC in 2012. Pictured: PCI Dr. George Issac, MACEAA President; Chief Guest Mr. TK Balakrishnan IAS; Jiss Paul, MACEAA Gen Sec; Mathew Kavalam; Jayakrishnan; and Hussain P., Founder President." }
+                { src: "images/Chapters%20images/uae22%20(2).jpeg", caption: "The launching of AMAC in 2012.Mathew Kavalam, Dr. George Issac, MACEAA President,John Emmanual, Chief Guest Mr. TK Balakrishnan IAS,Mohan Joseph Cheeran , Jiss Paul, MACEAA Gen Sec, Mr.Jayakrishnan T." }
             ],
         }
     },
@@ -194,7 +194,7 @@ const presidents = [
     { chapter: "AMAC", name: "Mohan Joseph Cheeran", contact: "chairman@amac.org", position: "Chairman", phone: "+91-9876543210", imageUrl: "images/People/MohanJoseph.jpeg" },
     
     // UAE
-    { chapter: "UAE Chapter", name: "Hussain", contact: "uae-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/hussain.jpeg" },
+    { chapter: "UAE Chapter", name: "Hussain P", contact: "uae-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/hussain.jpeg" },
     { chapter: "UAE Chapter", name: "Mohan Joseph Cheeran", contact: "uae-fgs@amac.org", position: "Founder Gen. Secretary", phone: null, imageUrl: "images/People/MohanJoseph.jpeg" },
     { chapter: "UAE Chapter", name: "Krishna Kumar", contact: "uae@amac.org", position: "Current President",  imageUrl: "images/People/krishnakumar.jpg" },
     
