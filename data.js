@@ -2,17 +2,17 @@ const chapters = [
     { 
         id: 'uae', name: "UAE Chapter", location: "UAE", region: "MEU", imageUrl: "images/uae.jpg",
         details: {
-            history: "Founded in 1994 June 18 by a group of pioneering MACE alumni, our chapter has expanded from 50 members to over 700, becoming one of the most active networks worldwide that fosters both professional and personal connections. AMAC was later constituted on April 13, 2012, in Dubai through the initiative of the UAE chapter.",
+            history: "Founded in 1994 June 18 by a group of pioneering MACE alumni, our chapter has expanded from 50 members to over 700, becoming one of the most active networks worldwide that fosters both professional and personal connections. AMAC was later constituted on April 13, 2012, in Dubai through the initiative of the UAE & Kuwait chapters.",
             gallery: [
-                { src: "images/Chapters%20images/uae%20(1).jpeg", caption: "MACE ALUMNI UAE winning KERA Cricket Tournament in 2006 and team celbrates in Cyprus" },
-                { src: "images/Chapters%20images/uae%20(4).jpeg", },
-                { src: "images/Chapters%20images/uae%20(8).jpeg" },
-                { src: "images/Chapters%20images/uae.jpeg",caption: "Founder PRESIDENT Engr Hussain P( Late) & Founder Gen Secretary Mohan Joseph  sharing a lighter moment in 2006 when MACE was leading the KERALA ENGG ALUMNI (KERA)in UAE as its 3rd President." },
-                {src: "images/Chapters%20images/uae%20(3).jpeg" },
-                { src: "images/Chapters%20images/uae11.jpeg",caption:"Founding leaders availabe in UAE  when Silver Jubilee was celebrated" },
-                {src: "images/Chapters%20images/uae12.jpeg" },
-                {src: "images/Chapters%20images/uae22%20(1).jpeg" },
-                {src: "images/Chapters%20images/uae22%20(2).jpeg" }
+                { src: "images/Chapters%20images/uae%20(1).jpeg", caption: "MACE Alumni UAE winning the KERA Cricket Tournament in 2006 and the team celebrating in Cyprus." },
+                { src: "images/Chapters%20images/uae%20(4).jpeg", caption: "Lighting the ceremonial lamp at the 25th Anniversary (Silver Jubilee) celebration by Biji Thoms and John Emmanuel." },
+                { src: "images/Chapters%20images/uae%20(8).jpeg", caption: "Electrical engineers at the Silver Jubilee with Dr. Bose Mathew." },
+                { src: "images/Chapters%20images/uae.jpeg", caption: "Founder President Engr. Hussain P. (Late) and Founder General Secretary Mohan Joseph Cheeran, who was selected as the 3rd President of KERA in the UAE, share a lighter moment in 2006." },
+                { src: "images/Chapters%20images/uae%20(3).jpeg", caption: "A committee meeting during the 10th (Decennial) Anniversary celebrations." },
+                { src: "images/Chapters%20images/uae11.jpeg", caption: "Founding members during the Silver Jubilee, along with Dr. Lazar John and Dr. Solly George (Princy)." },
+                { src: "images/Chapters%20images/uae12.jpeg", caption: "The AMAC Chairman addressing founding members of the MACE Alumni UAE chapter." },
+                { src: "images/Chapters%20images/uae22%20(1).jpeg", caption: "Faculty members along with former principals Prof. Kurian Mathew, Dr. George Issac, and Dr. J Issac." },
+                { src: "images/Chapters%20images/uae22%20(2).jpeg", caption: "The launching of AMAC in 2012. Pictured: PCI Dr. George Issac, MACEAA President; Chief Guest Mr. TK Balakrishnan IAS; Jiss Paul, MACEAA Gen Sec; Mathew Kavalam; Jayakrishnan; and Hussain P., Founder President." }
             ],
         }
     },
@@ -75,15 +75,14 @@ const chapters = [
         details: {
             history: "Launched in July 2019, our Seattle chapter brings together alumni in the Pacific Northwest's thriving tech and aerospace industries. We foster a community of innovation and collaboration.",
             gallery: [
-                { src: "images/Chapters%20images/Seattle%20(1).jpeg" },
-                { src: "images/Chapters%20images/Seattle%20(1).png" },
-                { src: "images/Chapters%20images/Seattle%20(2).png" },
-                { src: "images/Chapters%20images/Seattle%20(5).jpeg" }
+                { src: "images/Chapters%20images/Seattle%20(4).jpeg" },
+                { src: "images/Chapters%20images/Seattle%20(6).jpeg" },
+                { src: "images/Chapters%20images/Seattle%20(7).jpeg" }
             ],
         }
     },
     { 
-        id: 'siliconvalley', name: "Silicon Valley Chapter", location: "San Francisco, USA", region: "NA", imageUrl: "images/silliconvalley.jpg",
+        id: 'siliconvalley', name: "Silicon Valley Chapter", location: "San Francisco, USA", region: "NA", imageUrl: "images/silliconvalley.jpeg",
         details: {
             history: "The Silicon Valley chapter is at the heart of global innovation. Formed in 2019, it connects MACE alumni in leading tech companies, startups, and venture capital firms.",
             gallery: [
@@ -141,7 +140,7 @@ const chapters = [
         id: 'sydney', name: "OZ MACE Sydney", location: "Australia", region: "AP", imageUrl: "images/australia.jpg",
         details: {
             history: "Founded in July 2013, the Sydney chapter is a major hub for finance and professional services in Australia, connecting alumni in the heart of the city's bustling business district.",
-            gallery: [{ src: "images/Chapters images/OZ mace sydney (1).jpeg" }, { src: "images/Chapters%20images/OZ mace sydney%20(2).jpeg" }, { src: "images/Chapters%20images/OZ mace sydney%20(3).jpeg" }],
+            gallery: [{ src: "https://picsum.photos/seed/syd1/400/300" }],
         }
     },
     { 
@@ -159,9 +158,9 @@ const chapters = [
         }
     },
     { 
-        id: 'singapore', name: "Singapore Chapter", location: "Singapore", region: "AP", imageUrl: "images/singapore.webp",
+        id: 'singapore', name: "Singapore Chapter", location: "Singapore", region: "AP", imageUrl: "images/singapore.jpeg",
         details: {
-            history: "Founded in 2012, the Singapore chapter was created to cater to the growing number of MACE alumni in Southeast Asia's premier financial and tech hub. It has since become a vital resource for professional development in the region.",
+            history: "Launched on September 21st, 2024, the Singapore chapter was created to cater to the growing number of MACE alumni in Southeast Asia's premier financial and tech hub. It has since become a vital resource for professional development in the region.",
             gallery: [
                 { src: "images/Chapters%20images/Singapore%20(1).jpeg" }, 
                 { src: "images/Chapters%20images/Singapore%20(2).jpeg" }, 
@@ -182,9 +181,9 @@ const chapters = [
         }
     },
     { 
-        id: 'trichur', name: "Trichur Chapter", location: "Trichur", region: "AP", imageUrl: "images/trichur.jpg",
+        id: 'trichur', name: "Trichur (Seniors) Chapter", location: "Trichur", region: "AP", imageUrl: "images/trichur.jpg",
         details: {
-            history: "The Trichur chapter is a hub for our alumni in the energy sector. Since its inception, it has connected professionals in oil, gas, and renewable energy, as well as the aerospace industry.",
+            history: "Launched in Dubai in 2012 with its current president, Joseph Peter, this is also known as the Seniors Chapter, with members from the 1st batch of MACE. The chapter is a hub for our most experienced alumni.",
             gallery: [{ src: "https://picsum.photos/seed/hou1/400/300" }, { src: "https://picsum.photos/seed/hou2/400/300" }],
         }
     }
@@ -207,59 +206,71 @@ const presidents = [
     { chapter: "Saudi Arabia Chapter", name: "Johnson Samuel", contact: "saudi@amac.org", position: "President", phone: "+966-501234567", imageUrl: "images/People/Johnson%20Samuel%20.jpeg" },
 
     // Sydney
-    { chapter: "OZ MACE Sydney", name: "Xavi Joseph", contact: "sydney@amac.org", position: "Founder President", phone: "+61-401234567", imageUrl: "images/People/xavi.jpeg" },
-    
+    { chapter: "OZ MACE Sydney", name: "Xavi Joseph", contact: "sydney-fp@amac.org", position: "Founder President", phone: "+61-401234567", imageUrl: "images/People/xavi.jpeg" },
+    { chapter: "OZ MACE Sydney", name: "Basil Mathew", contact: "sydney@amac.org", position: "Current President", phone: null, imageUrl: "https://i.pravatar.cc/150?u=BasilMathew" },
+
     // Melbourne
     { chapter: "OZ MACE Melbourne", name: "Subeen Mathew", contact: "melbourne-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/SubeenMathew.jpeg" },
     { chapter: "OZ MACE Melbourne", name: "AK THOMAS", contact: "melbourne@amac.org", position: "Current President", phone: null, imageUrl: "https://i.pravatar.cc/150?u=AKTHOMAS" },
 
     // Singapore
-    { chapter: "Singapore Chapter", name: "Shaja Mathews", contact: "singapore@amac.org", position: "President", phone: null, imageUrl: "images/People/ShajahMathew.jpeg" },
+    { chapter: "Singapore Chapter", name: "Shaja Mathews", contact: "singapore@amac.org", position: "Current President", phone: null, imageUrl: "images/People/ShajahMathew.jpeg" },
 
     // Chennai
-    { chapter: "Chennai Chapter", name: "David Rajan", contact: "chennai@amac.org", position: "President", phone: null, imageUrl: "images/People/Rajan%20David.jpeg" },
+    { chapter: "Chennai Chapter", name: "David Rajan", contact: "chennai-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Rajan%20David.jpeg" },
+    { chapter: "Chennai Chapter", name: "David Rajan", contact: "chennai@amac.org", position: "Current President", phone: null, imageUrl: "images/People/Rajan%20David.jpeg" },
 
     // Trichur
-    { chapter: "Trichur Chapter", name: "Joseph Peter", contact: "trichur@amac.org", position: "President", phone: null, imageUrl: "images/People/josephpeter.jpeg" },
+    { chapter: "Trichur (Seniors) Chapter", name: "Joseph Peter", contact: "trichur@amac.org", position: "Current President", phone: null, imageUrl: "images/People/josephpeter.jpeg" },
+    { chapter: "Trichur (Seniors) Chapter", name: "George Panikulam", contact: "trichur-vp@amac.org", position: "Vice President", phone: null, imageUrl: "https://i.pravatar.cc/150?u=GeorgePanikulam" },
     
     // Qatar
     { chapter: "Qatar Chapter", name: "Joseph Joy", contact: "qatar-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Joseph%20Joy.jpeg" },
     { chapter: "Qatar Chapter", name: "Sinesh", contact: "qatar@amac.org", position: "Current President", phone: null, imageUrl: "images/People/Psykhaesh .jpeg" },
 
     // Washington DC
-    { chapter: "Washington D.C. Chapter", name: "Rejive Joseph", contact: "dc@amac.org", position: "Founder President", phone: "+1-202-555-0182", imageUrl: "images/People/RejiveJoseph.jpeg" },
+    { chapter: "Washington D.C. Chapter", name: "Rejive Joseph", contact: "dc-fp@amac.org", position: "Founder President", phone: "+1-202-555-0182", imageUrl: "images/People/RejiveJoseph.jpeg" },
+    { chapter: "Washington D.C. Chapter", name: "Psykhaesh", contact: "dc@amac.org", position: "Current President", phone: null, imageUrl: "images/People/Psykhaesh .jpeg" },
 
     // Chicago
-    { chapter: "Chicago Chapter", name: "Subash George", contact: "chicago@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/SubashGeorge%20(2).jpeg" },
+    { chapter: "Chicago Chapter", name: "Subash George", contact: "chicago-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/SubashGeorge%20(2).jpeg" },
+    { chapter: "Chicago Chapter", name: "Subash George", contact: "chicago@amac.org", position: "Current President", phone: null, imageUrl: "images/People/SubashGeorge%20(2).jpeg" },
 
     // Houston
-    { chapter: "Houston Chapter", name: "Basil Kuriakose", contact: "houston@amac.org", position: "President", phone: null, imageUrl: "images/People/basil.jpeg" },
+    { chapter: "Houston Chapter", name: "Basil Kuriakose", contact: "houston-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/basil.jpeg" },
+    { chapter: "Houston Chapter", name: "Basil Kuriakose", contact: "houston@amac.org", position: "Current President", phone: null, imageUrl: "images/People/basil.jpeg" },
 
     // Atlanta
-    { chapter: "Atlanta Chapter", name: "Manoj K Jose", contact: "atlanta@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Manoj%20K%20Jose.jpeg" },
+    { chapter: "Atlanta Chapter", name: "Manoj K Jose", contact: "atlanta-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Manoj%20K%20Jose.jpeg" },
+    { chapter: "Atlanta Chapter", name: "Manoj K Jose", contact: "atlanta@amac.org", position: "Current President", phone: null, imageUrl: "images/People/Manoj%20K%20Jose.jpeg" },
 
     // Seattle
     { chapter: "Seattle Chapter", name: "Thomas Stephen", contact: "seattle-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/ThomasStephan.jpeg" },
     { chapter: "Seattle Chapter", name: "Jyothish Nair", contact: "seattle@amac.org", position: "Current President", phone: null, imageUrl: "images/People/jyothishnair.png" },
     
     // Silicon Valley
-    { chapter: "Silicon Valley Chapter", name: "John Chandy", contact: "siliconvalley@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/John%20Chandy.jpeg" },
+    { chapter: "Silicon Valley Chapter", name: "John Chandy", contact: "siliconvalley-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/John%20Chandy.jpeg" },
+    { chapter: "Silicon Valley Chapter", name: "John Chandy", contact: "siliconvalley@amac.org", position: "Current President", phone: null, imageUrl: "images/People/John%20Chandy.jpeg" },
 
     // Delaware Valley
-    { chapter: "Delaware Valley Chapter", name: "Saji Gopal", contact: "delaware@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/SajiGopal%20(2).jpeg" },
+    { chapter: "Delaware Valley Chapter", name: "Saji Gopal", contact: "delaware-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/SajiGopal%20(2).jpeg" },
+    { chapter: "Delaware Valley Chapter", name: "Saji Gopal", contact: "delaware@amac.org", position: "Current President", phone: null, imageUrl: "images/People/SajiGopal%20(2).jpeg" },
 
     // Brisbane
-    { chapter: "OZMACE Brisbane", name: "Jose Puthanani", contact: "brisbane@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Jose%20Puthanani.jpeg" },
+    { chapter: "OZMACE Brisbane", name: "Jose Puthanani", contact: "brisbane-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Jose%20Puthanani.jpeg" },
+    { chapter: "OZMACE Brisbane", name: "Jose Puthanani", contact: "brisbane@amac.org", position: "Current President", phone: null, imageUrl: "images/People/Jose%20Puthanani.jpeg" },
 
     // Canada
     { chapter: "Canada Chapter", name: "Daniel Baby", contact: "canada-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Daniel%20Baby.jpeg" },
+    { chapter: "Canada Chapter", name: "Daniel Baby", contact: "canada@amac.org", position: "Current President", phone: null, imageUrl: "images/People/Daniel%20Baby.jpeg" },
 
     // Oman
-    { chapter: "Oman Chapter", name: "Late Engr. Murali", contact: "oman-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/murali.jpeg" },
+    { chapter: "Oman Chapter", name: "Mr.Murali", contact: "oman-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/murali.jpeg" },
     { chapter: "Oman Chapter", name: "Benny Joseph", contact: "oman@amac.org", position: "Current President", phone: null, imageUrl: "https://i.pravatar.cc/150?u=BennyJoseph" },
 
     // Bahrain
     { chapter: "Bahrain Chapter", name: "Dr VKM John", contact: "bahrain-fp@amac.org", position: "Founder President", phone: null, imageUrl: "https://i.pravatar.cc/150?u=VKMJohn" },
+    { chapter: "Bahrain Chapter", name: "Dr VKM John", contact: "bahrain@amac.org", position: "Current President", phone: null, imageUrl: "https://i.pravatar.cc/150?u=VKMJohn" },
 
     // UK
     { chapter: "UK Chapter", name: "Jose Mathiaekal", contact: "uk-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Jose%20Matheickal%20.jpeg" },
