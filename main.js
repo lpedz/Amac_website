@@ -60,6 +60,7 @@ async function renderAnnouncements() {
 
 // --- SEAMLESS MODAL & LIGHTBOX LOGIC ---
 let activeModalElement = null;
+let currentChapter = null;
 
 function setupModal() {
   const modalContainer = document.getElementById('leadership-modal');
@@ -69,7 +70,8 @@ function setupModal() {
   const modalBody = document.getElementById('modal-body');
   
   const lightbox = document.getElementById('lightbox');
-  const lightboxImg = lightbox.querySelector('.lightbox-image');
+  const lightboxImageEl = document.getElementById('lightbox-image');
+  const lightboxVideoContainer = document.getElementById('lightbox-video-container');
   const lightboxCaption = document.getElementById('lightbox-caption');
   const lightboxBackBtn = document.getElementById('lightbox-back-btn');
 
@@ -77,27 +79,42 @@ function setupModal() {
     if (modalContainer.classList.contains('is-open')) return;
     activeModalElement = clickedElement;
 
-    const chapter = chapters.find(c => c.id === chapterId);
-    if (!chapter || !chapter.details) return;
+    currentChapter = chapters.find(c => c.id === chapterId);
+    if (!currentChapter || !currentChapter.details) return;
     
-    modalTitle.textContent = chapter.name;
+    modalTitle.textContent = currentChapter.name;
     modalBody.innerHTML = '';
     
     const leftColumn = document.createElement('div');
     const rightColumn = document.createElement('div');
 
-    if (chapter.details.history) {
-        leftColumn.innerHTML += `<div class="modal-section"><h2>Our History</h2><p>${chapter.details.history}</p></div>`;
+    if (currentChapter.details.history) {
+        leftColumn.innerHTML += `<div class="modal-section"><h2>Our History</h2><p>${currentChapter.details.history}</p></div>`;
     }
 
-    if (chapter.details.gallery && chapter.details.gallery.length > 0) {
-      const galleryHtml = chapter.details.gallery.map(img => {
-          const captionData = img.caption ? `data-caption="${img.caption}"` : '';
-          return `<img src="${img.src}" alt="Chapter event photo" ${captionData}>`;
+    if (currentChapter.details.gallery && currentChapter.details.gallery.length > 0) {
+      const galleryHtml = currentChapter.details.gallery.map((item, index) => {
+          if (item.type === 'video') {
+              return `
+                <div class="gallery-item-wrapper" data-index="${index}">
+                  <div class="gallery-video-thumb">
+                    <img src="${item.thumbnail}" alt="${item.caption || 'Video thumbnail'}">
+                    <div class="play-button-overlay"></div>
+                  </div>
+                </div>
+              `;
+          } else { // It's an image
+              const captionData = item.caption ? `data-caption="${item.caption}"` : '';
+              return `
+                <div class="gallery-item-wrapper" data-index="${index}">
+                  <img src="${item.src}" alt="Chapter event photo" ${captionData} class="gallery-image">
+                </div>
+              `;
+          }
       }).join('');
       rightColumn.innerHTML += `<div class="modal-section"><h2>Gallery</h2><div class="modal-gallery">${galleryHtml}</div></div>`;
     }
-    const chapterLeaders = presidents.filter(p => p.chapter === chapter.name);
+    const chapterLeaders = presidents.filter(p => p.chapter === currentChapter.name);
     if (chapterLeaders.length > 0) {
       const leadersHtml = chapterLeaders.map(leader => {
         const phoneHtml = leader.phone ? `<a href="tel:${leader.phone}" class="contact-link">${leader.phone}</a>` : '';
@@ -148,6 +165,7 @@ function setupModal() {
       const onTransitionEnd = () => {
           document.body.classList.remove('modal-open');
           activeModalElement = null;
+          currentChapter = null;
           modalContainer.querySelector('.modal-title').style.opacity = '';
           modalContainer.querySelector('.modal-body').style.opacity = '';
           modalContent.removeEventListener('transitionend', onTransitionEnd);
@@ -155,17 +173,25 @@ function setupModal() {
       modalContent.addEventListener('transitionend', onTransitionEnd, { once: true });
   }
 
-  function openLightbox(src, caption) {
-      lightboxImg.src = src;
-      if (caption) {
-          lightboxCaption.textContent = caption;
+  function openLightbox(item) {
+      lightboxImageEl.classList.add('hidden');
+      lightboxVideoContainer.classList.add('hidden');
+      lightboxVideoContainer.innerHTML = '';
+
+      if (item.type === 'video') {
+          lightboxVideoContainer.innerHTML = `<iframe src="${item.src}?autoplay=1&modestbranding=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+          lightboxVideoContainer.classList.remove('hidden');
       } else {
-          lightboxCaption.textContent = '';
+          lightboxImageEl.src = item.src;
+          lightboxImageEl.classList.remove('hidden');
       }
+      
+      lightboxCaption.textContent = item.caption || '';
       lightbox.classList.remove('hidden');
   }
   function closeLightbox() {
       lightbox.classList.add('hidden');
+      lightboxVideoContainer.innerHTML = ''; // Stop video playback
   }
 
   document.addEventListener('click', (e) => {
@@ -174,11 +200,13 @@ function setupModal() {
       openModal(triggerElement.dataset.chapterId, triggerElement);
     }
     
-    const clickedImg = e.target.closest('.modal-gallery img');
-    if (modalContainer.classList.contains('is-open') && clickedImg) {
-        const src = clickedImg.src;
-        const caption = clickedImg.dataset.caption;
-        openLightbox(src, caption);
+    const clickedItemWrapper = e.target.closest('.modal-gallery .gallery-item-wrapper');
+    if (modalContainer.classList.contains('is-open') && clickedItemWrapper) {
+        const itemIndex = parseInt(clickedItemWrapper.dataset.index, 10);
+        if (currentChapter && currentChapter.details.gallery[itemIndex]) {
+            const galleryItem = currentChapter.details.gallery[itemIndex];
+            openLightbox(galleryItem);
+        }
     }
   });
 
