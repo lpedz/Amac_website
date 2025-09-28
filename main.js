@@ -58,7 +58,7 @@ async function renderAnnouncements() {
     }
 }
 
-// --- SEAMLESS MODAL & LIGHTBOX LOGIC ---
+// --- MODAL & LIGHTBOX LOGIC ---
 let currentChapter = null;
 
 function setupModal() {
@@ -74,8 +74,6 @@ function setupModal() {
   const lightboxBackBtn = document.getElementById('lightbox-back-btn');
 
   function openModal(chapterId) {
-    if (modalContainer.classList.contains('is-open')) return;
-
     currentChapter = chapters.find(c => c.id === chapterId);
     if (!currentChapter || !currentChapter.details) return;
     
