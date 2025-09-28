@@ -59,12 +59,10 @@ async function renderAnnouncements() {
 }
 
 // --- SEAMLESS MODAL & LIGHTBOX LOGIC ---
-let activeModalElement = null;
 let currentChapter = null;
 
 function setupModal() {
   const modalContainer = document.getElementById('leadership-modal');
-  const modalContent = modalContainer.querySelector('.modal-content');
   const modalCloseBtn = document.getElementById('modal-close-btn');
   const modalTitle = document.getElementById('modal-title');
   const modalBody = document.getElementById('modal-body');
@@ -75,9 +73,8 @@ function setupModal() {
   const lightboxCaption = document.getElementById('lightbox-caption');
   const lightboxBackBtn = document.getElementById('lightbox-back-btn');
 
-  function openModal(chapterId, clickedElement) {
+  function openModal(chapterId) {
     if (modalContainer.classList.contains('is-open')) return;
-    activeModalElement = clickedElement;
 
     currentChapter = chapters.find(c => c.id === chapterId);
     if (!currentChapter || !currentChapter.details) return;
@@ -103,11 +100,10 @@ function setupModal() {
                   </div>
                 </div>
               `;
-          } else { // It's an image
-              const captionData = item.caption ? `data-caption="${item.caption}"` : '';
+          } else {
               return `
                 <div class="gallery-item-wrapper" data-index="${index}">
-                  <img src="${item.src}" alt="Chapter event photo" ${captionData} class="gallery-image">
+                  <img src="${item.src}" alt="Chapter event photo" class="gallery-image">
                 </div>
               `;
           }
@@ -128,49 +124,13 @@ function setupModal() {
     modalBody.appendChild(leftColumn);
     modalBody.appendChild(rightColumn);
     
-    const rect = activeModalElement.getBoundingClientRect();
-    
-    modalContent.style.top = `${rect.top}px`;
-    modalContent.style.left = `${rect.left}px`;
-    modalContent.style.width = `${rect.width}px`;
-    modalContent.style.height = `${rect.height}px`;
-    modalContent.style.borderRadius = '0.75rem';
-    
     document.body.classList.add('modal-open');
     modalContainer.classList.add('is-open');
-    
-    requestAnimationFrame(() => {
-        modalContent.style.top = '5vh';
-        modalContent.style.left = '5vw';
-        modalContent.style.width = '90vw';
-        modalContent.style.height = '90vh';
-    });
   }
 
   function closeModal() {
-      if (!activeModalElement) return;
-      
-      const rect = activeModalElement.getBoundingClientRect();
-      
-      modalContainer.querySelector('.modal-title').style.opacity = '0';
-      modalContainer.querySelector('.modal-body').style.opacity = '0';
-      
-      modalContent.style.top = `${rect.top}px`;
-      modalContent.style.left = `${rect.left}px`;
-      modalContent.style.width = `${rect.width}px`;
-      modalContent.style.height = `${rect.height}px`;
-      
+      document.body.classList.remove('modal-open');
       modalContainer.classList.remove('is-open');
-      
-      const onTransitionEnd = () => {
-          document.body.classList.remove('modal-open');
-          activeModalElement = null;
-          currentChapter = null;
-          modalContainer.querySelector('.modal-title').style.opacity = '';
-          modalContainer.querySelector('.modal-body').style.opacity = '';
-          modalContent.removeEventListener('transitionend', onTransitionEnd);
-      };
-      modalContent.addEventListener('transitionend', onTransitionEnd, { once: true });
   }
 
   function openLightbox(item) {
@@ -191,13 +151,13 @@ function setupModal() {
   }
   function closeLightbox() {
       lightbox.classList.add('hidden');
-      lightboxVideoContainer.innerHTML = ''; // Stop video playback
+      lightboxVideoContainer.innerHTML = '';
   }
 
   document.addEventListener('click', (e) => {
     const triggerElement = e.target.closest('.card[data-chapter-id]');
     if (triggerElement) {
-      openModal(triggerElement.dataset.chapterId, triggerElement);
+      openModal(triggerElement.dataset.chapterId);
     }
     
     const clickedItemWrapper = e.target.closest('.modal-gallery .gallery-item-wrapper');
@@ -211,6 +171,7 @@ function setupModal() {
   });
 
   modalCloseBtn.addEventListener('click', closeModal);
+  modalContainer.querySelector('.modal-backdrop').addEventListener('click', closeModal);
   lightboxBackBtn.addEventListener('click', closeLightbox);
   lightbox.querySelector('.lightbox-backdrop').addEventListener('click', closeLightbox);
   
