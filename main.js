@@ -62,143 +62,209 @@ async function renderAnnouncements() {
 let currentChapter = null;
 
 function setupModal() {
-  const modalContainer = document.getElementById('leadership-modal');
-  const modalCloseBtn = document.getElementById('modal-close-btn');
-  const modalTitle = document.getElementById('modal-title');
-  const modalBody = document.getElementById('modal-body');
-  
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImageEl = document.getElementById('lightbox-image');
-  const lightboxVideoContainer = document.getElementById('lightbox-video-container');
-  const lightboxCaption = document.getElementById('lightbox-caption');
-  const lightboxBackBtn = document.getElementById('lightbox-back-btn');
-
-  function openModal(chapterId) {
-    currentChapter = chapters.find(c => c.id === chapterId);
-    if (!currentChapter || !currentChapter.details) return;
+    const modalContainer = document.getElementById('leadership-modal');
+    const modalContent = modalContainer.querySelector('.modal-content');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+    const modalTitle = document.getElementById('modal-title');
+    const modalBody = document.getElementById('modal-body');
+    const chapterCards = document.querySelectorAll('.card[data-chapter-id]');
     
-    modalTitle.textContent = currentChapter.name;
-    modalBody.innerHTML = '';
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImageEl = document.getElementById('lightbox-image');
+    const lightboxVideoContainer = document.getElementById('lightbox-video-container');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxBackBtn = document.getElementById('lightbox-back-btn');
     
-    const leftColumn = document.createElement('div');
-    const rightColumn = document.createElement('div');
+    let lastClickedCard = null;
 
-    if (currentChapter.details.history) {
-        leftColumn.innerHTML += `<div class="modal-section"><h2>Our History</h2><p>${currentChapter.details.history}</p></div>`;
-    }
+    function openModal(card) {
+        lastClickedCard = card;
+        const cardRect = card.getBoundingClientRect();
+        const chapterId = card.dataset.chapterId;
+        currentChapter = chapters.find(c => c.id === chapterId);
+        if (!currentChapter || !currentChapter.details) return;
 
-    if (currentChapter.details.gallery && currentChapter.details.gallery.length > 0) {
-      const galleryHtml = currentChapter.details.gallery.map((item, index) => {
-          if (item.type === 'video') {
-              return `
-                <div class="gallery-item-wrapper" data-index="${index}">
-                  <div class="gallery-video-thumb">
-                    <img src="${item.thumbnail}" alt="${item.caption || 'Video thumbnail'}">
-                    <div class="play-button-overlay"></div>
-                  </div>
-                </div>
-              `;
-          } else {
-              return `
-                <div class="gallery-item-wrapper" data-index="${index}">
-                  <img src="${item.src}" alt="Chapter event photo" class="gallery-image">
-                </div>
-              `;
-          }
-      }).join('');
-      rightColumn.innerHTML += `<div class="modal-section"><h2>Gallery</h2><div class="modal-gallery">${galleryHtml}</div></div>`;
-    }
-    const chapterLeaders = presidents.filter(p => p.chapter === currentChapter.name);
-    if (chapterLeaders.length > 0) {
-      const leadersHtml = chapterLeaders.map(leader => {
-        const phoneHtml = leader.phone ? `<a href="tel:${leader.phone}" class="contact-link">${leader.phone}</a>` : '';
-        return `<div class="modal-leader-card"><img src="${leader.imageUrl}" alt="Profile of ${leader.name}"><div class="modal-leader-info"><p class="name">${leader.name}</p><p class="position">${leader.position}</p><div class="contact"><a href="mailto:${leader.contact}" class="contact-link">${leader.contact}</a>${phoneHtml}</div></div></div>`;
-      }).join('');
-      rightColumn.innerHTML += `<div class="modal-section"><h2>Leadership</h2><div class="modal-leadership-grid">${leadersHtml}</div></div>`;
-    } else {
-        rightColumn.innerHTML += `<div class="modal-section"><h2>Leadership</h2><p class="text-gray-500">No leadership details available for this chapter.</p></div>`;
-    }
-
-    modalBody.appendChild(leftColumn);
-    modalBody.appendChild(rightColumn);
-    
-    document.body.classList.add('modal-open');
-    modalContainer.classList.add('is-open');
-  }
-
-  function closeModal() {
-      document.body.classList.remove('modal-open');
-      modalContainer.classList.remove('is-open');
-  }
-
-  function openLightbox(item) {
-      lightboxImageEl.classList.add('hidden');
-      lightboxVideoContainer.classList.add('hidden');
-      lightboxVideoContainer.innerHTML = '';
-
-      if (item.type === 'video') {
-          lightboxVideoContainer.innerHTML = `<iframe src="${item.src}?autoplay=1&modestbranding=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-          lightboxVideoContainer.classList.remove('hidden');
-      } else {
-          lightboxImageEl.src = item.src;
-          lightboxImageEl.classList.remove('hidden');
-      }
-      
-      lightboxCaption.textContent = item.caption || '';
-      lightbox.classList.remove('hidden');
-  }
-  function closeLightbox() {
-      lightbox.classList.add('hidden');
-      lightboxVideoContainer.innerHTML = '';
-  }
-
-  document.addEventListener('click', (e) => {
-    const triggerElement = e.target.closest('.card[data-chapter-id]');
-    if (triggerElement) {
-      openModal(triggerElement.dataset.chapterId);
-    }
-    
-    const clickedItemWrapper = e.target.closest('.modal-gallery .gallery-item-wrapper');
-    if (modalContainer.classList.contains('is-open') && clickedItemWrapper) {
-        const itemIndex = parseInt(clickedItemWrapper.dataset.index, 10);
-        if (currentChapter && currentChapter.details.gallery[itemIndex]) {
-            const galleryItem = currentChapter.details.gallery[itemIndex];
-            openLightbox(galleryItem);
+        // 1. Populate content
+        modalTitle.textContent = currentChapter.name;
+        modalBody.innerHTML = '';
+        
+        const leftColumn = document.createElement('div');
+        const rightColumn = document.createElement('div');
+        if (currentChapter.details.history) {
+            leftColumn.innerHTML += `<div class="modal-section"><h2>Our History</h2><p>${currentChapter.details.history}</p></div>`;
         }
-    }
-  });
+        if (currentChapter.details.gallery && currentChapter.details.gallery.length > 0) {
+            const galleryHtml = currentChapter.details.gallery.map((item, index) => `<div class="gallery-item-wrapper"><img class="gallery-image" src="${item.src}" alt="${item.caption || 'Gallery image'}" data-index="${index}"></div>`).join('');
+            rightColumn.innerHTML += `<div class="modal-section"><h2>Gallery</h2><div class="modal-gallery">${galleryHtml}</div></div>`;
+        }
+        const chapterLeaders = presidents.filter(p => p.chapter === currentChapter.name);
+        if (chapterLeaders.length > 0) {
+            const leadersHtml = chapterLeaders.map(leader => `<div class="modal-leader-card"><img src="${leader.imageUrl}" alt="${leader.name}"><div class="modal-leader-info"><p class="name">${leader.name}</p><p class="position">${leader.position}</p><div class="contact"><a href="mailto:${leader.contact}" class="contact-link">${leader.contact}</a>${leader.phone ? `<a href="tel:${leader.phone}" class="contact-link">${leader.phone}</a>` : ''}</div></div></div>`).join('');
+            rightColumn.innerHTML += `<div class="modal-section"><h2>Leadership</h2><div class="modal-leadership-grid">${leadersHtml}</div></div>`;
+        }
+        modalBody.appendChild(leftColumn);
+        modalBody.appendChild(rightColumn);
 
-  modalCloseBtn.addEventListener('click', closeModal);
-  modalContainer.querySelector('.modal-backdrop').addEventListener('click', closeModal);
-  lightboxBackBtn.addEventListener('click', closeLightbox);
-  lightbox.querySelector('.lightbox-backdrop').addEventListener('click', closeLightbox);
-  
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      if (!lightbox.classList.contains('hidden')) closeLightbox();
-      else if (modalContainer.classList.contains('is-open')) closeModal();
+        // 2. Set initial position
+        modalContent.style.top = `${cardRect.top}px`;
+        modalContent.style.left = `${cardRect.left}px`;
+        modalContent.style.width = `${cardRect.width}px`;
+        modalContent.style.height = `${cardRect.height}px`;
+
+        // 3. Open modal and transition to final position
+        document.body.classList.add('modal-open');
+        modalContainer.classList.add('is-open');
+        
+        requestAnimationFrame(() => {
+            modalContent.style.top = '5vh';
+            modalContent.style.left = '50%';
+            modalContent.style.width = 'min(90vw, 64rem)';
+            modalContent.style.height = '90vh';
+            modalContent.style.transform = 'translateX(-50%)';
+        });
     }
-  });
+
+    function closeModal() {
+        if (!lastClickedCard) return;
+        const cardRect = lastClickedCard.getBoundingClientRect();
+
+        modalContent.style.top = `${cardRect.top}px`;
+        modalContent.style.left = `${cardRect.left}px`;
+        modalContent.style.width = `${cardRect.width}px`;
+        modalContent.style.height = `${cardRect.height}px`;
+        modalContent.style.transform = 'translateX(0)';
+        
+        modalContainer.classList.remove('is-open');
+        document.body.classList.remove('modal-open');
+    }
+    
+    function openLightbox(item) {
+        lightboxImageEl.classList.add('hidden');
+        lightboxVideoContainer.classList.add('hidden');
+        lightboxVideoContainer.innerHTML = '';
+        if (item.type === 'video') {
+            lightboxVideoContainer.innerHTML = `<div class="video-embed-wrapper"><iframe src="${item.src}?autoplay=1&modestbranding=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+            lightboxVideoContainer.classList.remove('hidden');
+        } else {
+            lightboxImageEl.src = item.src;
+            lightboxImageEl.classList.remove('hidden');
+        }
+        lightboxCaption.textContent = item.caption || '';
+        lightbox.classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+        lightbox.classList.add('hidden');
+        lightboxVideoContainer.innerHTML = '';
+    }
+
+    chapterCards.forEach(card => card.addEventListener('click', () => openModal(card)));
+    modalCloseBtn.addEventListener('click', closeModal);
+    modalContainer.querySelector('.modal-backdrop').addEventListener('click', closeModal);
+    modalBody.addEventListener('click', (e) => {
+        const galleryImg = e.target.closest('.modal-gallery img');
+        if (galleryImg) {
+            const itemIndex = parseInt(galleryImg.dataset.index, 10);
+            const galleryItem = currentChapter.details.gallery[itemIndex];
+            if (galleryItem) openLightbox(galleryItem);
+        }
+    });
+    lightboxBackBtn.addEventListener('click', closeLightbox);
+    lightbox.querySelector('.lightbox-backdrop').addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            if (!lightbox.classList.contains('hidden')) closeLightbox();
+            else if (modalContainer.classList.contains('is-open')) closeModal();
+        }
+    });
 }
 
 
 // --- UTILITY & SETUP FUNCTIONS ---
-
-let currentSlide = 0;
-const slides = ['slide1', 'slide2', 'slide3'];
+let currentHeroSlide = 0;
+const heroSlides = ['slide1', 'slide2', 'slide3'];
 const slideInterval = 4000;
 
 function initSlideshow() {
-  const slideElements = slides.map(id => document.getElementById(id));
+  const slideElements = heroSlides.map(id => document.getElementById(id));
   if (slideElements.some(el => !el)) return;
   
   setInterval(() => {
-    slideElements[currentSlide].style.opacity = '0';
-    currentSlide = (currentSlide + 1) % slides.length;
-    slideElements[currentSlide].style.opacity = '1';
+    slideElements[currentHeroSlide].style.opacity = '0';
+    currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
+    slideElements[currentHeroSlide].style.opacity = '1';
   }, slideInterval);
 }
 
+const polaroidSlidesData = [
+    { type: 'video', caption: 'AMAC: A Global Network, United (Documentary)' },
+    { type: 'image', src: 'images/Chapters%20images/uae22%20(1).webp', caption: 'Faculty with former principals at the AMAC launch.' },
+    { type: 'image', src: 'images/Chapters%20images/uae22%20(2).webp', caption: 'The official launching of AMAC in Dubai, 2012.' }
+];
+
+function initAboutSlideshow() {
+    const slideshowContainer = document.getElementById('about-slideshow');
+    const indicatorsContainer = document.getElementById('about-indicators');
+    const captionEl = document.getElementById('polaroid-caption');
+    if (!slideshowContainer || !indicatorsContainer || !captionEl) return;
+
+    slideshowContainer.innerHTML = polaroidSlidesData.map((slide) => {
+        if (slide.type === 'video') {
+            return `<div class="about-slide"><iframe id="youtube-player" style="width: 100%; height: 100%; border: 0;" src="https://www.youtube.com/embed/E2dU3jCuZak?enablejsapi=1" title="AMAC Documentary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+        }
+        return `<div class="about-slide"><img src="${slide.src}" alt="${slide.caption}" class="w-full h-full object-cover"></div>`;
+    }).join('');
+    
+    indicatorsContainer.innerHTML = polaroidSlidesData.map(() => `<div class="indicator-dot"></div>`).join('');
+
+    const slides = slideshowContainer.querySelectorAll('.about-slide');
+    const indicatorDots = indicatorsContainer.querySelectorAll('.indicator-dot');
+    let currentAboutSlide = 0;
+    const aboutInterval = slideInterval + 1000;
+    let intervalId = null;
+
+    function updateSlide(slideIndex) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[slideIndex].classList.add('active');
+        indicatorDots.forEach(dot => dot.classList.remove('active'));
+        indicatorDots[slideIndex].classList.add('active');
+        captionEl.textContent = polaroidSlidesData[slideIndex].caption;
+    }
+
+    function start() {
+        if (intervalId) clearInterval(intervalId);
+        intervalId = setInterval(() => {
+            currentAboutSlide = (currentAboutSlide + 1) % slides.length;
+            updateSlide(currentAboutSlide);
+        }, aboutInterval);
+    }
+
+    function stop() {
+        clearInterval(intervalId);
+    }
+    
+    window.slideshowController = { start, stop };
+    updateSlide(currentAboutSlide);
+    start();
+}
+
+// --- YouTube Player API Functions ---
+let player;
+function onYouTubeIframeAPIReady() {
+  if (document.getElementById('youtube-player')) {
+    player = new YT.Player('youtube-player', { events: { 'onStateChange': onPlayerStateChange } });
+  }
+}
+
+function onPlayerStateChange(event) {
+  if (event.data == YT.PlayerState.PLAYING) {
+    if (window.slideshowController) window.slideshowController.stop();
+  } else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
+    if (window.slideshowController) window.slideshowController.start();
+  }
+}
+
+// --- Other Setup Functions ---
 let revealObserver;
 function initReveal() {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -220,6 +286,7 @@ function initReveal() {
     }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
     elements.forEach(el => revealObserver.observe(el));
 }
+
 function triggerReveal() {
     if (!revealObserver) return;
     const elements = document.querySelectorAll('.reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-zoom:not(.visible)');
@@ -229,10 +296,8 @@ function triggerReveal() {
 function setupNavbarScroll() {
     const navbar = document.getElementById('navbar');
     if (!navbar) return;
-    const heroSection = document.getElementById('home');
-    const heroHeight = heroSection ? heroSection.offsetHeight : 50;
     window.addEventListener('scroll', () => {
-      if (window.scrollY > heroHeight - 50) {
+      if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
@@ -252,6 +317,7 @@ function setupMobileMenu() {
   
 window.addEventListener("DOMContentLoaded", () => {
   initSlideshow();
+  initAboutSlideshow();
   renderChapters();
   renderAnnouncements();
   initReveal();

@@ -1,27 +1,19 @@
 const chapters = [
-    { 
-        id: 'uae', name: "UAE Chapter", location: "UAE", region: "MEU", imageUrl: "images/uae.webp",
-        details: {
-            history: "Founded in 1994 June 18 by a group of pioneering MACE alumni, our chapter has expanded from 50 members to over 700, becoming one of the most active networks worldwide that fosters both professional and personal connections. AMAC was later constituted on April 13, 2012, in Dubai through the initiative of the UAE & Kuwait chapters.",
-            gallery: [
-                { src: "images/Chapters%20images/uae%20(1).webp", caption: "MACE Alumni UAE winning the KERA Cricket Tournament in 2006 and the team celebrating in Cyprus." },
-                { src: "images/Chapters%20images/uae%20(4).webp", caption: "Lighting the ceremonial lamp at the 25th Anniversary (Silver Jubilee) celebration by Biji Thoms and John Emmanuel." },
-                { src: "images/Chapters%20images/uae%20(8).webp", caption: "Electrical engineers at the Silver Jubilee with Dr. Bose Mathew." },
-                { src: "images/Chapters%20images/uae.webp", caption: "Founder President Engr. Hussain P. (Late) and Founder General Secretary Mohan Joseph Cheeran, who was selected as the 3rd President of KERA in the UAE, share a lighter moment in 2006." },
-                { src: "images/Chapters%20images/uae%20(3).webp", caption: "A committee meeting during the 10th (Decennial) Anniversary celebrations." },
-                { src: "images/Chapters%20images/uae11.webp", caption: "Founding members during the Silver Jubilee, along with Dr. Lazar John and Dr. Solly George (Princy)." },
-                { src: "images/Chapters%20images/uae12.webp", caption: "The AMAC Chairman addressing founding members of the MACE Alumni UAE chapter." },
-                { src: "images/Chapters%20images/uae22%20(1).webp", caption: "Faculty members along with former principals Prof. Kurian Mathew, Dr. George Issac, and Dr. J Issac." },
-                { src: "images/Chapters%20images/uae22%20(2).webp", caption: "The launching of AMAC in 2012. Pictured: PCI Dr. George Issac, MACEAA President; Chief Guest Mr. TK Balakrishnan IAS; Jiss Paul, MACEAA Gen Sec; Mathew Kavalam; Jayakrishnan; and Hussain P., Founder President." },
-                { 
-                    type: "video", 
-                    src: "https://www.youtube.com/embed/s6hgJoXilgA", 
-                    thumbnail: "https://img.youtube.com/vi/s6hgJoXilgA/0.jpg", 
-                },
-            
-            ],
-        }
-    },
+   { 
+    id: 'uae', name: "UAE Chapter", location: "UAE", region: "MEU", imageUrl: "images/uae.webp",
+    details: {
+        history: "Founded in 1994 June 18 by a group of pioneering MACE alumni, our chapter has expanded from 50 members to over 700, becoming one of the most active networks worldwide that fosters both professional and personal connections. AMAC was later constituted on April 13, 2012, in Dubai through the initiative of the UAE & Kuwait chapters.",
+        gallery: [
+            { src: "images/Chapters%20images/uae%20(1).webp", caption: "MACE Alumni UAE winning the KERA Cricket Tournament in 2006 and the team celebrating in Cyprus." },
+            { src: "images/Chapters%20images/uae%20(4).webp", caption: "Lighting the ceremonial lamp at the 25th Anniversary (Silver Jubilee) celebration by Biji Thoms and John Emmanuel." },
+            { src: "images/Chapters%20images/uae%20(8).webp", caption: "Electrical engineers at the Silver Jubilee with Dr. Bose Mathew." },
+            { src: "images/Chapters%20images/uae.webp", caption: "Founder President Engr. Hussain P. (Late) and Founder General Secretary Mohan Joseph Cheeran, who was selected as the 3rd President of KERA in the UAE, share a lighter moment in 2006." },
+            { src: "images/Chapters%20images/uae%20(3).webp", caption: "A committee meeting during the 10th (Decennial) Anniversary celebrations." },
+            { src: "images/Chapters%20images/uae11.webp", caption: "Founding members during the Silver Jubilee, along with Dr. Lazar John and Dr. Solly George (Princy)." },
+            { src: "images/Chapters%20images/uae12.webp", caption: "The AMAC Chairman addressing founding members of the MACE Alumni UAE chapter." }
+        ],
+    }
+},
     { 
         id: 'saudi', name: "Saudi Arabia Chapter", location: "Saudi Arabia", region: "MEU", imageUrl: "images/saudi.webp",
         details: {
@@ -81,9 +73,10 @@ const chapters = [
         details: {
             history: "Launched in July 2019, our Seattle chapter brings together alumni in the Pacific Northwest's thriving tech and aerospace industries. We foster a community of innovation and collaboration.",
             gallery: [
-                { src: "images/Chapters%20images/Seattle%20(4).webp" },
-                { src: "images/Chapters%20images/Seattle%20(6).webp" },
-                { src: "images/Chapters%20images/Seattle%20(7).webp" }
+                { src: "images/Chapters%20images/Seattle%20(2).webp" },
+                { src: "images/Chapters%20images/Seattle%20(5).webp" },
+                { src: "images/Chapters%20images/Seattle%20(1)_1.webp" },
+                { src: "images/Chapters%20images/Seattle%20(1).webp" }
             ],
         }
     },
@@ -219,8 +212,11 @@ const presidents = [
     { chapter: "OZ MACE Melbourne", name: "Subeen Mathew", contact: "melbourne-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/SubeenMathew.webp" },
     { chapter: "OZ MACE Melbourne", name: "AK THOMAS", contact: "melbourne@amac.org", position: "Current President", phone: null, imageUrl: "images/People/AK THOMAS.webp" },
 
+
     // Singapore
+    { chapter: "Singapore Chapter", name: "Shaja Mathews", contact: "singapore@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/ShajahMathew.webp" },
     { chapter: "Singapore Chapter", name: "Shaja Mathews", contact: "singapore@amac.org", position: "Current President", phone: null, imageUrl: "images/People/ShajahMathew.webp" },
+
 
     // Chennai
     { chapter: "Chennai Chapter", name: "David Rajan", contact: "chennai-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Rajan David.webp" },
