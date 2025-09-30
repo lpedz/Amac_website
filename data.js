@@ -64,22 +64,24 @@ const chapters = [
             gallery: [
                 { src: "images/Chapters%20images/DC%20(1).webp" }, 
                 { src: "images/Chapters%20images/DC%20(2).webp" },
-                { src: "images/Chapters%20images/DC%20(3).webp" }
+                { src: "images/Chapters%20images/DC%20(3).webp" },
+                { src: "images/Chapters%20images/dc4.jpeg",caption:"Dr Bos Mathew Jose in Washington DC Chapter.29th September 2025" },
+
             ],
         }
     },
-    { 
-        id: 'seattle', name: "Seattle Chapter", location: "USA", region: "NA", imageUrl: "images/seattle.webp",
-        details: {
-            history: "Launched in July 2019, our Seattle chapter brings together alumni in the Pacific Northwest's thriving tech and aerospace industries. We foster a community of innovation and collaboration.",
-            gallery: [
-                { src: "images/Chapters%20images/Seattle%20(2).webp" },
-                { src: "images/Chapters%20images/Seattle%20(5).webp" },
-                { src: "images/Chapters%20images/Seattle%20(1)_1.webp" },
-                { src: "images/Chapters%20images/Seattle%20(1).webp" }
-            ],
-        }
-    },
+    {
+    id: 'seattle', name: "Seattle Chapter", location: "USA", region: "NA", imageUrl: "images/seattle.webp",
+    details: {
+        history: "Launched in July 2019, our Seattle chapter brings together alumni in the Pacific Northwest's thriving tech and aerospace industries. We foster a community of innovation and collaboration.",
+        gallery: [
+            { src: "images/Chapters%20images/Seattle%20(2).webp" },
+            { src: "images/Chapters%20images/Seattle%20(5).webp" },
+            { src: "images/Chapters%20images/Seattle%20(1)_1.webp" },
+            { src: "images/Chapters%20images/Seattle%20(1).webp" },
+        ],
+    }
+},
     { 
         id: 'siliconvalley', name: "Silicon Valley Chapter", location: "San Francisco, USA", region: "NA", imageUrl: "images/silliconvalley.webp",
         details: {
