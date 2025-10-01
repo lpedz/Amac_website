@@ -79,6 +79,7 @@ const chapters = [
             { src: "images/Chapters%20images/Seattle%20(5).webp" },
             { src: "images/Chapters%20images/Seattle%20(1)_1.webp" },
             { src: "images/Chapters%20images/Seattle%20(1).webp" },
+            { type: 'video', src: 'https://www.youtube.com/embed/c3RQT-3M76U', caption: 'Seattle Chapter Event Highlights' }
         ],
     }
 },
@@ -191,92 +192,81 @@ const chapters = [
 ];
 
 const presidents = [
-    // Global
     { chapter: "AMAC", name: "Mohan Joseph Cheeran", contact: "chairman@amac.org", position: "Chairman", phone: "+91-9876543210", imageUrl: "images/People/MohanJoseph.webp" },
-    
-    // UAE
     { chapter: "UAE Chapter", name: "Hussain P", contact: "uae-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/hussain.webp" },
     { chapter: "UAE Chapter", name: "Mohan Joseph Cheeran", contact: "uae-fgs@amac.org", position: "Founder Gen. Secretary", phone: null, imageUrl: "images/People/MohanJoseph.webp" },
     { chapter: "UAE Chapter", name: "Krishna Kumar", contact: "uae@amac.org", position: "Current President", phone: null, imageUrl: "images/People/krishnakumar.webp" },
-    
-    // Kuwait
     { chapter: "Kuwait Chapter", name: "Muhhamadd Kutty", contact: "kuwait@amac.org", position: "Founder Chairman", phone: null, imageUrl: "images/People/pkmuahhamedkutty.webp" },
     { chapter: "Kuwait Chapter", name: "Giju George", contact: "kuwait-chairman@amac.org", position: "Current Chairman", phone: "+965-51234567", imageUrl: "images/People/GijuGeorge.webp" },
-
-    // Saudi Arabia
-    { chapter: "Saudi Arabia Chapter", name: "Johnson Samuel", contact: "saudi@amac.org", position: "President", phone: "+966-501234567", imageUrl: "images/People/Johnson Samuel .webp" },
-
-    // Sydney
+    { chapter: "Saudi Arabia Chapter", name: "Johnson Samuel", contact: "saudi@amac.org", position: "President", phone: "+966-501234567", imageUrl: "images/People/Johnson%20Samuel%20.webp" },
     { chapter: "OZ MACE Sydney", name: "Xavi Joseph", contact: "sydney-fp@amac.org", position: "Founder President", phone: "+61-401234567", imageUrl: "images/People/xavi.webp" },
     { chapter: "OZ MACE Sydney", name: "Basil Mathew", contact: "sydney@amac.org", position: "Current President", phone: null, imageUrl: "images/People/basil.webp" },
-
-    // Melbourne
     { chapter: "OZ MACE Melbourne", name: "Subeen Mathew", contact: "melbourne-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/SubeenMathew.webp" },
-    { chapter: "OZ MACE Melbourne", name: "AK THOMAS", contact: "melbourne@amac.org", position: "Current President", phone: null, imageUrl: "images/People/AK THOMAS.webp" },
-
-
-    // Singapore
+    { chapter: "OZ MACE Melbourne", name: "AK THOMAS", contact: "melbourne@amac.org", position: "Current President", phone: null, imageUrl: "images/People/AK%20THOMAS.webp" },
     { chapter: "Singapore Chapter", name: "Shaja Mathews", contact: "singapore@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/ShajahMathew.webp" },
     { chapter: "Singapore Chapter", name: "Shaja Mathews", contact: "singapore@amac.org", position: "Current President", phone: null, imageUrl: "images/People/ShajahMathew.webp" },
-
-
-    // Chennai
-    { chapter: "Chennai Chapter", name: "David Rajan", contact: "chennai-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Rajan David.webp" },
-    { chapter: "Chennai Chapter", name: "David Rajan", contact: "chennai@amac.org", position: "Current President", phone: null, imageUrl: "images/People/Rajan David.webp" },
-
-    // Trichur
+    { chapter: "Chennai Chapter", name: "David Rajan", contact: "chennai-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Rajan%20David.webp" },
+    { chapter: "Chennai Chapter", name: "David Rajan", contact: "chennai@amac.org", position: "Current President", phone: null, imageUrl: "images/People/Rajan%20David.webp" },
     { chapter: "Trichur (Seniors) Chapter", name: "Joseph Peter", contact: "trichur@amac.org", position: "Current President", phone: null, imageUrl: "images/People/josephpeter.webp" },
-    { chapter: "Trichur (Seniors) Chapter", name: "George Panikulam", contact: "trichur-vp@amac.org", position: "Vice President", phone: null, imageUrl: "images/People/George Issac (2).webp" },
-    
-    // Qatar
-    { chapter: "Qatar Chapter", name: "Joseph Joy", contact: "qatar-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Joseph Joy.webp" },
-    { chapter: "Qatar Chapter", name: "Sinesh", contact: "qatar@amac.org", position: "Current President", phone: null, imageUrl: "images/People/Psykhaesh .webp" },
-
-    // Washington DC
+    { chapter: "Trichur (Seniors) Chapter", name: "George Panikulam", contact: "trichur-vp@amac.org", position: "Vice President", phone: null, imageUrl: "images/People/George%20Issac%20(2).webp" },
+    { chapter: "Qatar Chapter", name: "Joseph Joy", contact: "qatar-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Joseph%20Joy.webp" },
+    { chapter: "Qatar Chapter", name: "Sinesh", contact: "qatar@amac.org", position: "Current President", phone: null, imageUrl: "images/People/Psykhaesh%20.webp" },
     { chapter: "Washington D.C. Chapter", name: "Rejive Joseph", contact: "dc-fp@amac.org", position: "Founder President", phone: "+1-202-555-0182", imageUrl: "images/People/RejiveJoseph.webp" },
-    { chapter: "Washington D.C. Chapter", name: "Psykhaesh", contact: "dc@amac.org", position: "Current President", phone: null, imageUrl: "images/People/Psykhaesh .webp" },
-
-    // Chicago
-    { chapter: "Chicago Chapter", name: "Subash George", contact: "chicago-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/SubashGeorge (2).webp" },
-    { chapter: "Chicago Chapter", name: "Subash George", contact: "chicago@amac.org", position: "Current President", phone: null, imageUrl: "images/People/SubashGeorge (2).webp" },
-
-    // Houston
+    { chapter: "Washington D.C. Chapter", name: "Psykhaesh", contact: "dc@amac.org", position: "Current President", phone: null, imageUrl: "images/People/Psykhaesh%20.webp" },
+    { chapter: "Chicago Chapter", name: "Subash George", contact: "chicago-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/SubashGeorge%20(2).webp" },
+    { chapter: "Chicago Chapter", name: "Subash George", contact: "chicago@amac.org", position: "Current President", phone: null, imageUrl: "images/People/SubashGeorge%20(2).webp" },
     { chapter: "Houston Chapter", name: "Basil Kuriakose", contact: "houston-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/basil.webp" },
     { chapter: "Houston Chapter", name: "Basil Kuriakose", contact: "houston@amac.org", position: "Current President", phone: null, imageUrl: "images/People/basil.webp" },
-
-    // Atlanta
-    { chapter: "Atlanta Chapter", name: "Manoj K Jose", contact: "atlanta-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Manoj K Jose.webp" },
-    { chapter: "Atlanta Chapter", name: "Manoj K Jose", contact: "atlanta@amac.org", position: "Current President", phone: null, imageUrl: "images/People/Manoj K Jose.webp" },
-
-    // Seattle
+    { chapter: "Atlanta Chapter", name: "Manoj K Jose", contact: "atlanta-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Manoj%20K%20Jose.webp" },
+    { chapter: "Atlanta Chapter", name: "Manoj K Jose", contact: "atlanta@amac.org", position: "Current President", phone: null, imageUrl: "images/People/Manoj%20K%20Jose.webp" },
     { chapter: "Seattle Chapter", name: "Thomas Stephen", contact: "seattle-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/ThomasStephan.webp" },
     { chapter: "Seattle Chapter", name: "Jyothish Nair", contact: "seattle@amac.org", position: "Current President", phone: null, imageUrl: "images/People/jyothishnair.webp" },
-    
-    // Silicon Valley
-    { chapter: "Silicon Valley Chapter", name: "John Chandy", contact: "siliconvalley-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/John Chandy.webp" },
-    { chapter: "Silicon Valley Chapter", name: "John Chandy", contact: "siliconvalley@amac.org", position: "Current President", phone: null, imageUrl: "images/People/John Chandy.webp" },
-
-    // Delaware Valley
-    { chapter: "Delaware Valley Chapter", name: "Saji Gopal", contact: "delaware-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/SajiGopal (2).webp" },
-    { chapter: "Delaware Valley Chapter", name: "Saji Gopal", contact: "delaware@amac.org", position: "Current President", phone: null, imageUrl: "images/People/SajiGopal (2).webp" },
-
-    // Brisbane
-    { chapter: "OZMACE Brisbane", name: "Jose Puthanani", contact: "brisbane-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Jose Puthanani.webp" },
-    { chapter: "OZMACE Brisbane", name: "Jose Puthanani", contact: "brisbane@amac.org", position: "Current President", phone: null, imageUrl: "images/People/Jose Puthanani.webp" },
-
-    // Canada
-    { chapter: "Canada Chapter", name: "Daniel Baby", contact: "canada-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Daniel Baby.webp" },
-    { chapter: "Canada Chapter", name: "Daniel Baby", contact: "canada@amac.org", position: "Current President", phone: null, imageUrl: "images/People/Daniel Baby.webp" },
-
-    // Oman
+    { chapter: "Silicon Valley Chapter", name: "John Chandy", contact: "siliconvalley-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/John%20Chandy.webp" },
+    { chapter: "Silicon Valley Chapter", name: "John Chandy", contact: "siliconvalley@amac.org", position: "Current President", phone: null, imageUrl: "images/People/John%20Chandy.webp" },
+    { chapter: "Delaware Valley Chapter", name: "Saji Gopal", contact: "delaware-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/SajiGopal%20(2).webp" },
+    { chapter: "Delaware Valley Chapter", name: "Saji Gopal", contact: "delaware@amac.org", position: "Current President", phone: null, imageUrl: "images/People/SajiGopal%20(2).webp" },
+    { chapter: "OZMACE Brisbane", name: "Jose Puthanani", contact: "brisbane-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Jose%20Puthanani.webp" },
+    { chapter: "OZMACE Brisbane", name: "Jose Puthanani", contact: "brisbane@amac.org", position: "Current President", phone: null, imageUrl: "images/People/Jose%20Puthanani.webp" },
+    { chapter: "Canada Chapter", name: "Daniel Baby", contact: "canada-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Daniel%20Baby.webp" },
+    { chapter: "Canada Chapter", name: "Daniel Baby", contact: "canada@amac.org", position: "Current President", phone: null, imageUrl: "images/People/Daniel%20Baby.webp" },
     { chapter: "Oman Chapter", name: "Mr.Murali", contact: "oman-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/murali.webp" },
     { chapter: "Oman Chapter", name: "Benny Joseph", contact: "oman@amac.org", position: "Current President", phone: null, imageUrl: "images/People/BennyJoseph.webp" },
-
-    // Bahrain
     { chapter: "Bahrain Chapter", name: "Dr VKM John", contact: "bahrain-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/VKMJohn.webp" },
     { chapter: "Bahrain Chapter", name: "Dr VKM John", contact: "bahrain@amac.org", position: "Current President", phone: null, imageUrl: "images/People/VKMJohn.webp" },
-
-    // UK
-    { chapter: "UK Chapter", name: "Jose Mathiaekal", contact: "uk-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Jose Matheickal .webp" },
+    { chapter: "UK Chapter", name: "Jose Mathiaekal", contact: "uk-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Jose%20Matheickal%20.webp" },
     { chapter: "UK Chapter", name: "Sabu Kalathil", contact: "uk@amac.org", position: "Current President", phone: null, imageUrl: "images/People/SabuKalathil.webp" }
+];
+
+// UPDATED EXCOM DATA WITH REAL IMAGES
+const excomMembers = [
+    { name: "Mohan Joseph Cheeran", position: "Chairman AMAC", imageUrl: "images/People/MohanJoseph.webp" },
+    { name: "Xavi Joseph", position: "Vice Chairman AMAC (ASIA PACIFIC)", imageUrl: "images/People/xavi.webp" },
+    { name: "Thomas Stephen", position: "Vice Chairman AMAC (AMERICAS)", imageUrl: "images/People/ThomasStephan.webp" },
+    { name: "Mathew Kavalam", position: "Vice Chairman AMAC (ME & EUROPE) / Treasurer AMAC", imageUrl: "images/People/MathewKavalam.webp" },
+    { name: "Jacob Zachariah", position: "General Secretary AMAC", imageUrl: "images/People/jacobzacharia.png" },
+    { name: "John Emmanuel", position: "Special Nominee by UAE Chapter / BALI Convener", imageUrl: "images/People/john_emmanuel.webp" },
+    { name: "Krishna Kumar", position: "President - UAE Chapter", imageUrl: "images/People/krishnakumar.webp" },
+    { name: "Giju K George", position: "Chairman - Kuwait Chapter", imageUrl: "images/People/GijuGeorge.webp" },
+    { name: "Sinesh", position: "President - Qatar Chapter", imageUrl: "images/People/Psykhaesh%20.webp" },
+    { name: "Benny Joseph", position: "President - Oman Chapter", imageUrl: "https://i.pravatar.cc/150?u=BennyJoseph" },
+    { name: "Rajesh George", position: "President - Baharin Chapter", imageUrl: "https://i.pravatar.cc/150?u=RajeshGeorge" },
+    { name: "Johnson Samuel", position: "President - KSA Chapter", imageUrl: "images/People/Johnson%20Samuel%20.webp" },
+    { name: "Joseph Peter", position: "President - Trichur (Senior Chapter)", imageUrl: "images/People/josephpeter.webp" },
+    { name: "Sabu Kalathil", position: "President UK Chapter", imageUrl: "https://i.pravatar.cc/150?u=SabuKalathil" },
+    { name: "John Chandy", position: "President Silicon Valley Chapter", imageUrl: "images/People/John%20Chandy.webp" },
+    { name: "Jyotish Nair", position: "President Seattle Chapter", imageUrl: "images/People/jyothishnair.webp" },
+    { name: "Rejive Joseph", position: "President Washington DC Chapter", imageUrl: "images/People/RejiveJoseph.webp" },
+    { name: "Saji Gopal", position: "President Delaware Chapter", imageUrl: "images/People/SajiGopal%20(2).webp" },
+    { name: "Bazil Kuriakose", position: "President Houston Chapter", imageUrl: "images/People/basil.webp" },
+    { name: "Manoj K Jose", position: "President Atlanta Chapter", imageUrl: "images/People/Manoj%20K%20Jose.webp" },
+    { name: "Subash George", position: "President Chicago Chapter", imageUrl: "images/People/SubashGeorge%20(2).webp" },
+    { name: "Daniel Baby", position: "President CANADA Chapter (TORONTO)", imageUrl: "images/People/Daniel%20Baby.webp" },
+    { name: "Basil Mathew", position: "President OZMACE Sydney", imageUrl: "images/People/basil.webp" },
+    { name: "Subeen Mathew", position: "President OZMACE Melbourne", imageUrl: "images/People/SubeenMathew.webp" },
+    { name: "Jose Puthanani", position: "President OZMACE Brisbane", imageUrl: "images/People/Jose%20Puthanani.webp" },
+    { name: "Shaja Mathew", position: "President - Singapore Chapter", imageUrl: "images/People/ShajahMathew.webp" },
+    { name: "David Rajan", position: "President - Chennai", imageUrl: "images/People/Rajan%20David.webp" },
+    { name: "Dr. Bos Mathew Jos", position: "Principal MACE", imageUrl: "images/People/bosmathewjose.png" },
+    { name: "Dr. Jiss Paul", position: "General Secretary MACEAA", imageUrl: "https://i.pravatar.cc/150?u=DrJissPaul" },
+    { name: "Dr. George Issac", position: "Ex Principal - Founder AMAC Member", imageUrl: "images/People/George%20Issac%20(2).webp" }
 ];

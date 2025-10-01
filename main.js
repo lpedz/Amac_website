@@ -28,6 +28,67 @@ function renderChapters() {
   });
 }
 
+function renderExcom() {
+    const grid = document.getElementById("excom-grid");
+    if (!grid) return;
+
+    grid.innerHTML = excomMembers.map((member, idx) => `
+        <div class="glass-card reveal-up flex items-center p-4" data-reveal-delay="${idx * 50}">
+            <img class="h-16 w-16 rounded-full object-cover flex-shrink-0" src="${member.imageUrl}" alt="Photo of ${member.name}">
+            <div class="ml-4 text-left">
+                <h3 class="text-base font-semibold leading-tight text-white">${member.name}</h3>
+                <p class="text-sm text-blue-400">${member.position}</p>
+            </div>
+        </div>
+    `).join('');
+}
+
+// NEW SCROLL HIJACK LOGIC
+function setupScrollHijack() {
+    const section = document.getElementById('excom');
+    const scrollContainer = document.getElementById('excom-scroll-wrapper');
+    if (!section || !scrollContainer) return;
+
+    let isHijacked = false;
+
+    const handleWheel = (e) => {
+        if (!isHijacked) return;
+
+        const { scrollTop, scrollHeight, clientHeight } = scrollContainer;
+        const isAtTop = scrollTop === 0;
+        const isAtBottom = Math.ceil(scrollTop + clientHeight) >= scrollHeight;
+
+        // If scrolling up at the top OR scrolling down at the bottom, release the hijack
+        if ((e.deltaY < 0 && isAtTop) || (e.deltaY > 0 && isAtBottom)) {
+            isHijacked = false;
+            document.body.classList.remove('scroll-locked');
+            return;
+        }
+
+        // Otherwise, hijack the scroll
+        e.preventDefault();
+        scrollContainer.scrollTop += e.deltaY;
+    };
+
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting) {
+                // When section is in view, enable hijacking
+                isHijacked = true;
+                document.body.classList.add('scroll-locked');
+            } else {
+                // When section is out of view, disable hijacking and ensure normal scroll
+                isHijacked = false;
+                document.body.classList.remove('scroll-locked');
+            }
+        },
+        { threshold: 1.0 } // Trigger when the entire section is in view
+    );
+
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    observer.observe(section);
+}
+
 async function renderAnnouncements() {
     const list = document.getElementById("announcementsList");
     if (!list) return;
@@ -94,7 +155,27 @@ function setupModal() {
             leftColumn.innerHTML += `<div class="modal-section"><h2>Our History</h2><p>${currentChapter.details.history}</p></div>`;
         }
         if (currentChapter.details.gallery && currentChapter.details.gallery.length > 0) {
-            const galleryHtml = currentChapter.details.gallery.map((item, index) => `<div class="gallery-item-wrapper"><img class="gallery-image" src="${item.src}" alt="${item.caption || 'Gallery image'}" data-index="${index}"></div>`).join('');
+            const galleryHtml = currentChapter.details.gallery.map((item, index) => {
+                const isVideo = item.type === 'video';
+                let thumbnailUrl = item.src;
+                if (isVideo) {
+                     try {
+                        const videoId = new URL(item.src).pathname.split('/').pop();
+                        thumbnailUrl = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+                    } catch(e) { /* fallback to a default image if needed */ }
+                }
+                
+                return `
+                    <div class="gallery-item-wrapper" 
+                         data-index="${index}" 
+                         data-type="${item.type || 'image'}"
+                         data-src="${item.src}"
+                         data-caption="${item.caption || ''}">
+                        <img class="gallery-image" src="${thumbnailUrl}" alt="${item.caption || 'Gallery item'}">
+                        ${isVideo ? `<div class="video-play-icon"><svg style="width:3rem;height:3rem;color:rgba(255,255,255,0.8)" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg></div>` : ''}
+                    </div>
+                `;
+            }).join('');
             rightColumn.innerHTML += `<div class="modal-section"><h2>Gallery</h2><div class="modal-gallery">${galleryHtml}</div></div>`;
         }
         const chapterLeaders = presidents.filter(p => p.chapter === currentChapter.name);
@@ -105,51 +186,27 @@ function setupModal() {
         modalBody.appendChild(leftColumn);
         modalBody.appendChild(rightColumn);
 
-        // 2. Set initial position
-        modalContent.style.top = `${cardRect.top}px`;
-        modalContent.style.left = `${cardRect.left}px`;
-        modalContent.style.width = `${cardRect.width}px`;
-        modalContent.style.height = `${cardRect.height}px`;
-
-        // 3. Open modal and transition to final position
         document.body.classList.add('modal-open');
         modalContainer.classList.add('is-open');
-        
-        requestAnimationFrame(() => {
-            modalContent.style.top = '5vh';
-            modalContent.style.left = '50%';
-            modalContent.style.width = 'min(90vw, 64rem)';
-            modalContent.style.height = '90vh';
-            modalContent.style.transform = 'translateX(-50%)';
-        });
     }
 
     function closeModal() {
-        if (!lastClickedCard) return;
-        const cardRect = lastClickedCard.getBoundingClientRect();
-
-        modalContent.style.top = `${cardRect.top}px`;
-        modalContent.style.left = `${cardRect.left}px`;
-        modalContent.style.width = `${cardRect.width}px`;
-        modalContent.style.height = `${cardRect.height}px`;
-        modalContent.style.transform = 'translateX(0)';
-        
         modalContainer.classList.remove('is-open');
         document.body.classList.remove('modal-open');
     }
     
-    function openLightbox(item) {
+    function openLightbox(type, src, caption) {
         lightboxImageEl.classList.add('hidden');
         lightboxVideoContainer.classList.add('hidden');
-        lightboxVideoContainer.innerHTML = '';
-        if (item.type === 'video') {
-            lightboxVideoContainer.innerHTML = `<div class="video-embed-wrapper"><iframe src="${item.src}?autoplay=1&modestbranding=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+        
+        if (type === 'video') {
+            lightboxVideoContainer.innerHTML = `<iframe src="${src}?autoplay=1&modestbranding=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
             lightboxVideoContainer.classList.remove('hidden');
         } else {
-            lightboxImageEl.src = item.src;
+            lightboxImageEl.src = src;
             lightboxImageEl.classList.remove('hidden');
         }
-        lightboxCaption.textContent = item.caption || '';
+        lightboxCaption.textContent = caption || '';
         lightbox.classList.remove('hidden');
     }
 
@@ -161,16 +218,18 @@ function setupModal() {
     chapterCards.forEach(card => card.addEventListener('click', () => openModal(card)));
     modalCloseBtn.addEventListener('click', closeModal);
     modalContainer.querySelector('.modal-backdrop').addEventListener('click', closeModal);
+
     modalBody.addEventListener('click', (e) => {
-        const galleryImg = e.target.closest('.modal-gallery img');
-        if (galleryImg) {
-            const itemIndex = parseInt(galleryImg.dataset.index, 10);
-            const galleryItem = currentChapter.details.gallery[itemIndex];
-            if (galleryItem) openLightbox(galleryItem);
+        const galleryWrapper = e.target.closest('.gallery-item-wrapper');
+        if (galleryWrapper) {
+            const { type, src, caption } = galleryWrapper.dataset;
+            openLightbox(type, src, caption);
         }
     });
+
     lightboxBackBtn.addEventListener('click', closeLightbox);
     lightbox.querySelector('.lightbox-backdrop').addEventListener('click', closeLightbox);
+    
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             if (!lightbox.classList.contains('hidden')) closeLightbox();
@@ -206,7 +265,9 @@ function initAboutSlideshow() {
     const slideshowContainer = document.getElementById('about-slideshow');
     const indicatorsContainer = document.getElementById('about-indicators');
     const captionEl = document.getElementById('polaroid-caption');
-    if (!slideshowContainer || !indicatorsContainer || !captionEl) return;
+    const polaroidFrame = document.querySelector('.polaroid-frame');
+
+    if (!slideshowContainer || !indicatorsContainer || !captionEl || !polaroidFrame) return;
 
     slideshowContainer.innerHTML = polaroidSlidesData.map((slide) => {
         if (slide.type === 'video') {
@@ -220,7 +281,7 @@ function initAboutSlideshow() {
     const slides = slideshowContainer.querySelectorAll('.about-slide');
     const indicatorDots = indicatorsContainer.querySelectorAll('.indicator-dot');
     let currentAboutSlide = 0;
-    const aboutInterval = slideInterval + 1000;
+    const aboutInterval = slideInterval + 100;
     let intervalId = null;
 
     function updateSlide(slideIndex) {
@@ -246,6 +307,9 @@ function initAboutSlideshow() {
     window.slideshowController = { start, stop };
     updateSlide(currentAboutSlide);
     start();
+
+    polaroidFrame.addEventListener('mouseenter', stop);
+    polaroidFrame.addEventListener('mouseleave', start);
 }
 
 // --- YouTube Player API Functions ---
@@ -319,9 +383,11 @@ window.addEventListener("DOMContentLoaded", () => {
   initSlideshow();
   initAboutSlideshow();
   renderChapters();
+  renderExcom();
   renderAnnouncements();
   initReveal();
   setupNavbarScroll();
   setupMobileMenu();
   setupModal();
+  setupScrollHijack();
 });
