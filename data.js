@@ -10,7 +10,8 @@ const chapters = [
             { src: "images/Chapters%20images/uae.webp", caption: "Founder President Engr. Hussain P. (Late) and Founder General Secretary Mohan Joseph Cheeran, who was selected as the 3rd President of KERA in the UAE, share a lighter moment in 2006." },
             { src: "images/Chapters%20images/uae%20(3).webp", caption: "A committee meeting during the 10th (Decennial) Anniversary celebrations." },
             { src: "images/Chapters%20images/uae11.webp", caption: "Founding members during the Silver Jubilee, along with Dr. Lazar John and Dr. Solly George (Princy)." },
-            { src: "images/Chapters%20images/uae12.webp", caption: "The AMAC Chairman addressing founding members of the MACE Alumni UAE chapter." }
+            { src: "images/Chapters%20images/uae12.webp", caption: "The AMAC Chairman addressing founding members of the MACE Alumni UAE chapter." },
+            {src: "images/Chapters%20images/uae.jepg",caption: "Mace Alumni UAE Dance team winning ACKAF  dance competition in 2025"}
         ],
     }
 },
@@ -36,7 +37,7 @@ const chapters = [
         id: 'qatar', name: "Qatar Chapter", location: "Qatar", region: "MEU", imageUrl: "images/qatar.webp",
         details: {
             history: "The Qatar Chapter was established in the lead-up to the 2022 FIFA World Cup, a period of immense growth. Our members played key roles in developing the nation's infrastructure and continue to shape its future.",
-            gallery: [{ src: "https://picsum.photos/seed/qa1/400/300" }, { src: "https://picsum.photos/seed/qa2/400/300" }],
+            gallery: [{ src: "images/Chapters images/qatar.jpeg" },],
         }
     },
     { 
@@ -99,7 +100,8 @@ const chapters = [
             history: "Established in October 2019, our Atlanta chapter serves the growing community of alumni in the southeastern United States. It focuses on logistics, manufacturing, and the burgeoning film technology industry.",
             gallery: [
                 { src: "images/Chapters%20images/Atlanta%20(1).webp" },
-                { src: "images/Chapters%20images/Atlanta%20(2).webp" }
+                { src: "images/Chapters%20images/Atlanta%20(2).webp" },
+                {src:"images/Chapters%20images/Atlanta.jpeg",caption:"Atlanta (Georgia) Chapter Wecomes Pricipal on Oct 1st 2025"}
             ],
         }
     },
@@ -265,8 +267,8 @@ const excomMembers = [
     { name: "Subeen Mathew", position: "President OZMACE Melbourne", imageUrl: "images/People/SubeenMathew.webp" },
     { name: "Jose Puthanani", position: "President OZMACE Brisbane", imageUrl: "images/People/Jose%20Puthanani.webp" },
     { name: "Shaja Mathew", position: "President - Singapore Chapter", imageUrl: "images/People/ShajahMathew.webp" },
-    { name: "David Rajan", position: "President - Chennai", imageUrl: "images/People/Rajan%20David.webp" },
-    { name: "Dr. Bos Mathew Jos", position: "Principal MACE", imageUrl: "images/People/bosmathewjose.png" },
-    { name: "Dr. Jiss Paul", position: "General Secretary MACEAA", imageUrl: "https://i.pravatar.cc/150?u=DrJissPaul" },
+    { name: "David Rajan", position: "President - Chennai", imageUrl: "images/People/Rajan%20David.webp"},
+    { name: "Dr. Bos Mathew Jos", position: "Principal MACE", imageUrl: "images/People/bosmathewjose.png"},
+    { name: "Dr. Jiss Paul", position: "General Secretary MACEAA", imageUrl: "images/People/JissPaul.jpeg"},
     { name: "Dr. George Issac", position: "Ex Principal - Founder AMAC Member", imageUrl: "images/People/George%20Issac%20(2).webp" }
 ];
