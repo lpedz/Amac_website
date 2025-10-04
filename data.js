@@ -206,7 +206,7 @@ const presidents = [
     { chapter: "Kuwait Chapter", name: "Giju George", contact: "kuwait-chairman@amac.org", position: "Current Chairman", phone: "+965-51234567", imageUrl: "images/People/GijuGeorge.webp" },
     { chapter: "Saudi Arabia Chapter", name: "Johnson Samuel", contact: "saudi@amac.org", position: "President", phone: "+966-501234567", imageUrl: "images/People/Johnson%20Samuel%20.webp" },
     { chapter: "OZ MACE Sydney", name: "Xavi Joseph", contact: "sydney-fp@amac.org", position: "Founder President", phone: "+61-401234567", imageUrl: "images/People/xavi.webp" },
-    { chapter: "OZ MACE Sydney", name: "Basil Mathew", contact: "sydney@amac.org", position: "Current President", phone: null, imageUrl: "images/People/basil.webp" },
+    { chapter: "OZ MACE Sydney", name: "Basil Mathew", contact: "sydney@amac.org", position: "Current President", phone: null, imageUrl: "" },
     { chapter: "OZ MACE Melbourne", name: "Subeen Mathew", contact: "melbourne-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/SubeenMathew.webp" },
     { chapter: "OZ MACE Melbourne", name: "AK THOMAS", contact: "melbourne@amac.org", position: "Current President", phone: null, imageUrl: "images/People/AK%20THOMAS.webp" },
     { chapter: "Singapore Chapter", name: "Shaja Mathews", contact: "singapore@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/ShajahMathew.webp" },
