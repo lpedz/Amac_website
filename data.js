@@ -90,7 +90,9 @@ const chapters = [
             history: "The Silicon Valley chapter is at the heart of global innovation. Formed in 2019, it connects MACE alumni in leading tech companies, startups, and venture capital firms.",
             gallery: [
                 { src: "images/Chapters%20images/SilliconValley%20(1).webp" },
-                { src: "images/Chapters%20images/SilliconValley%20(2).webp" }
+                { src: "images/Chapters%20images/SilliconValley%20(2).webp" },
+                {src: "images/Chapters%20images/silliconvalley.webp",caption:"AMAC Leaders in Silicon Valley 2019. Silicon Valley Leader Thampy Antony  toasting welcome to AMAC chairman Mohan J Cheeran, OZMACE Founder President Xavi Joseph & Bala Murali  ( who became Gen Secretary of MACEALUMNI ( 24-26"},
+
             ],
         }
     },
@@ -144,7 +146,9 @@ const chapters = [
         id: 'sydney', name: "OZ MACE Sydney", location: "Australia", region: "AP", imageUrl: "images/australia.webp",
         details: {
             history: "Founded in July 2013, the Sydney chapter is a major hub for finance and professional services in Australia, connecting alumni in the heart of the city's bustling business district.",
-            gallery: [{ src: "https://picsum.photos/seed/syd1/400/300" }],
+            gallery: [{ src: "images/Chapters images/OZ mace sydney (1).webp" },{ src: "images/Chapters images/OZ mace sydney (2).webp" },{ src: "images/Chapters images/OZ mace sydney (3).webp" },
+
+            ],
         }
     },
     { 
