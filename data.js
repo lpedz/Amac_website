@@ -11,7 +11,9 @@ const chapters = [
             { src: "images/Chapters%20images/uae%20(3).webp", caption: "A committee meeting during the 10th (Decennial) Anniversary celebrations." },
             { src: "images/Chapters%20images/uae11.webp", caption: "Founding members during the Silver Jubilee, along with Dr. Lazar John and Dr. Solly George (Princy)." },
             { src: "images/Chapters%20images/uae12.webp", caption: "The AMAC Chairman addressing founding members of the MACE Alumni UAE chapter." },
-            {src: "images/Chapters%20images/uae.jepg",caption: "Mace Alumni UAE Dance team winning ACKAF  dance competition in 2025"}
+            {src: "images/Chapters%20images/uae.jpeg",caption: "Mace Alumni UAE Dance team winning ACKAF  dance competition in 2025"},
+            {src: "images/Chapters images/uae220.jpeg",caption: "The only MACE college union CHAIRMAN  to  join MACE Alumni UAE so far. ( 2015EEE   SREC campus interview. ) KEVIN JOHNY"}
+
         ],
     }
 },
@@ -55,7 +57,11 @@ const chapters = [
         id: 'chicago', name: "Chicago Chapter", location: "USA", region: "NA", imageUrl: "images/chicago.webp",
         details: {
             history: "Established in 2019, the Chicago Chapter is a hub for MACE alumni in the American Midwest. It focuses on connecting professionals in manufacturing, architecture, and finance through targeted events and seminars.",
-            gallery: [{ src: "images/Chapters%20images/chicago.webp" }],
+            gallery: [{ src: "images/Chapters%20images/chicago.webp" },
+                {src:"images/Chapters images/chicago45.jpeg",caption:"MIDWEST Chicago  Committee members with Principal Dr Bos Mathew Jos"},
+                {src:"images/Chapters images/chicago46.jpeg",caption:"President & vice president Chicago Chapter  Subash George & Lishy  honoring  Principal.on  Oct 2025"},
+                {src:"images/Chapters images/chicago44.jpeg",caption:"Welcome given by Midwest Chicago  chapter  to MACEAA President & Principal  Dr. BOS MATHEW JOS  in Chicago on 4th October 2025"}
+            ],
         }
     },
     { 
@@ -147,6 +153,7 @@ const chapters = [
         details: {
             history: "Founded in July 2013, the Sydney chapter is a major hub for finance and professional services in Australia, connecting alumni in the heart of the city's bustling business district.",
             gallery: [{ src: "images/Chapters images/OZ mace sydney (1).webp" },{ src: "images/Chapters images/OZ mace sydney (2).webp" },{ src: "images/Chapters images/OZ mace sydney (3).webp" },
+                        {src:"images/Chapters images/sydney43.jpeg",caption:"OZMACE Sydney President with Amac chairman"}
 
             ],
         }
@@ -206,7 +213,7 @@ const presidents = [
     { chapter: "Kuwait Chapter", name: "Giju George", contact: "kuwait-chairman@amac.org", position: "Current Chairman", phone: "+965-51234567", imageUrl: "images/People/GijuGeorge.webp" },
     { chapter: "Saudi Arabia Chapter", name: "Johnson Samuel", contact: "saudi@amac.org", position: "President", phone: "+966-501234567", imageUrl: "images/People/Johnson%20Samuel%20.webp" },
     { chapter: "OZ MACE Sydney", name: "Xavi Joseph", contact: "sydney-fp@amac.org", position: "Founder President", phone: "+61-401234567", imageUrl: "images/People/xavi.webp" },
-    { chapter: "OZ MACE Sydney", name: "Basil Mathew", contact: "sydney@amac.org", position: "Current President", phone: null, imageUrl: "" },
+    { chapter: "OZ MACE Sydney", name: "Basil Mathew", contact: "sydney@amac.org", position: "Current President", phone: null, imageUrl: "images/People/basilmathew.JPG" },
     { chapter: "OZ MACE Melbourne", name: "Subeen Mathew", contact: "melbourne-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/SubeenMathew.webp" },
     { chapter: "OZ MACE Melbourne", name: "AK THOMAS", contact: "melbourne@amac.org", position: "Current President", phone: null, imageUrl: "images/People/AK%20THOMAS.webp" },
     { chapter: "Singapore Chapter", name: "Shaja Mathews", contact: "singapore@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/ShajahMathew.webp" },
@@ -237,8 +244,8 @@ const presidents = [
     { chapter: "Canada Chapter", name: "Daniel Baby", contact: "canada@amac.org", position: "Current President", phone: null, imageUrl: "images/People/Daniel%20Baby.webp" },
     { chapter: "Oman Chapter", name: "Mr.Murali", contact: "oman-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/murali.webp" },
     { chapter: "Oman Chapter", name: "Benny Joseph", contact: "oman@amac.org", position: "Current President", phone: null, imageUrl: "images/People/BennyJoseph.webp" },
-    { chapter: "Bahrain Chapter", name: "Dr VKM John", contact: "bahrain-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/VKMJohn.webp" },
-    { chapter: "Bahrain Chapter", name: "Dr VKM John", contact: "bahrain@amac.org", position: "Current President", phone: null, imageUrl: "images/People/VKMJohn.webp" },
+    { chapter: "Bahrain Chapter", name: "Dr VKM John", contact: "bahrain-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/vkmjohn.jpeg" },
+    { chapter: "Bahrain Chapter", name: "Dr VKM John", contact: "bahrain@amac.org", position: "Current President", phone: null, imageUrl: "images/People/vkmjohn.jpeg" },
     { chapter: "UK Chapter", name: "Jose Mathiaekal", contact: "uk-fp@amac.org", position: "Founder President", phone: null, imageUrl: "images/People/Jose%20Matheickal%20.webp" },
     { chapter: "UK Chapter", name: "Sabu Kalathil", contact: "uk@amac.org", position: "Current President", phone: null, imageUrl: "images/People/SabuKalathil.webp" }
 ];
