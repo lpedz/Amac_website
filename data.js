@@ -12,7 +12,8 @@ const chapters = [
             { src: "images/Chapters%20images/uae11.webp", caption: "Founding members during the Silver Jubilee, along with Dr. Lazar John and Dr. Solly George (Princy)." },
             { src: "images/Chapters%20images/uae12.webp", caption: "The AMAC Chairman addressing founding members of the MACE Alumni UAE chapter." },
             {src: "images/Chapters%20images/uae.jpeg",caption: "Mace Alumni UAE Dance team winning ACKAF  dance competition in 2025"},
-            {src: "images/Chapters images/uae220.jpeg",caption: "The only MACE college union CHAIRMAN  to  join MACE Alumni UAE so far. ( 2015EEE   SREC campus interview. ) KEVIN JOHNY"}
+            {src: "images/Chapters images/uae220.jpeg",caption: "The only MACE college union CHAIRMAN  to  join MACE Alumni UAE so far. ( 2015EEE   SREC campus interview. ) KEVIN JOHNY"},
+            {type:'video',src:"https://www.youtube.com/embed/PTHi6K3H6s0"}
 
         ],
     }
@@ -98,6 +99,7 @@ const chapters = [
                 { src: "images/Chapters%20images/SilliconValley%20(1).webp" },
                 { src: "images/Chapters%20images/SilliconValley%20(2).webp" },
                 {src: "images/Chapters%20images/silliconvalley.webp",caption:"AMAC Leaders in Silicon Valley 2019. Silicon Valley Leader Thampy Antony  toasting welcome to AMAC chairman Mohan J Cheeran, OZMACE Founder President Xavi Joseph & Bala Murali  ( who became Gen Secretary of MACEALUMNI ( 24-26"},
+                {type:'video',src:"https://www.youtube.com/embed/l_S6h_SOE-M"}
 
             ],
         }
