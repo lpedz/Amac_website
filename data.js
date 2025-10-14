@@ -265,7 +265,7 @@ const excomMembers = [
     { name: "Giju K George", position: "Chairman - Kuwait Chapter", imageUrl: "images/People/GijuGeorge.webp" },
     { name: "Sinesh", position: "President - Qatar Chapter", imageUrl: "images/People/Psykhaesh%20.webp" },
     { name: "Benny Joseph", position: "President - Oman Chapter", imageUrl: "images/People/benneyjoseph.jpeg" },
-    { name: "Rajesh George", position: "President - Baharin Chapter", imageUrl: "https://i.pravatar.cc/150?u=RajeshGeorge" },
+    { name: "Rajesh George", position: "President - Baharin Chapter", imageUrl: "" },
     { name: "Johnson Samuel", position: "President - KSA Chapter", imageUrl: "images/People/Johnson%20Samuel%20.webp" },
     { name: "Joseph Peter", position: "President - Trichur (Senior Chapter)", imageUrl: "images/People/josephpeter.webp" },
     { name: "Sabu Kalathil", position: "President UK Chapter", imageUrl: "" },
