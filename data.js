@@ -98,8 +98,10 @@ const chapters = [
             gallery: [
                 { src: "images/Chapters%20images/SilliconValley%20(1).webp" },
                 { src: "images/Chapters%20images/SilliconValley%20(2).webp" },
+                { src: "images/Chapters%20images/silliconvalley12.jpeg" },
                 {src: "images/Chapters%20images/silliconvalley.webp",caption:"AMAC Leaders in Silicon Valley 2019. Silicon Valley Leader Thampy Antony  toasting welcome to AMAC chairman Mohan J Cheeran, OZMACE Founder President Xavi Joseph & Bala Murali  ( who became Gen Secretary of MACEALUMNI ( 24-26"},
                 {type:'video',src:"https://www.youtube.com/embed/l_S6h_SOE-M"}
+
 
             ],
         }
@@ -144,7 +146,7 @@ const chapters = [
         }
     },
     { 
-        id: 'uk', name: "UK Chapter", location: "United Kingdom", region: "MEU", imageUrl: "images/uk.webp",
+        id: 'uk', name: "UK Chapter", location: "United Kingdom", region: "MEU", imageUrl: "images/uk1.jpg",
         details: {
             history: "The UK chapter connects alumni across England, Scotland, Wales, and Northern Ireland. It has strong ties to London's financial district and the UK's rich engineering heritage.",
             gallery: [{ src: "images/uk.webp" }],
@@ -211,7 +213,7 @@ const presidents = [
     { chapter: "UAE Chapter", name: "Hussain P", position: "Founder President", phone: null, imageUrl: "images/People/hussain.webp" },
     { chapter: "UAE Chapter", name: "Mohan Joseph Cheeran", position: "Founder Gen. Secretary",email:"chairman@amac.org.in", phone: null, imageUrl: "images/People/MohanJoseph.webp" },
     { chapter: "UAE Chapter", name: "Krishna Kumar", position: "Current President", phone: null, imageUrl: "images/People/krishnakumar.webp" },
-    { chapter: "Kuwait Chapter", name: "Late Sasi Kodanadan", position: "Founder Gen. Secretary", phone: null, imageUrl: "images/People/SasiKodanad.webp" },
+    { chapter: "Kuwait Chapter", name: "Sasi Kodanadan Late", position: "Founder Gen. Secretary", phone: null, imageUrl: "images/People/SasiKodanad.webp" },
     { chapter: "Kuwait Chapter", name: "Muhhamadd Kutty", position: "Founder Chairman", phone: null, imageUrl: "images/People/pkmuahhamedkutty.webp" },
     { chapter: "Kuwait Chapter", name: "Jacob Zacharia", position: "Current Gen. Secretary", phone: null,email:"secretary@amac.org.in", imageUrl: "images/People/jacobzacharia.png" },
     { chapter: "Kuwait Chapter", name: "Giju George", position: "Current Chairman", phone: null, imageUrl: "images/People/GijuGeorge.webp" },
@@ -248,8 +250,8 @@ const presidents = [
     { chapter: "Canada Chapter", name: "Daniel Baby", position: "Current President", phone: null, imageUrl: "images/People/Daniel%20Baby.webp" },
     { chapter: "Oman Chapter", name: "Mr.Murali", position: "Founder President", phone: null, imageUrl: "images/People/murali.webp" },
     { chapter: "Oman Chapter", name: "Benny Joseph", position: "Current President", phone: null, imageUrl: "images/People/benneyjoseph.jpeg" },
-    { chapter: "Bahrain Chapter", name: "Dr VKM John", position: "Founder President", phone: null, imageUrl: "images/People/vkmjohn.jpeg" },
-    { chapter: "Bahrain Chapter", name: "Dr VKM John", position: "Current President", phone: null, imageUrl: "images/People/vkmjohn.jpeg" },
+    { chapter: "Bahrain Chapter", name: "Late Dr. VKM John", position: "Founder President (Former Principal)", phone: null, imageUrl: "images/People/vkmjohn.jpeg" },
+    { chapter: "Bahrain Chapter", name: "Rajesh George", position: "Current President", phone: null, imageUrl: "images/People/vkmjohn.jpeg" },
     { chapter: "UK Chapter", name: "Jose Mathiaekal", position: "Founder President", phone: null, imageUrl: "images/People/Jose%20Matheickal%20.webp" },
     { chapter: "UK Chapter", name: "Sabu Kalathil", position: "Current President", phone: null, imageUrl: "images/People/SabuKalathil.webp" }
 ];
