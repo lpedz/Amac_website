@@ -22,7 +22,7 @@ const chapters = [
         id: 'saudi', name: "Saudi Arabia Chapter", location: "Saudi Arabia", region: "MEU", imageUrl: "images/saudi.webp",
         details: {
             history: "Our chapter was formed in 2016 to align with the Kingdom's Vision 2030, creating a network for MACE engineers and professionals contributing to the nation's ambitious giga-projects and economic diversification.",
-            gallery: [{ src: "https://picsum.photos/seed/sa1/400/300" }, { src: "https://picsum.photos/seed/sa2/400/300" }],
+            gallery: [],
         }
     },
     { 
@@ -121,7 +121,7 @@ const chapters = [
         id: 'delaware', name: "Delaware Valley Chapter", location: "USA", region: "NA", imageUrl: "images/delawarevalley.webp",
         details: {
             history: "Established to support alumni in the financial and chemical engineering sectors, the Delaware Valley chapter provides a valuable network in the mid-Atlantic region.",
-            gallery: [{ src: "https://picsum.photos/seed/de1/400/300" }],
+            gallery: [],
         }
     },
     { 
@@ -135,14 +135,14 @@ const chapters = [
         id: 'toronto', name: "Canada Chapter", location: "Canada", region: "NA", imageUrl: "images/tronto.webp",
         details: {
             history: "Our first chapter in Canada, the Canada chapter, unites alumni across the country. It focuses on finance, real estate, and technology, reflecting the nation's diverse economy.",
-            gallery: [{ src: "https://picsum.photos/seed/tor1/400/300" }],
+            gallery: [],
         }
     },
     { 
         id: 'bahrain', name: "Bahrain Chapter", location: "Bahrain", region: "MEU", imageUrl: "images/bahrin.webp",
         details: {
             history: "The Bahrain chapter, one of our earliest in the Gulf, has a long history of connecting alumni in the banking and finance sectors. It hosts regular events to foster community and professional growth.",
-            gallery: [{ src: "https://picsum.photos/seed/bah1/400/300" }],
+            gallery: [],
         }
     },
     { 
@@ -166,14 +166,14 @@ const chapters = [
         id: 'melbourne', name: "OZ MACE Melbourne", location: "Australia", region: "AP", imageUrl: "images/mellbourne.webp",
         details: {
             history: "Founded in July 2013, this chapter focuses on Melbourne's vibrant arts, sports, and tech scenes, providing a network for alumni in Victoria. It's known for its creative and social events.",
-            gallery: [{ src: "https://picsum.photos/seed/mel1/400/300" }],
+            gallery: [],
         }
     },
     { 
         id: 'brisbane', name: "OZMACE Brisbane", location: "Australia", region: "AP", imageUrl: "images/brisbane.webp",
         details: {
             history: "The Brisbane chapter supports alumni in Queensland, focusing on the region's strengths in construction, resources, and tourism. It provides a key network on Australia's east coast.",
-            gallery: [{ src: "https://picsum.photos/seed/bris1/400/300" }],
+            gallery: [],
         }
     },
     { 
@@ -203,7 +203,7 @@ const chapters = [
         id: 'trichur', name: "Trichur (Seniors) Chapter", location: "Trichur", region: "AP", imageUrl: "images/trichur.webp",
         details: {
             history: "Launched in Dubai in 2012 with its current president, Joseph Peter, this is also known as the Seniors Chapter, with members from the 1st batch of MACE. The chapter is a hub for our most experienced alumni.",
-            gallery: [{ src: "https://picsum.photos/seed/hou1/400/300" }, { src: "https://picsum.photos/seed/hou2/400/300" }],
+            gallery: [],
         }
     }
 ];
