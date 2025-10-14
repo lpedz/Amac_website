@@ -38,6 +38,7 @@ function renderExcom() {
             <div class="ml-4 text-left">
                 <h3 class="text-base font-semibold leading-tight text-white">${member.name}</h3>
                 <p class="text-sm text-blue-400">${member.position}</p>
+                ${member.email ? `<a href="mailto:${member.email}" class="text-xs text-blue-500 hover:underline">${member.email}</a>` : ''}
             </div>
         </div>
     `).join('');
@@ -180,7 +181,18 @@ function setupModal() {
         }
         const chapterLeaders = presidents.filter(p => p.chapter === currentChapter.name);
         if (chapterLeaders.length > 0) {
-            const leadersHtml = chapterLeaders.map(leader => `<div class="modal-leader-card"><img src="${leader.imageUrl}" alt="${leader.name}"><div class="modal-leader-info"><p class="name">${leader.name}</p><p class="position">${leader.position}</p><div class="contact"><a href="mailto:${leader.contact}" class="contact-link">${leader.contact}</a>${leader.phone ? `<a href="tel:${leader.phone}" class="contact-link">${leader.phone}</a>` : ''}</div></div></div>`).join('');
+            const leadersHtml = chapterLeaders.map(leader => `
+                <div class="modal-leader-card">
+                    <img src="${leader.imageUrl}" alt="${leader.name}">
+                    <div class="modal-leader-info">
+                        <p class="name">${leader.name}</p>
+                        <p class="position">${leader.position}</p>
+                        <div class="contact">
+                            ${leader.email ? `<a href="mailto:${leader.email}" class="contact-link">${leader.email}</a>` : ''}
+                            ${leader.phone ? `<a href="tel:${leader.phone}" class="contact-link">${leader.phone}</a>` : ''}
+                        </div>
+                    </div>
+                </div>`).join('');
             rightColumn.innerHTML += `<div class="modal-section"><h2>Leadership</h2><div class="modal-leadership-grid">${leadersHtml}</div></div>`;
         }
         modalBody.appendChild(leftColumn);
