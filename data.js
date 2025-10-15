@@ -83,10 +83,10 @@ const chapters = [
     details: {
         history: "Launched in July 2019, our Seattle chapter brings together alumni in the Pacific Northwest's thriving tech and aerospace industries. We foster a community of innovation and collaboration.",
         gallery: [
-            { src: "images/Chapters%20images/Seattle%20(2).webp" },
-            { src: "images/Chapters%20images/Seattle%20(5).webp" },
-            { src: "images/Chapters%20images/Seattle%20(1)_1.webp" },
-            { src: "images/Chapters%20images/Seattle%20(1).webp" },
+            { src: "images/Chapters%20images/Seattle%20(2).webp" ,caption:'Dignitaries on the podium'},
+            { src: "images/Chapters%20images/Seattle%20(5).webp", caption:"Group photo of inauguration"},
+            { src: "images/Chapters%20images/Seattle%20(1)_1.webp",caption:".AMAC chairman’s inaugural address" },
+            { src: "images/Chapters%20images/Seattle%20(1).webp",caption:'Seattle Board members with the dignitaries' },
             { type: 'video', src: 'https://www.youtube.com/embed/c3RQT-3M76U', caption: 'Seattle Chapter Event Highlights' }
         ],
     }
@@ -248,10 +248,10 @@ const presidents = [
     { chapter: "OZMACE Brisbane", name: "Jose Puthanani", position: "Current President", phone: null, imageUrl: "images/People/Jose%20Puthanani.webp" },
     { chapter: "Canada Chapter", name: "Daniel Baby", position: "Founder President", phone: null, imageUrl: "images/People/Daniel%20Baby.webp" },
     { chapter: "Canada Chapter", name: "Daniel Baby", position: "Current President", phone: null, imageUrl: "images/People/Daniel%20Baby.webp" },
-    { chapter: "Oman Chapter", name: "Mr.Murali", position: "Founder President", phone: null, imageUrl: "images/People/murali.webp" },
+    { chapter: "Oman Chapter", name: "Mr. Saju Cherian Late", position: "Founder President", phone: null, imageUrl: "images/People/sajucherian.png" },
     { chapter: "Oman Chapter", name: "Benny Joseph", position: "Current President", phone: null, imageUrl: "images/People/benneyjoseph.jpeg" },
     { chapter: "Bahrain Chapter", name: "Late Dr. VKM John", position: "Founder President (Former Principal)", phone: null, imageUrl: "images/People/vkmjohn.jpeg" },
-    { chapter: "Bahrain Chapter", name: "Rajesh George", position: "Current President", phone: null, imageUrl: "images/People/vkmjohn.jpeg" },
+    { chapter: "Bahrain Chapter", name: "Rajesh George", position: "Current President", phone: null, imageUrl: "" },
     { chapter: "UK Chapter", name: "Jose Mathiaekal", position: "Founder President", phone: null, imageUrl: "images/People/Jose%20Matheickal%20.webp" },
     { chapter: "UK Chapter", name: "Sabu Kalathil", position: "Current President", phone: null, imageUrl: "images/People/SabuKalathil.webp" }
 ];
