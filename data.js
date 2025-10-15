@@ -85,7 +85,7 @@ const chapters = [
         gallery: [
             { src: "images/Chapters%20images/Seattle%20(2).webp" ,caption:'Dignitaries on the podium'},
             { src: "images/Chapters%20images/Seattle%20(5).webp", caption:"Group photo of inauguration"},
-            { src: "images/Chapters%20images/Seattle%20(1)_1.webp",caption:".AMAC chairman’s inaugural address" },
+            { src: "images/Chapters%20images/Seattle%20(1)_1.webp",caption:"AMAC chairman's inaugural address" },
             { src: "images/Chapters%20images/Seattle%20(1).webp",caption:'Seattle Board members with the dignitaries' },
             { type: 'video', src: 'https://www.youtube.com/embed/c3RQT-3M76U', caption: 'Seattle Chapter Event Highlights' }
         ],
