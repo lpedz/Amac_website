@@ -215,7 +215,7 @@ const presidents = [
     { chapter: "UAE Chapter", name: "Krishna Kumar", position: "Current President", phone: null, imageUrl: "images/People/krishnakumar.webp" },
     { chapter: "Kuwait Chapter", name: "Sasi Kodanadan Late", position: "Founder Gen. Secretary", phone: null, imageUrl: "images/People/SasiKodanad.webp" },
     { chapter: "Kuwait Chapter", name: "Muhhamadd Kutty", position: "Founder Chairman", phone: null, imageUrl: "images/People/pkmuahhamedkutty.webp" },
-    { chapter: "Kuwait Chapter", name: "Jacob Zacharia", position: "Current Gen. Secretary", phone: null,email:"secretary@amac.org.in", imageUrl: "images/People/jacobzacharia.png" },
+    { chapter: "Kuwait Chapter", name: "Delin Sojan", position: "Current Gen. Secretary", phone: null,email:null, imageUrl: "" },
     { chapter: "Kuwait Chapter", name: "Giju George", position: "Current Chairman", phone: null, imageUrl: "images/People/GijuGeorge.webp" },
     { chapter: "Saudi Arabia Chapter", name: "Johnson Samuel", position: "President", phone: null, imageUrl: "images/People/Johnson%20Samuel%20.webp" },
     { chapter: "OZ MACE Sydney", name: "Xavi Joseph", position: "Founder President", phone: null, imageUrl: "images/People/xavi.webp" },
