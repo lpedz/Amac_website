@@ -203,7 +203,25 @@ const chapters = [
         id: 'trichur', name: "Trichur (Seniors) Chapter", location: "Trichur", region: "AP", imageUrl: "images/trichur.webp",
         details: {
             history: "Launched in Dubai in 2012 with its current president, Joseph Peter, this is also known as the Seniors Chapter, with members from the 1st batch of MACE. The chapter is a hub for our most experienced alumni.",
-            gallery: [],
+            gallery: [
+                { src: "images/Chapters%20images/perth%20(1).webp" },
+                { src: "images/Chapters%20images/perth%20(2).webp" },
+                { src: "images/Chapters%20images/perth%20(3).webp" },
+                { src: "images/Chapters%20images/perth%20(4).webp" }
+
+],
+        }
+    },
+    {
+        id:'perth',name:"Perth Chapter",location:"Perth,Australia",region:"AP",imageUrl:"images/perth.jpg",
+        details:{
+            history:"The latest Chapter Inaugrated on 18th October 2025, Unites MACE Alumini Across Western Australia",
+            gallery:[
+                { src: "images/Chapters%20images/perth%20(1).jpeg",caption:"Inauguration of MACE Alumni Perth Chapter by Mr. Mohan Joseph Cheeran"},
+                { src: "images/Chapters%20images/perth%20(2).jpeg" },
+                { src: "images/Chapters%20images/perth%20(3).jpeg" },
+                { src: "images/Chapters%20images/perth%20(4).jpeg" }
+            ],
         }
     }
 ];
