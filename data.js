@@ -220,7 +220,9 @@ const chapters = [
                 { src: "images/Chapters%20images/perth%20(1).jpeg",caption:"Inauguration of MACE Alumni Perth Chapter by Mr. Mohan Joseph Cheeran"},
                 { src: "images/Chapters%20images/perth%20(2).jpeg" },
                 { src: "images/Chapters%20images/perth%20(3).jpeg" },
-                { src: "images/Chapters%20images/perth%20(4).jpeg" }
+                { src: "images/Chapters%20images/perth%20(4).jpeg" },
+                { src: "images/Chapters%20images/perth12.jpeg" }
+
             ],
         }
     }
