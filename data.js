@@ -183,7 +183,9 @@ const chapters = [
             gallery: [
                 { src: "images/Chapters%20images/Singapore%20(1).webp" }, 
                 { src: "images/Chapters%20images/Singapore%20(2).webp" }, 
-                { src: "images/Chapters%20images/Singapore%20(3).webp" }
+                { src: "images/Chapters%20images/Singapore%20(3).webp" },
+                { src: "images/Chapters%20images/Singapore.jpeg" ,caption:"Celebrated First Annual day & ONAM 2025 on October 25th."}
+                       
             ],
         }
     },
