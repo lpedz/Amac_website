@@ -303,10 +303,10 @@ const excomMembers = [
     { name: "Manoj K Jose", position: "President Atlanta Chapter", imageUrl: "images/People/Manoj%20K%20Jose.webp" },
     { name: "Subash George", position: "President Chicago Chapter", imageUrl: "images/People/SubashGeorge%20(2).webp" },
     { name: "Daniel Baby", position: "President CANADA Chapter (TORONTO)", imageUrl: "images/People/Daniel%20Baby.webp" },
-    { name: "Basil Mathew", position: "President OZMACE Sydney", imageUrl: "" },
+    { name: "Basil Mathew", position: "President OZMACE Sydney", imageUrl: "images/People/basilmathew.JPG" },
     { name: "Subeen Mathew", position: "President OZMACE Melbourne", imageUrl: "images/People/SubeenMathew.webp" },
     { name: "Jose Puthanani", position: "President OZMACE Brisbane", imageUrl: "images/People/Jose%20Puthanani.webp" },
-    { name: "Shaja Mathew", position: "President - Singapore Chapter", imageUrl: "images/People/ShajahMathew.webp" },
+    { name: "Basil Mathew", position: "President - Singapore Chapter", imageUrl: "images/People/bas" },
     { name: "David Rajan", position: "President - Chennai", imageUrl: "images/People/Rajan%20David.webp"},
     { name: "Dr. Jiss Paul", position: "General Secretary MACEAA", imageUrl: "images/People/JissPaul.jpeg"},
     { name: "Dr. George Issac", position: "Ex Principal - Founder AMAC Member", imageUrl: "images/People/George%20Issac%20(2).webp" }
