@@ -37,8 +37,9 @@ function renderExcom() {
             <img class="h-16 w-16 rounded-full object-cover flex-shrink-0" src="${member.imageUrl}" alt="Photo of ${member.name}">
             <div class="ml-4 text-left">
                 <h3 class="text-base font-semibold leading-tight text-white">${member.name}</h3>
-                <p class="text-sm text-blue-400">${member.position}</p>
-                ${member.email ? `<a href="mailto:${member.email}" class="text-xs text-blue-500 hover:underline">${member.email}</a>` : ''}
+                <p class="text-sm text-blue-400">${member.amacPosition}</p>
+                ${member.details ? `<p class="text-xs text-gray-400 mt-1">${member.details}</p>` : ''}
+                ${member.email ? `<a href="mailto:${member.email}" class="text-xs text-blue-500 hover:underline mt-1">${member.email}</a>` : ''}
             </div>
         </div>
     `).join('');
