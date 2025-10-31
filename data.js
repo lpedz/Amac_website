@@ -264,7 +264,7 @@ const presidents = [
     { chapter: "Seattle Chapter", name: "Thomas Stephen", position: "Founder President", phone: null,email:"vicechair@amac.org.in", imageUrl: "images/People/ThomasStephan.webp" },
     { chapter: "Seattle Chapter", name: "Jyothish Nair", position: "Current President", phone: null, imageUrl: "images/People/jyothishnair.webp" },
     { chapter: "Silicon Valley Chapter", name: "John Chandy", position: "Founder President", phone: null, imageUrl: "images/People/John%20Chandy.webp" },
-    { chapter: "Silicon Valley Chapter", name: "John Chandy", position: "Current President", phone: null, imageUrl: "images/People/John%20Chandy.webp" },
+    { chapter: "Silicon Valley Chapter", name: "Baiju Nair", position: "Current President", phone: null, imageUrl: "images/People/baijunair.jpeg" },
     { chapter: "Delaware Valley Chapter", name: "Saji Gopal", position: "Founder President", phone: null, imageUrl: "images/People/SajiGopal%20(2).webp" },
     { chapter: "Delaware Valley Chapter", name: "Saji Gopal", position: "Current President", phone: null, imageUrl: "images/People/SajiGopal%20(2).webp" },
     { chapter: "OZMACE Brisbane", name: "Jose Puthanani", position: "Founder President", phone: null, imageUrl: "images/People/Jose%20Puthanani.webp" },
