@@ -98,7 +98,6 @@ const chapters = [
             gallery: [
                 { src: "images/Chapters%20images/SilliconValley%20(1).webp" },
                 { src: "images/Chapters%20images/SilliconValley%20(2).webp" },
-                { src: "images/Chapters%20images/silliconvalley12.jpeg" },
                 { src: "images/Chapters%20images/sillicaonvalley111 (1).jpeg",caption:"5th Anniversary Celebration of Silicon Valley Chapter" },
                 { src: "images/Chapters%20images/sillicaonvalley111 (2).jpeg",caption:'Newly elected MACE Alumni, Silicon Valley Chapter Board.  President Biju Nair (1992 ECE), Secretary Sibi  Joseph (2003 ECE).' },
                 {src: "images/Chapters%20images/silliconvalley.webp",caption:"AMAC Leaders in Silicon Valley 2019. Silicon Valley Leader Thampy Antony  toasting welcome to AMAC chairman Mohan J Cheeran, OZMACE Founder President Xavi Joseph & Bala Murali  ( who became Gen Secretary of MACEALUMNI ( 24-26"},
