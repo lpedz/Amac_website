@@ -122,7 +122,7 @@ const chapters = [
         id: 'delaware', name: "Delaware Valley Chapter", location: "USA", region: "NA", imageUrl: "images/delawarevalley.webp",
         details: {
             history: "Established to support alumni in the financial and chemical engineering sectors, the Delaware Valley chapter provides a valuable network in the mid-Atlantic region.",
-            gallery: [],
+            gallery: [ { src: "images/Chapters%20images/delaware.jpeg" },],
         }
     },
     { 
@@ -307,7 +307,7 @@ const excomMembers = [
     { name: "Shajah Mathew", amacPosition: "President - Singapore Chapter", details: null, imageUrl: "images/People/ShajahMathew.webp" },
     { name: "Subeen Mathew", amacPosition: "President OZMACE Melbourne", details: null, imageUrl: "images/People/SubeenMathew.webp" },
     { name: "Jose Puthanani", amacPosition: "President OZMACE Brisbane", details: null, imageUrl: "images/People/Jose%20Puthanani.webp" },
-    { name: "Basil Mathew", amacPosition: "President OZMACE Sydney", details: null, imageUrl: "images/People/bas" },
+    { name: "Basil Mathew", amacPosition: "President OZMACE Sydney", details: null, imageUrl: "images/People/basilmathew.JPG" },
     { name: "David Rajan", amacPosition: "President - Chennai", details: null, imageUrl: "images/People/Rajan%20David.webp"},
     { name: "Dr. Jiss Paul", amacPosition: "General Secretary MACEAA", details: null, imageUrl: "images/People/JissPaul.jpeg"},
     { name: "Dr. George Issac", amacPosition: "Founder AMAC Member", details: "1981 Mechanical, Principal (2007-2015)", imageUrl: "images/People/George%20Issac%20(2).webp" }
